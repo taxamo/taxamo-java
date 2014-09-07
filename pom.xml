@@ -5,7 +5,7 @@
   <artifactId>taxamo-java</artifactId>
   <packaging>jar</packaging>
   <name>taxamo-java</name>
-  <version>0.0.1</version>
+  <version>1.0.1</version>
   <scm>
     <connection>scm:git:git@github.com:taxamo/taxamo-java.git</connection>
     <developerConnection>scm:git:git@github.com:taxamo/taxamo-java.git</developerConnection>
@@ -87,9 +87,6 @@
           </execution>
         </executions>
         <configuration>
-          <configuration>
-            <recompileMode>incremental</recompileMode>
-          </configuration>
           <jvmArgs>
             <jvmArg>-Xmx384m</jvmArg>
           </jvmArgs>
