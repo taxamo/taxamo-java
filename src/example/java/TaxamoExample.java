@@ -1,25 +1,3 @@
-=== Taxamo Java bindings
-
-This package provides [Taxamo](http://www.taxamo.com/) Java bindings.
- 
-=== Installation
-
-If using Maven, just add the following dependency to your module's `pom.xml` file:
-
-```
-<dependency>
-  <groupId>com.taxamo</groupId>
-  <artifactId>taxamo-java</artifactId>
-  <version>1.0.1</version>
-</dependency>
-```
-
-=== Usage
-
-The [TaxamoExample.java](src/example/java/TaxamoExample.java) file provides example of most common operations - transaction
-storage, retrieval and confirmation.
-
-```
 import com.taxamo.client.api.TaxamoApi;
 import com.taxamo.client.common.ApiException;
 import com.taxamo.client.model.*;
@@ -71,4 +49,3 @@ public class TaxamoExample {
 
     }
 }
-```
