@@ -21,9 +21,9 @@ import com.taxamo.client.api.TaxamoApi;
 import com.taxamo.client.common.ApiException;
 import com.taxamo.client.model.*;
 import org.junit.*;
-import scala.actors.threadpool.Arrays;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 
 public class TaxamoApiClientTest {
 
@@ -39,14 +39,14 @@ public class TaxamoApiClientTest {
                         .setBillingCountryCode("IE")
                         .setForceCountryCode("FR")
                         .setOrderDate("2014-06-01")
-                        .setTransactionLines(Arrays.asList(new TransactionLines[]{
-                                new TransactionLines()
+                        .setTransactionLines(Arrays.asList(
+                                new InputTransactionLine()
                                         .setAmount(new BigDecimal(200))
                                         .setCustomId("line1"),
-                                new TransactionLines()
+                                new InputTransactionLine()
                                         .setAmount(new BigDecimal(100))
                                         .setCustomId("line2")
-                                        .setProductType("e-book")}))));
+                                        .setProductType("e-book")))));
         Transaction transaction = createTransactionOut.getTransaction();
         TransactionLines line1 = null, line2 = null;
 
@@ -231,14 +231,14 @@ public class TaxamoApiClientTest {
                             .setBillingCountryCode("IE")
                             .setForceCountryCode("FR")
                             .setOrderDate("2014-06-01")
-                            .setTransactionLines(Arrays.asList(new TransactionLines[]{
-                                    new TransactionLines()
+                            .setTransactionLines(Arrays.asList(
+                                    new InputTransactionLine()
                                             .setAmount(new BigDecimal(200))
                                             .setCustomId("line1"),
-                                    new TransactionLines()
+                                    new InputTransactionLine()
                                             .setAmount(new BigDecimal(100))
                                             .setCustomId("line2")
-                                            .setProductType("e-book")}))));
+                                            .setProductType("e-book")))));
         } catch (ApiException e) {
             apiException = e;
         }
@@ -248,14 +248,14 @@ public class TaxamoApiClientTest {
         try {
             api.createTransaction(new CreateTransactionIn()
                     .setTransaction(new InputTransaction()
-                            .setTransactionLines(Arrays.asList(new TransactionLines[]{
-                                    new TransactionLines()
+                            .setTransactionLines(Arrays.asList(
+                                    new InputTransactionLine()
                                             .setAmount(new BigDecimal(200))
                                             .setCustomId("line1"),
-                                    new TransactionLines()
+                                    new InputTransactionLine()
                                             .setAmount(new BigDecimal(100))
                                             .setCustomId("line2")
-                                            .setProductType("e-book")}))));
+                                            .setProductType("e-book")))));
         } catch (ApiException e) {
             apiException = e;
         }
@@ -275,14 +275,14 @@ public class TaxamoApiClientTest {
                             .setBillingCountryCode("IE")
                             .setForceCountryCode("FR")
                             .setOrderDate("2014-06-01")
-                            .setTransactionLines(Arrays.asList(new TransactionLines[]{
-                                    new TransactionLines()
+                            .setTransactionLines(Arrays.asList(
+                                    new InputTransactionLine()
                                             .setAmount(new BigDecimal(200))
                                             .setCustomId("line1"),
-                                    new TransactionLines()
+                                    new InputTransactionLine()
                                             .setAmount(new BigDecimal(100))
                                             .setCustomId("line2")
-                                            .setProductType("e-book")}))));
+                                            .setProductType("e-book")))));
         } catch (ClientHandlerException e) {
             clientHandlerException = e;
         }
