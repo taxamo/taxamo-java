@@ -5,7 +5,23 @@
   <artifactId>taxamo-java</artifactId>
   <packaging>jar</packaging>
   <name>taxamo-java</name>
-  <version>1.0.1</version>
+  <description>
+    Taxamo API client bindings for Java.
+  </description>
+    <organization>
+        <name>Taxamo</name>
+        <url>http://www.taxamo.com</url>
+    </organization>
+  <url>http://github.com/taxamo</url>
+  <licenses>
+      <license>
+          <name>Apache License, Version 2.0</name>
+          <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+          <distribution>repo</distribution>
+          <comments>A business-friendly OSS license</comments>
+      </license>
+  </licenses>
+  <version>1.0.2</version>
   <scm>
     <connection>scm:git:git@github.com:taxamo/taxamo-java.git</connection>
     <developerConnection>scm:git:git@github.com:taxamo/taxamo-java.git</developerConnection>
@@ -14,6 +30,8 @@
   <prerequisites>
     <maven>2.2.0</maven>
   </prerequisites>
+
+    <!-- Project description missing, Project URL missing, License information missing, Developer information missing -->
 
   <build>
     <plugins>
@@ -178,6 +196,19 @@
     </dependency>
   </dependencies>
 
+    <developers>
+        <developer>
+            <id>tlipski</id>
+            <name>Tom Lipski</name>
+            <email>tom@taxamo.com</email>
+            <organization>Taxamo</organization>
+            <organizationUrl>http://www.taxamo.com</organizationUrl>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
   <properties>
     <jersey-version>1.7</jersey-version>
     <jackson-version>2.1.4</jackson-version>
