@@ -159,7 +159,7 @@ public class TaxamoApi {
   //error info- code: 200 reason: "OK" model: <none>
   //error info- code: 401 reason: "Incorrect token" model: <none>
   //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
-  public ListPaymentsOut listPayments (BigDecimal limit, BigDecimal offset, String key) throws ApiException {
+  public ListPaymentsOut listPayments (String limit, String offset, String key) throws ApiException {
     // verify required params are set
     if(key == null ) {
        throw new ApiException(400, "missing required params");

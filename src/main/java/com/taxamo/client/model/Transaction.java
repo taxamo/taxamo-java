@@ -56,6 +56,8 @@ public class Transaction {
   private BigDecimal taxAmount = null;
   /* Timezone name for tax transaction. */
   private String taxTimezone = null;
+  /* Buyer's declared email address. */
+  private String buyerEmail = null;
   /* Use data and evidence from original transaction. Tax will be re-calculated, but evidence won't be re-checked. */
   private String originalTransactionKey = null;
   /* Was this transaction created in test mode? */
@@ -211,6 +213,14 @@ public class Transaction {
   }
   public Transaction setTaxTimezone(String taxTimezone) {
     this.taxTimezone = taxTimezone;
+    return this;
+  }
+
+  public String getBuyerEmail() {
+    return buyerEmail;
+  }
+  public Transaction setBuyerEmail(String buyerEmail) {
+    this.buyerEmail = buyerEmail;
     return this;
   }
 
@@ -447,6 +457,7 @@ public class Transaction {
     sb.append("  forceCountryCode: ").append(forceCountryCode).append("\n");
     sb.append("  taxAmount: ").append(taxAmount).append("\n");
     sb.append("  taxTimezone: ").append(taxTimezone).append("\n");
+    sb.append("  buyerEmail: ").append(buyerEmail).append("\n");
     sb.append("  originalTransactionKey: ").append(originalTransactionKey).append("\n");
     sb.append("  test: ").append(test).append("\n");
     sb.append("  status: ").append(status).append("\n");

@@ -46,6 +46,8 @@ public class InputTransactionUpdate {
   private String taxCountryCode = null;
   /* Two-letter ISO country code, e.g. FR. Use it to force country code for tax calculation. */
   private String forceCountryCode = null;
+  /* Buyer's declared email address. */
+  private String buyerEmail = null;
   /* Use data and evidence from original transaction. Tax will be re-calculated, but evidence won't be re-checked. */
   private String originalTransactionKey = null;
   /* IP address of the buyer in dotted decimal (IPv4) or text format (IPv6). */
@@ -145,6 +147,14 @@ public class InputTransactionUpdate {
   }
   public InputTransactionUpdate setForceCountryCode(String forceCountryCode) {
     this.forceCountryCode = forceCountryCode;
+    return this;
+  }
+
+  public String getBuyerEmail() {
+    return buyerEmail;
+  }
+  public InputTransactionUpdate setBuyerEmail(String buyerEmail) {
+    this.buyerEmail = buyerEmail;
     return this;
   }
 
@@ -281,6 +291,7 @@ public class InputTransactionUpdate {
     sb.append("  customId: ").append(customId).append("\n");
     sb.append("  taxCountryCode: ").append(taxCountryCode).append("\n");
     sb.append("  forceCountryCode: ").append(forceCountryCode).append("\n");
+    sb.append("  buyerEmail: ").append(buyerEmail).append("\n");
     sb.append("  originalTransactionKey: ").append(originalTransactionKey).append("\n");
     sb.append("  buyerIp: ").append(buyerIp).append("\n");
     sb.append("  invoicePlace: ").append(invoicePlace).append("\n");
