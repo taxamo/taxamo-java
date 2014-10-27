@@ -46,9 +46,10 @@ import com.taxamo.client.model.GetTransactionsStatsOut;
 import com.taxamo.client.model.CapturePaymentOut;
 import com.taxamo.client.model.ConfirmTransactionIn;
 import com.taxamo.client.model.ValidateTaxNumberOut;
+import com.taxamo.client.model.GetDailySettlementStatsOut;
 import com.taxamo.client.model.CreateRefundOut;
-import com.taxamo.client.model.GetSettlementReportOut;
 import com.taxamo.client.model.GetProductTypesDictOut;
+import com.taxamo.client.model.GetSettlementSummaryOut;
 import com.taxamo.client.model.ConfirmTransactionOut;
 import com.taxamo.client.model.GetSettlementStatsByCountryOut;
 import com.taxamo.client.model.GetCountriesDictOut;
@@ -56,6 +57,7 @@ import com.taxamo.client.model.CalculateSimpleTaxOut;
 import com.taxamo.client.model.CreateTransactionOut;
 import com.taxamo.client.model.GetCurrenciesDictOut;
 import com.taxamo.client.model.VerifySMSTokenOut;
+import com.taxamo.client.model.GetRefundsOut;
 import com.taxamo.client.model.CreateTransactionIn;
 import java.math.BigDecimal;
 import java.io.File;
@@ -861,21 +863,25 @@ public class TaxamoApi {
   //error info- code: 200 reason: "OK" model: <none>
   //error info- code: 401 reason: "Incorrect token" model: <none>
   //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
-  public GetSettlementReportOut getSettlementReport (String quarter) throws ApiException {
+  public GetDailySettlementStatsOut getDailySettlementStats (String interval, String dateFrom, String dateTo) throws ApiException {
     // verify required params are set
-    if(quarter == null ) {
+    if(interval == null || dateFrom == null || dateTo == null ) {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String path = "/api/v1/reports/settlement".replaceAll("\\{format\\}","json");
+    String path = "/api/v1/stats/settlement/daily".replaceAll("\\{format\\}","json");
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if(!"null".equals(String.valueOf(quarter)))
-      queryParams.put("quarter", String.valueOf(quarter));
+    if(!"null".equals(String.valueOf(interval)))
+      queryParams.put("interval", String.valueOf(interval));
+    if(!"null".equals(String.valueOf(dateFrom)))
+      queryParams.put("date_from", String.valueOf(dateFrom));
+    if(!"null".equals(String.valueOf(dateTo)))
+      queryParams.put("date_to", String.valueOf(dateTo));
     String[] contentTypes = {
       "application/json"};
 
@@ -884,7 +890,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (GetSettlementReportOut) ApiInvoker.deserialize(response, "", GetSettlementReportOut.class);
+        return (GetDailySettlementStatsOut) ApiInvoker.deserialize(response, "", GetDailySettlementStatsOut.class);
       }
       else {
         return null;
@@ -901,7 +907,45 @@ public class TaxamoApi {
   //error info- code: 200 reason: "OK" model: <none>
   //error info- code: 401 reason: "Incorrect token" model: <none>
   //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
-  public GetSettlementOut getSettlement (String format, String quarter) throws ApiException {
+  public GetRefundsOut getRefunds (String mossCountryCode, String dateFrom) throws ApiException {
+    // create path and map variables
+    String path = "/api/v1/settlement/refunds".replaceAll("\\{format\\}","json");
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    if(!"null".equals(String.valueOf(mossCountryCode)))
+      queryParams.put("moss_country_code", String.valueOf(mossCountryCode));
+    if(!"null".equals(String.valueOf(dateFrom)))
+      queryParams.put("date_from", String.valueOf(dateFrom));
+    String[] contentTypes = {
+      "application/json"};
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
+      if(response != null){
+        return (GetRefundsOut) ApiInvoker.deserialize(response, "", GetRefundsOut.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  //error info- code: 200 reason: "OK" model: <none>
+  //error info- code: 401 reason: "Incorrect token" model: <none>
+  //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
+  public GetSettlementOut getSettlement (String format, String mossCountryCode, String quarter) throws ApiException {
     // verify required params are set
     if(quarter == null ) {
        throw new ApiException(400, "missing required params");
@@ -916,6 +960,8 @@ public class TaxamoApi {
 
     if(!"null".equals(String.valueOf(format)))
       queryParams.put("format", String.valueOf(format));
+    if(!"null".equals(String.valueOf(mossCountryCode)))
+      queryParams.put("moss_country_code", String.valueOf(mossCountryCode));
     String[] contentTypes = {
       "application/json"};
 
@@ -925,6 +971,46 @@ public class TaxamoApi {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
         return (GetSettlementOut) ApiInvoker.deserialize(response, "", GetSettlementOut.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  //error info- code: 200 reason: "OK" model: <none>
+  //error info- code: 401 reason: "Incorrect token" model: <none>
+  //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
+  public GetSettlementSummaryOut getSettlementSummary (String mossCountryCode, String quarter) throws ApiException {
+    // verify required params are set
+    if(quarter == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    // create path and map variables
+    String path = "/api/v1/settlement/summary/{quarter}".replaceAll("\\{format\\}","json").replaceAll("\\{" + "quarter" + "\\}", apiInvoker.escapeString(quarter.toString()));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    if(!"null".equals(String.valueOf(mossCountryCode)))
+      queryParams.put("moss_country_code", String.valueOf(mossCountryCode));
+    String[] contentTypes = {
+      "application/json"};
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
+      if(response != null){
+        return (GetSettlementSummaryOut) ApiInvoker.deserialize(response, "", GetSettlementSummaryOut.class);
       }
       else {
         return null;
@@ -1085,7 +1171,7 @@ public class TaxamoApi {
   //error info- code: 200 reason: "OK" model: <none>
   //error info- code: 401 reason: "Incorrect token" model: <none>
   //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
-  public GetCountriesDictOut getCountriesDict () throws ApiException {
+  public GetCountriesDictOut getCountriesDict (Boolean taxSupported) throws ApiException {
     // create path and map variables
     String path = "/api/v1/dictionaries/countries".replaceAll("\\{format\\}","json");
 
@@ -1094,6 +1180,8 @@ public class TaxamoApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
+    if(!"null".equals(String.valueOf(taxSupported)))
+      queryParams.put("tax_supported", String.valueOf(taxSupported));
     String[] contentTypes = {
       "application/json"};
 

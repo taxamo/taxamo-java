@@ -29,7 +29,7 @@ public class InputTransactionLine {
   private List<CustomFields> customFields = new ArrayList<CustomFields>();
   /* Custom id, provided by ecommerce software. */
   private String customId = null;
-  /* Product type, according to dictionary /dictionaries/product_types */
+  /* Product type, according to dictionary /dictionaries/product_types.  */
   private String productType = null;
   /* Quantity Defaults to 1. */
   private BigDecimal quantity = null;
@@ -39,16 +39,22 @@ public class InputTransactionLine {
   private String unitOfMeasure = null;
   /* Total amount. Required if amount is not provided. */
   private BigDecimal totalAmount = null;
+  /* Tax rate, calculated by taxamo. Can be overwritten when informative field is true. */
+  private BigDecimal taxRate = null;
   /* Generated line key. */
   private String lineKey = null;
   /* Amount. Required if total amount is not provided. */
   private BigDecimal amount = null;
+  /* If the line is provided for informative purposes. Such line can have :tax-rate and/or :tax-name - if not, API will calculate missing values according to product type and country of residence. */
+  private Boolean informative = null;
   /* Line contents description. */
   private String description = null;
   /* Internal product code, used for invoicing for example. */
   private String productCode = null;
   /* Date of supply in yyyy-MM-dd format. */
   private String supplyDate = null;
+  /* Tax name, calculated by taxamo.  Can be overwritten when informative field is true. */
+  private String taxName = null;
   public List<CustomFields> getCustomFields() {
     return customFields;
   }
@@ -105,6 +111,14 @@ public class InputTransactionLine {
     return this;
   }
 
+  public BigDecimal getTaxRate() {
+    return taxRate;
+  }
+  public InputTransactionLine setTaxRate(BigDecimal taxRate) {
+    this.taxRate = taxRate;
+    return this;
+  }
+
   public String getLineKey() {
     return lineKey;
   }
@@ -118,6 +132,14 @@ public class InputTransactionLine {
   }
   public InputTransactionLine setAmount(BigDecimal amount) {
     this.amount = amount;
+    return this;
+  }
+
+  public Boolean getInformative() {
+    return informative;
+  }
+  public InputTransactionLine setInformative(Boolean informative) {
+    this.informative = informative;
     return this;
   }
 
@@ -145,6 +167,14 @@ public class InputTransactionLine {
     return this;
   }
 
+  public String getTaxName() {
+    return taxName;
+  }
+  public InputTransactionLine setTaxName(String taxName) {
+    this.taxName = taxName;
+    return this;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -156,11 +186,14 @@ public class InputTransactionLine {
     sb.append("  unitPrice: ").append(unitPrice).append("\n");
     sb.append("  unitOfMeasure: ").append(unitOfMeasure).append("\n");
     sb.append("  totalAmount: ").append(totalAmount).append("\n");
+    sb.append("  taxRate: ").append(taxRate).append("\n");
     sb.append("  lineKey: ").append(lineKey).append("\n");
     sb.append("  amount: ").append(amount).append("\n");
+    sb.append("  informative: ").append(informative).append("\n");
     sb.append("  description: ").append(description).append("\n");
     sb.append("  productCode: ").append(productCode).append("\n");
     sb.append("  supplyDate: ").append(supplyDate).append("\n");
+    sb.append("  taxName: ").append(taxName).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

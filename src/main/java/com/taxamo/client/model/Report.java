@@ -33,6 +33,8 @@ public class Report {
   private String countryCode = null;
   /* Tax amount */
   private BigDecimal taxAmount = null;
+  /* If true, this line should not be entered into MOSS and is provided for informative purposes only. For example because the country is the same as MOSS registration country and merchant country. */
+  private Boolean skipMoss = null;
   /* Three-letter ISO currency code. */
   private String currencyCode = null;
   public BigDecimal getTaxRate() {
@@ -75,6 +77,14 @@ public class Report {
     return this;
   }
 
+  public Boolean getSkipMoss() {
+    return skipMoss;
+  }
+  public Report setSkipMoss(Boolean skipMoss) {
+    this.skipMoss = skipMoss;
+    return this;
+  }
+
   public String getCurrencyCode() {
     return currencyCode;
   }
@@ -92,6 +102,7 @@ public class Report {
     sb.append("  countryName: ").append(countryName).append("\n");
     sb.append("  countryCode: ").append(countryCode).append("\n");
     sb.append("  taxAmount: ").append(taxAmount).append("\n");
+    sb.append("  skipMoss: ").append(skipMoss).append("\n");
     sb.append("  currencyCode: ").append(currencyCode).append("\n");
     sb.append("}\n");
     return sb.toString();

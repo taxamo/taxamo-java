@@ -66,8 +66,8 @@ public class TaxamoApiClientTest {
         Assert.assertNotNull(transaction.getKey());
         Assert.assertEquals("IE", transaction.getCountries().getDetected().getCode());
         Assert.assertEquals(300.0, transaction.getAmount().doubleValue(), 0.1);
-        Assert.assertEquals(47.00, transaction.getTaxAmount().doubleValue(), 0.1);
-        Assert.assertEquals(347.00, transaction.getTotalAmount().doubleValue(), 0.1);
+        Assert.assertEquals(45.50, transaction.getTaxAmount().doubleValue(), 0.1);
+        Assert.assertEquals(345.50, transaction.getTotalAmount().doubleValue(), 0.1);
         Assert.assertEquals("N", transaction.getStatus());
 
         Assert.assertEquals("line1", line1.getCustomId());
@@ -79,8 +79,8 @@ public class TaxamoApiClientTest {
 
         Assert.assertNotNull(transaction.getKey());
         Assert.assertEquals(300.0, transaction.getAmount().doubleValue(), 0.1);
-        Assert.assertEquals(47.00, transaction.getTaxAmount().doubleValue(), 0.1);
-        Assert.assertEquals(347.00, transaction.getTotalAmount().doubleValue(), 0.1);
+        Assert.assertEquals(45.50, transaction.getTaxAmount().doubleValue(), 0.1);
+        Assert.assertEquals(345.50, transaction.getTotalAmount().doubleValue(), 0.1);
         Assert.assertEquals("N", transaction.getStatus());
         Assert.assertEquals("test@taxamo.com", transaction.getBuyerEmail());
 
@@ -120,8 +120,8 @@ public class TaxamoApiClientTest {
         Assert.assertEquals("Java Test #5", transaction.getBuyerName());
         Assert.assertEquals("Test street #5", transaction.getInvoiceAddress().getStreetName());
         Assert.assertEquals(70.0, transaction.getAmount().doubleValue(), 0.1);
-        Assert.assertEquals(8.8, transaction.getTaxAmount().doubleValue(), 0.1);
-        Assert.assertEquals(78.8, transaction.getTotalAmount().doubleValue(), 0.1);
+        Assert.assertEquals(8.2, transaction.getTaxAmount().doubleValue(), 0.1);
+        Assert.assertEquals(78.2, transaction.getTotalAmount().doubleValue(), 0.1);
         Assert.assertEquals("N", transaction.getStatus());
         Assert.assertEquals("2014-06-01T00:00:00Z", transaction.getOrderDate());
 
@@ -149,8 +149,8 @@ public class TaxamoApiClientTest {
         Assert.assertEquals("Java Test #5", transaction.getBuyerName());
         Assert.assertEquals("Test street #5", transaction.getInvoiceAddress().getStreetName());
         Assert.assertEquals(70.0, transaction.getAmount().doubleValue(), 0.1);
-        Assert.assertEquals(8.8, transaction.getTaxAmount().doubleValue(), 0.1);
-        Assert.assertEquals(78.8, transaction.getTotalAmount().doubleValue(), 0.1);
+        Assert.assertEquals(8.2, transaction.getTaxAmount().doubleValue(), 0.1);
+        Assert.assertEquals(78.2, transaction.getTotalAmount().doubleValue(), 0.1);
         Assert.assertEquals("N", transaction.getStatus());
         Assert.assertEquals("2014-06-01T00:00:00Z", transaction.getOrderDate());
 
@@ -181,8 +181,8 @@ public class TaxamoApiClientTest {
         Assert.assertEquals("Java Test #5", transaction.getBuyerName());
         Assert.assertEquals("Test street #5", transaction.getInvoiceAddress().getStreetName());
         Assert.assertEquals(70.0, transaction.getAmount().doubleValue(), 0.1);
-        Assert.assertEquals(8.8, transaction.getTaxAmount().doubleValue(), 0.1);
-        Assert.assertEquals(78.8, transaction.getTotalAmount().doubleValue(), 0.1);
+        Assert.assertEquals(8.2, transaction.getTaxAmount().doubleValue(), 0.1);
+        Assert.assertEquals(78.2, transaction.getTotalAmount().doubleValue(), 0.1);
         Assert.assertEquals("C", transaction.getStatus());
         Assert.assertEquals("2014-06-01T00:00:00Z", transaction.getOrderDate());
 
@@ -192,8 +192,8 @@ public class TaxamoApiClientTest {
         Assert.assertEquals("Java Test #5", transaction.getBuyerName());
         Assert.assertEquals("Test street #5", transaction.getInvoiceAddress().getStreetName());
         Assert.assertEquals(70.0, transaction.getAmount().doubleValue(), 0.1);
-        Assert.assertEquals(8.8, transaction.getTaxAmount().doubleValue(), 0.1);
-        Assert.assertEquals(78.8, transaction.getTotalAmount().doubleValue(), 0.1);
+        Assert.assertEquals(8.2, transaction.getTaxAmount().doubleValue(), 0.1);
+        Assert.assertEquals(78.2, transaction.getTotalAmount().doubleValue(), 0.1);
         Assert.assertEquals("C", transaction.getStatus());
         Assert.assertEquals("2014-06-01T00:00:00Z", transaction.getOrderDate());
 

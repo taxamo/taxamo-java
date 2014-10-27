@@ -38,7 +38,7 @@ public class InputTransaction {
   private List<CustomFields> customFields = new ArrayList<CustomFields>();
   /* Additional currency information - can be used to receive additional information about invoice in another currency. */
   private AdditionalCurrencies additionalCurrencies = null;
-  /*  Buyer's tax number - EU VAT number for example. */
+  /*  Buyer's tax number - EU VAT number for example. If using EU VAT number, it is possible to provide country code in it (e.g. IE1234567X) or simply use billing_country_code field for that. In the first case, if billing_country_code value was provided, it will be overwritten with country code value extracted from VAT number - but only if the VAT has been verified properly. */
   private String buyerTaxNumber = null;
   /* Custom identifier provided upon transaction creation. */
   private String customId = null;
@@ -76,7 +76,8 @@ public class InputTransaction {
   private String supplyDate = null;
   /* Transaction lines. */
   private List<InputTransactionLine> transactionLines = new ArrayList<InputTransactionLine>();
-  /* Order date in yyyy-MM-dd format. */
+  /* Order date in yyyy-MM-dd format, in merchant's timezone. If provided by the API caller, no timezone conversion is performed.
+   Default value is current date and time. When using public token, the default value is used. */
   private String orderDate = null;
   public String getInvoiceDate() {
     return invoiceDate;

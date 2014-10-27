@@ -25,9 +25,9 @@ import java.math.BigDecimal;
 public class C {
   /* Date for stats in yyyy-MM-dd'T'hh:mm:ss'Z' format. */
   private String dayRaw = null;
-  /* Transaction count */
+  /* Transaction count. */
   private BigDecimal value = null;
-  /* Transaction status (C or N) */
+  /* Transaction status (C or N). */
   private String status = null;
   /* Date for stats in yyyy-MM-dd format. */
   private String day = null;

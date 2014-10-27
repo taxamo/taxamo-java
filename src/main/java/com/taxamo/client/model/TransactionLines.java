@@ -34,7 +34,7 @@ public class TransactionLines {
   private String customId = null;
   /* Deducted tax amount, calculated by taxmo. */
   private BigDecimal deductedTaxAmount = null;
-  /* Product type, according to dictionary /dictionaries/product_types */
+  /* Product type, according to dictionary /dictionaries/product_types.  */
   private String productType = null;
   /* Quantity Defaults to 1. */
   private BigDecimal quantity = null;
@@ -46,7 +46,7 @@ public class TransactionLines {
   private String unitOfMeasure = null;
   /* Total amount. Required if amount is not provided. */
   private BigDecimal totalAmount = null;
-  /* Tax rate, calculated by taxamo. */
+  /* Tax rate, calculated by taxamo. Can be overwritten when informative field is true. */
   private BigDecimal taxRate = null;
   /* Refunded tax amount, calculated by taxmo. */
   private BigDecimal refundedTaxAmount = null;
@@ -58,12 +58,16 @@ public class TransactionLines {
   private BigDecimal id = null;
   /* Refunded total amount, calculated by taxmo. */
   private BigDecimal refundedTotalAmount = null;
+  /* If the line is provided for informative purposes. Such line can have :tax-rate and/or :tax-name - if not, API will calculate missing values according to product type and country of residence. */
+  private Boolean informative = null;
   /* Line contents description. */
   private String description = null;
   /* Internal product code, used for invoicing for example. */
   private String productCode = null;
   /* Date of supply in yyyy-MM-dd format. */
   private String supplyDate = null;
+  /* Tax name, calculated by taxamo.  Can be overwritten when informative field is true. */
+  private String taxName = null;
   public List<CustomFields> getCustomFields() {
     return customFields;
   }
@@ -192,6 +196,14 @@ public class TransactionLines {
     return this;
   }
 
+  public Boolean getInformative() {
+    return informative;
+  }
+  public TransactionLines setInformative(Boolean informative) {
+    this.informative = informative;
+    return this;
+  }
+
   public String getDescription() {
     return description;
   }
@@ -216,6 +228,14 @@ public class TransactionLines {
     return this;
   }
 
+  public String getTaxName() {
+    return taxName;
+  }
+  public TransactionLines setTaxName(String taxName) {
+    this.taxName = taxName;
+    return this;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -236,9 +256,11 @@ public class TransactionLines {
     sb.append("  amount: ").append(amount).append("\n");
     sb.append("  id: ").append(id).append("\n");
     sb.append("  refundedTotalAmount: ").append(refundedTotalAmount).append("\n");
+    sb.append("  informative: ").append(informative).append("\n");
     sb.append("  description: ").append(description).append("\n");
     sb.append("  productCode: ").append(productCode).append("\n");
     sb.append("  supplyDate: ").append(supplyDate).append("\n");
+    sb.append("  taxName: ").append(taxName).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
