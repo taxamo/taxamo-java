@@ -37,6 +37,8 @@ public class Country {
   private List<String> callingCode = new ArrayList<String>();
   /* Three letter ISO country code. */
   private String cca3 = null;
+  /* VAT number country code. Important for Greece. */
+  private String taxNumberCountryCode = null;
   /* Country ISO 3-digit code. */
   private String codenum = null;
   /* True if tax calculation supported for this country. */
@@ -97,6 +99,14 @@ public class Country {
     return this;
   }
 
+  public String getTaxNumberCountryCode() {
+    return taxNumberCountryCode;
+  }
+  public Country setTaxNumberCountryCode(String taxNumberCountryCode) {
+    this.taxNumberCountryCode = taxNumberCountryCode;
+    return this;
+  }
+
   public String getCodenum() {
     return codenum;
   }
@@ -124,6 +134,7 @@ public class Country {
     sb.append("  cca2: ").append(cca2).append("\n");
     sb.append("  callingCode: ").append(callingCode).append("\n");
     sb.append("  cca3: ").append(cca3).append("\n");
+    sb.append("  taxNumberCountryCode: ").append(taxNumberCountryCode).append("\n");
     sb.append("  codenum: ").append(codenum).append("\n");
     sb.append("  taxSupported: ").append(taxSupported).append("\n");
     sb.append("}\n");

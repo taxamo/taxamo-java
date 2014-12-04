@@ -907,7 +907,11 @@ public class TaxamoApi {
   //error info- code: 200 reason: "OK" model: <none>
   //error info- code: 401 reason: "Incorrect token" model: <none>
   //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
-  public GetRefundsOut getRefunds (String mossCountryCode, String dateFrom) throws ApiException {
+  public GetRefundsOut getRefunds (String format, String mossCountryCode, String dateFrom) throws ApiException {
+    // verify required params are set
+    if(dateFrom == null ) {
+       throw new ApiException(400, "missing required params");
+    }
     // create path and map variables
     String path = "/api/v1/settlement/refunds".replaceAll("\\{format\\}","json");
 
@@ -916,6 +920,8 @@ public class TaxamoApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
+    if(!"null".equals(String.valueOf(format)))
+      queryParams.put("format", String.valueOf(format));
     if(!"null".equals(String.valueOf(mossCountryCode)))
       queryParams.put("moss_country_code", String.valueOf(mossCountryCode));
     if(!"null".equals(String.valueOf(dateFrom)))

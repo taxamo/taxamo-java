@@ -22,6 +22,8 @@ package com.taxamo.client.model;
 
 
 public class InvoiceAddress {
+  /* Freeform address. Use when structured data is not available. Will be used in SAF-MOSS file if other fields are not provided. */
+  private String freeformAddress = null;
   /* Building number. */
   private String buildingNumber = null;
   /*  Street name. */
@@ -36,6 +38,14 @@ public class InvoiceAddress {
   private String region = null;
   /* 2-letter ISO country code. */
   private String country = null;
+  public String getFreeformAddress() {
+    return freeformAddress;
+  }
+  public InvoiceAddress setFreeformAddress(String freeformAddress) {
+    this.freeformAddress = freeformAddress;
+    return this;
+  }
+
   public String getBuildingNumber() {
     return buildingNumber;
   }
@@ -96,6 +106,7 @@ public class InvoiceAddress {
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class InvoiceAddress {\n");
+    sb.append("  freeformAddress: ").append(freeformAddress).append("\n");
     sb.append("  buildingNumber: ").append(buildingNumber).append("\n");
     sb.append("  streetName: ").append(streetName).append("\n");
     sb.append("  addressDetail: ").append(addressDetail).append("\n");
