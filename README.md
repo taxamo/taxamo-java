@@ -1,7 +1,11 @@
 ### Taxamo Java bindings
 
 This package provides [Taxamo](http://www.taxamo.com/) Java bindings.
- 
+
+### Example implementation
+
+There is an example project for integration with Taxamo and PayPal Express Checkout at [https://github.com/taxamo/java-paypal-express-checkout-example](https://github.com/taxamo/java-paypal-express-checkout-example), that can be used as a template, regardless if PayPal EC support is needed or not.
+
 ### Installation
 
 If using Maven, just add the following dependency to your module's `pom.xml` file:
