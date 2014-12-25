@@ -290,4 +290,55 @@ public class TaxamoApiClientTest {
         }
         Assert.assertNotNull(clientHandlerException);
     }
+
+    @Test
+    public void testNewEvidenceFields() throws Exception {
+        CreateTransactionOut createTransactionOut = api.createTransaction(new CreateTransactionIn()
+                .setTransaction(new InputTransaction()
+                        .setCurrencyCode("USD")
+                        .setBillingCountryCode("GR")
+                        .setEvidence(new Evidence()
+                                .setOtherCommerciallyRelevantInfo(new EvidenceSchema().setEvidenceValue("GR"))
+                                .setSelfDeclaration(new EvidenceSchema().setEvidenceValue("GR")))
+                        .setBuyerEmail("test@taxamo.com")
+                        .setOrderDate("2014-06-01")
+                        .setTransactionLines(Arrays.asList(
+                                new InputTransactionLine()
+                                        .setAmount(new BigDecimal(200))
+                                        .setCustomId("line1"),
+                                new InputTransactionLine()
+                                        .setAmount(new BigDecimal(100))
+                                        .setCustomId("line2")
+                                        .setProductType("e-book")))));
+        Transaction transaction = createTransactionOut.getTransaction();
+        TransactionLines line1 = null, line2 = null;
+
+        for (TransactionLines line : transaction.getTransactionLines()) {
+            if (line.getCustomId().equals("line1")) {
+                line1 = line;
+            }
+            if (line.getCustomId().equals("line2")) {
+                line2 = line;
+            }
+        }
+
+        Assert.assertNotNull(line1);
+        Assert.assertNotNull(line2);
+
+        Assert.assertNotNull(transaction.getKey());
+        Assert.assertEquals("GR", transaction.getCountries().getDetected().getCode());
+        Assert.assertEquals("GR", transaction.getCountries().getOtherCommerciallyRelevantInfo().getCode());
+        Assert.assertEquals("GR", transaction.getCountries().getSelfDeclaration().getCode());
+        Assert.assertEquals("GR", transaction.getCountries().getByBilling().getCode());
+
+        transaction = api.getTransaction(transaction.getKey()).getTransaction();
+
+        Assert.assertNotNull(transaction.getKey());
+        Assert.assertEquals("GR", transaction.getTaxCountryCode());
+        Assert.assertEquals("GR", transaction.getEvidence().getOtherCommerciallyRelevantInfo().getEvidenceValue());
+        Assert.assertEquals("GR", transaction.getEvidence().getSelfDeclaration().getEvidenceValue());
+        Assert.assertEquals("GR", transaction.getEvidence().getByBilling().getEvidenceValue());
+
+
+    }
 }

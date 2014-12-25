@@ -29,6 +29,8 @@ public class Evidence {
   private EvidenceSchema byPaymentMethod = null;
   /* Country detected from EU TAX number */
   private EvidenceSchema byTaxNumber = null;
+  /* Self declared country as evidence. Requires merchant setting to be active. */
+  private EvidenceSchema selfDeclaration = null;
   /* Country detected by credit card number prefix */
   private EvidenceSchema byCc = null;
   /* Country detected by IP */
@@ -39,6 +41,8 @@ public class Evidence {
   private EvidenceSchema byBilling = null;
   /* Country guessed from IP due to lack of other evidence */
   private EvidenceSchema guessedFromIp = null;
+  /* Additional evidence held by the merchant. Can be used only with a private token. */
+  private EvidenceSchema otherCommerciallyRelevantInfo = null;
   /* Country forced by paramters */
   private EvidenceSchema forced = null;
   public EvidenceSchema getBy2003Rules() {
@@ -62,6 +66,14 @@ public class Evidence {
   }
   public Evidence setByTaxNumber(EvidenceSchema byTaxNumber) {
     this.byTaxNumber = byTaxNumber;
+    return this;
+  }
+
+  public EvidenceSchema getSelfDeclaration() {
+    return selfDeclaration;
+  }
+  public Evidence setSelfDeclaration(EvidenceSchema selfDeclaration) {
+    this.selfDeclaration = selfDeclaration;
     return this;
   }
 
@@ -105,6 +117,14 @@ public class Evidence {
     return this;
   }
 
+  public EvidenceSchema getOtherCommerciallyRelevantInfo() {
+    return otherCommerciallyRelevantInfo;
+  }
+  public Evidence setOtherCommerciallyRelevantInfo(EvidenceSchema otherCommerciallyRelevantInfo) {
+    this.otherCommerciallyRelevantInfo = otherCommerciallyRelevantInfo;
+    return this;
+  }
+
   public EvidenceSchema getForced() {
     return forced;
   }
@@ -120,11 +140,13 @@ public class Evidence {
     sb.append("  by2003Rules: ").append(by2003Rules).append("\n");
     sb.append("  byPaymentMethod: ").append(byPaymentMethod).append("\n");
     sb.append("  byTaxNumber: ").append(byTaxNumber).append("\n");
+    sb.append("  selfDeclaration: ").append(selfDeclaration).append("\n");
     sb.append("  byCc: ").append(byCc).append("\n");
     sb.append("  byIp: ").append(byIp).append("\n");
     sb.append("  byToken: ").append(byToken).append("\n");
     sb.append("  byBilling: ").append(byBilling).append("\n");
     sb.append("  guessedFromIp: ").append(guessedFromIp).append("\n");
+    sb.append("  otherCommerciallyRelevantInfo: ").append(otherCommerciallyRelevantInfo).append("\n");
     sb.append("  forced: ").append(forced).append("\n");
     sb.append("}\n");
     return sb.toString();
