@@ -39,13 +39,13 @@ public class InputTransactionLine {
   private String unitOfMeasure = null;
   /* Total amount. Required if amount is not provided. */
   private BigDecimal totalAmount = null;
-  /* Tax rate, calculated by taxamo. Can be overwritten when informative field is true. */
+  /* Tax rate, calculated by taxamo. Must be provided when informative field is true. */
   private BigDecimal taxRate = null;
   /* Generated line key. */
   private String lineKey = null;
   /* Amount. Required if total amount is not provided. */
   private BigDecimal amount = null;
-  /* If the line is provided for informative purposes. Such line can have :tax-rate and/or :tax-name - if not, API will calculate missing values according to product type and country of residence. */
+  /* If the line is provided for informative purposes. Such line must have :tax-rate and optionally :tax-name - if not, API validation will fail for this line. */
   private Boolean informative = null;
   /* Line contents description. */
   private String description = null;

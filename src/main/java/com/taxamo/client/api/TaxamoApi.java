@@ -46,7 +46,6 @@ import com.taxamo.client.model.GetTransactionsStatsOut;
 import com.taxamo.client.model.CapturePaymentOut;
 import com.taxamo.client.model.ConfirmTransactionIn;
 import com.taxamo.client.model.ValidateTaxNumberOut;
-import com.taxamo.client.model.GetDailySettlementStatsOut;
 import com.taxamo.client.model.CreateRefundOut;
 import com.taxamo.client.model.GetProductTypesDictOut;
 import com.taxamo.client.model.GetSettlementSummaryOut;
@@ -431,7 +430,7 @@ public class TaxamoApi {
   //error info- code: 200 reason: "OK" model: <none>
   //error info- code: 401 reason: "Incorrect token" model: <none>
   //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
-  public ListTransactionsOut listTransactions (String statuses, Boolean sortReverse, String taxCountryCode, String orderDateFrom, Integer offset, String filterText, String format, String orderDateTo, String currencyCode, Integer limit) throws ApiException {
+  public ListTransactionsOut listTransactions (String statuses, Boolean sortReverse, String taxCountryCode, String orderDateFrom, String keyOrCustomId, Integer offset, String filterText, String format, String orderDateTo, String currencyCode, Integer limit) throws ApiException {
     // create path and map variables
     String path = "/api/v1/transactions".replaceAll("\\{format\\}","json");
 
@@ -448,6 +447,8 @@ public class TaxamoApi {
       queryParams.put("tax_country_code", String.valueOf(taxCountryCode));
     if(!"null".equals(String.valueOf(orderDateFrom)))
       queryParams.put("order_date_from", String.valueOf(orderDateFrom));
+    if(!"null".equals(String.valueOf(keyOrCustomId)))
+      queryParams.put("key_or_custom_id", String.valueOf(keyOrCustomId));
     if(!"null".equals(String.valueOf(offset)))
       queryParams.put("offset", String.valueOf(offset));
     if(!"null".equals(String.valueOf(filterText)))
@@ -847,50 +848,6 @@ public class TaxamoApi {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
         return (GetSettlementStatsByTaxationTypeOut) ApiInvoker.deserialize(response, "", GetSettlementStatsByTaxationTypeOut.class);
-      }
-      else {
-        return null;
-      }
-    } catch (ApiException ex) {
-      if(ex.getCode() == 404) {
-      	return null;
-      }
-      else {
-        throw ex;
-      }
-    }
-  }
-  //error info- code: 200 reason: "OK" model: <none>
-  //error info- code: 401 reason: "Incorrect token" model: <none>
-  //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
-  public GetDailySettlementStatsOut getDailySettlementStats (String interval, String dateFrom, String dateTo) throws ApiException {
-    // verify required params are set
-    if(interval == null || dateFrom == null || dateTo == null ) {
-       throw new ApiException(400, "missing required params");
-    }
-    // create path and map variables
-    String path = "/api/v1/stats/settlement/daily".replaceAll("\\{format\\}","json");
-
-    // query params
-    Map<String, String> queryParams = new HashMap<String, String>();
-    Map<String, String> headerParams = new HashMap<String, String>();
-    Map<String, String> formParams = new HashMap<String, String>();
-
-    if(!"null".equals(String.valueOf(interval)))
-      queryParams.put("interval", String.valueOf(interval));
-    if(!"null".equals(String.valueOf(dateFrom)))
-      queryParams.put("date_from", String.valueOf(dateFrom));
-    if(!"null".equals(String.valueOf(dateTo)))
-      queryParams.put("date_to", String.valueOf(dateTo));
-    String[] contentTypes = {
-      "application/json"};
-
-    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
-
-    try {
-      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
-      if(response != null){
-        return (GetDailySettlementStatsOut) ApiInvoker.deserialize(response, "", GetDailySettlementStatsOut.class);
       }
       else {
         return null;

@@ -23,10 +23,14 @@ package com.taxamo.client.model;
 
 import java.math.BigDecimal;
 public class CreateRefundOut {
-  /* Total amount, including tax, to be refunded. Either amount or total amount is required. */
+  /* Total amount, including tax, that was refunded in this call. */
   private BigDecimal totalAmount = null;
-  /* Calculated total amount. */
+  /* Calculated tax amount, that was refunded in this call. */
   private BigDecimal taxAmount = null;
+  /* Total amount, including tax, that was refunded for this line. */
+  private BigDecimal refundedTotalAmount = null;
+  /* Total tax amount, that was refunded for this line. */
+  private BigDecimal refundedTaxAmount = null;
   public BigDecimal getTotalAmount() {
     return totalAmount;
   }
@@ -43,12 +47,30 @@ public class CreateRefundOut {
     return this;
   }
 
+  public BigDecimal getRefundedTotalAmount() {
+    return refundedTotalAmount;
+  }
+  public CreateRefundOut setRefundedTotalAmount(BigDecimal refundedTotalAmount) {
+    this.refundedTotalAmount = refundedTotalAmount;
+    return this;
+  }
+
+  public BigDecimal getRefundedTaxAmount() {
+    return refundedTaxAmount;
+  }
+  public CreateRefundOut setRefundedTaxAmount(BigDecimal refundedTaxAmount) {
+    this.refundedTaxAmount = refundedTaxAmount;
+    return this;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateRefundOut {\n");
     sb.append("  totalAmount: ").append(totalAmount).append("\n");
     sb.append("  taxAmount: ").append(taxAmount).append("\n");
+    sb.append("  refundedTotalAmount: ").append(refundedTotalAmount).append("\n");
+    sb.append("  refundedTaxAmount: ").append(refundedTaxAmount).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

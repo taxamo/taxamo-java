@@ -22,10 +22,12 @@ package com.taxamo.client.model;
 
 
 public class ValidateTaxNumberOut {
-  /* True if the transaction deducted from tax and no tax is applied. Either set automatically when VAT number validates with VIES correctly, but can also be provided in manual mode. */
+  /* If the transaction is in a country supported by Taxamo, but the tax is not calculated due to merchant settings or EU B2B transaction for example. */
   private Boolean taxDeducted = null;
   /*  Buyer's tax number - EU VAT number for example. If using EU VAT number, it is possible to provide country code in it (e.g. IE1234567X) or simply use billing_country_code field for that. In the first case, if billing_country_code value was provided, it will be overwritten with country code value extracted from VAT number - but only if the VAT has been verified properly. */
   private String buyerTaxNumber = null;
+  /* If the buyer tax number has been provided and was validated successfully. */
+  private Boolean buyerTaxNumberValid = null;
   /* Billing two letter ISO country code. */
   private String billingCountryCode = null;
   public Boolean getTaxDeducted() {
@@ -44,6 +46,14 @@ public class ValidateTaxNumberOut {
     return this;
   }
 
+  public Boolean getBuyerTaxNumberValid() {
+    return buyerTaxNumberValid;
+  }
+  public ValidateTaxNumberOut setBuyerTaxNumberValid(Boolean buyerTaxNumberValid) {
+    this.buyerTaxNumberValid = buyerTaxNumberValid;
+    return this;
+  }
+
   public String getBillingCountryCode() {
     return billingCountryCode;
   }
@@ -58,6 +68,7 @@ public class ValidateTaxNumberOut {
     sb.append("class ValidateTaxNumberOut {\n");
     sb.append("  taxDeducted: ").append(taxDeducted).append("\n");
     sb.append("  buyerTaxNumber: ").append(buyerTaxNumber).append("\n");
+    sb.append("  buyerTaxNumberValid: ").append(buyerTaxNumberValid).append("\n");
     sb.append("  billingCountryCode: ").append(billingCountryCode).append("\n");
     sb.append("}\n");
     return sb.toString();

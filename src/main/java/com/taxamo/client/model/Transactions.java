@@ -34,6 +34,8 @@ public class Transactions {
   private String invoiceDate = null;
   /* Invoice address. */
   private InvoiceAddress invoiceAddress = null;
+  /* If the buyer tax number has been provided and was validated successfully. */
+  private Boolean buyerTaxNumberValid = null;
   /* Is the transaction created manually - using private token. In manual mode, it is the merchant who calculates tax country and validates evidence. If you need API to do that when accessing the API with private token, just skip the 'manual' flag or use false value there and provide customer's ip address through buyer_ip field. */
   private Boolean manual = null;
   /* Buyer's credit card prefix. */
@@ -80,7 +82,7 @@ public class Transactions {
   private String invoicePlace = null;
   /* Verification token */
   private String verificationToken = null;
-  /* True if the transaction deducted from tax and no tax is applied. Either set automatically when VAT number validates with VIES correctly, but can also be provided in manual mode. */
+  /* If the transaction is in a country supported by Taxamo, but the tax is not calculated due to merchant settings or EU B2B transaction for example. */
   private Boolean taxDeducted = null;
   /* Buyer's name - first name and last name or company name. */
   private String buyerName = null;
@@ -125,6 +127,14 @@ public class Transactions {
   }
   public Transactions setInvoiceAddress(InvoiceAddress invoiceAddress) {
     this.invoiceAddress = invoiceAddress;
+    return this;
+  }
+
+  public Boolean getBuyerTaxNumberValid() {
+    return buyerTaxNumberValid;
+  }
+  public Transactions setBuyerTaxNumberValid(Boolean buyerTaxNumberValid) {
+    this.buyerTaxNumberValid = buyerTaxNumberValid;
     return this;
   }
 
@@ -446,6 +456,7 @@ public class Transactions {
     sb.append("class Transactions {\n");
     sb.append("  invoiceDate: ").append(invoiceDate).append("\n");
     sb.append("  invoiceAddress: ").append(invoiceAddress).append("\n");
+    sb.append("  buyerTaxNumberValid: ").append(buyerTaxNumberValid).append("\n");
     sb.append("  manual: ").append(manual).append("\n");
     sb.append("  buyerCreditCardPrefix: ").append(buyerCreditCardPrefix).append("\n");
     sb.append("  customFields: ").append(customFields).append("\n");
