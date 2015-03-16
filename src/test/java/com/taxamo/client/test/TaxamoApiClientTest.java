@@ -341,4 +341,22 @@ public class TaxamoApiClientTest {
 
 
     }
+
+    @Test
+    public void testValidateVATNumber() throws Exception {
+        ValidateTaxNumberOut validateTaxNumberOut = api.validateTaxNumber("IE", "6388047V");
+        Assert.assertEquals(Boolean.TRUE, validateTaxNumberOut.getBuyerTaxNumberValid());
+    }
+
+//    @Test
+//    public void testSimpleArrayDeserialization() throws Exception {
+//        GetCountriesDictOut countriesDict = api.getCountriesDict(false);
+//        for (CountrySchema cs : countriesDict.getDictionary()) {
+//            if ("PL".equals(cs.getCode())) {
+//                System.out.println(cs);
+//                Assert.assertFalse(cs.getCallingCode().isEmpty());
+//            }
+//        }
+//    }
+
 }

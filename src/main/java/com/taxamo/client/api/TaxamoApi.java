@@ -592,7 +592,7 @@ public class TaxamoApi {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String path = "/api/v1/tax/vat_numbers/{tax_number}/validate".replaceAll("\\{format\\}","json").replaceAll("\\{" + "taxNumber" + "\\}", apiInvoker.escapeString(taxNumber.toString()));
+    String path = "/api/v1/tax/vat_numbers/{tax_number}/validate".replaceAll("\\{format\\}","json").replaceAll("\\{" + "tax_number" + "\\}", apiInvoker.escapeString(taxNumber));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();

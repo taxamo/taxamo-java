@@ -1,3 +1,10 @@
+=== 1.0.6
+ * sync fields with api.taxamo.com
+ * fix issue with validateTaxNumber operation
+
+=== 1.0.5
+ * sync fields with api.taxamo.com
+ 
 === 1.0.4
  * add freeform address field for invoice data
  * add tax number country code field for country configuration
