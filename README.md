@@ -14,7 +14,7 @@ If using Maven, just add the following dependency to your module's `pom.xml` fil
 <dependency>
   <groupId>com.taxamo</groupId>
   <artifactId>taxamo-java</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.6</version>
 </dependency>
 ```
 
