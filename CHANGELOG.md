@@ -1,3 +1,6 @@
+=== 1.0.7 (2015-07-08)
+ * sync fields with api.taxamo.com
+
 === 1.0.6
  * sync fields with api.taxamo.com
  * fix issue with validateTaxNumber operation

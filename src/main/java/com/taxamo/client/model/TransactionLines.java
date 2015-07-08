@@ -26,69 +26,53 @@ import java.util.*;
 import com.taxamo.client.model.AdditionalCurrencies;
 import com.taxamo.client.model.CustomFields;
 public class TransactionLines {
-  /* Custom fields, stored as key-value pairs. This property is not processed and used mostly with Taxamo-built helpers. */
-  private List<CustomFields> customFields = new ArrayList<CustomFields>();
-  /* Additional currency information - can be used to receive additional information about invoice in another currency. */
-  private AdditionalCurrencies additionalCurrencies = null;
-  /* Custom id, provided by ecommerce software. */
-  private String customId = null;
-  /* Deducted tax amount, calculated by taxmo. */
-  private BigDecimal deductedTaxAmount = null;
   /* Product type, according to dictionary /dictionaries/product_types.  */
   private String productType = null;
-  /* Quantity Defaults to 1. */
-  private BigDecimal quantity = null;
-  /* Tax amount, calculated by taxamo. */
-  private BigDecimal taxAmount = null;
+  /* Deducted tax amount, calculated by taxmo. */
+  private BigDecimal deductedTaxAmount = null;
+  /* Date of supply in yyyy-MM-dd format. */
+  private String supplyDate = null;
+  /* Generated id. */
+  private BigDecimal id = null;
   /* Unit price. */
   private BigDecimal unitPrice = null;
   /* Unit of measure. */
   private String unitOfMeasure = null;
-  /* Total amount. Required if amount is not provided. */
-  private BigDecimal totalAmount = null;
-  /* Tax rate, calculated by taxamo. Must be provided when informative field is true. */
-  private BigDecimal taxRate = null;
-  /* Refunded tax amount, calculated by taxmo. */
-  private BigDecimal refundedTaxAmount = null;
+  /* Quantity Defaults to 1. */
+  private BigDecimal quantity = null;
+  /* Custom fields, stored as key-value pairs. This property is not processed and used mostly with Taxamo-built helpers. */
+  private List<CustomFields> customFields = new ArrayList<CustomFields>();
   /* Generated line key. */
   private String lineKey = null;
-  /* Amount. Required if total amount is not provided. */
-  private BigDecimal amount = null;
-  /* Generated id. */
-  private BigDecimal id = null;
-  /* Refunded total amount, calculated by taxmo. */
-  private BigDecimal refundedTotalAmount = null;
-  /* If the line is provided for informative purposes. Such line must have :tax-rate and optionally :tax-name - if not, API validation will fail for this line. */
-  private Boolean informative = null;
-  /* Line contents description. */
-  private String description = null;
-  /* Internal product code, used for invoicing for example. */
-  private String productCode = null;
-  /* Date of supply in yyyy-MM-dd format. */
-  private String supplyDate = null;
   /* Tax name, calculated by taxamo.  Can be overwritten when informative field is true. */
   private String taxName = null;
-  public List<CustomFields> getCustomFields() {
-    return customFields;
+  /* Internal product code, used for invoicing for example. */
+  private String productCode = null;
+  /* Amount. Required if total amount is not provided. */
+  private BigDecimal amount = null;
+  /* Custom id, provided by ecommerce software. */
+  private String customId = null;
+  /* If the line is provided for informative purposes. Such line must have :tax-rate and optionally :tax-name - if not, API validation will fail for this line. */
+  private Boolean informative = null;
+  /* Tax amount, calculated by taxamo. */
+  private BigDecimal taxAmount = null;
+  /* Tax rate, calculated by taxamo. Must be provided when informative field is true. */
+  private BigDecimal taxRate = null;
+  /* Additional currency information - can be used to receive additional information about invoice in another currency. */
+  private AdditionalCurrencies additionalCurrencies = null;
+  /* Total amount. Required if amount is not provided. */
+  private BigDecimal totalAmount = null;
+  /* Refunded tax amount, calculated by taxmo. */
+  private BigDecimal refundedTaxAmount = null;
+  /* Line contents description. */
+  private String description = null;
+  /* Refunded total amount, calculated by taxmo. */
+  private BigDecimal refundedTotalAmount = null;
+  public String getProductType() {
+    return productType;
   }
-  public TransactionLines setCustomFields(List<CustomFields> customFields) {
-    this.customFields = customFields;
-    return this;
-  }
-
-  public AdditionalCurrencies getAdditionalCurrencies() {
-    return additionalCurrencies;
-  }
-  public TransactionLines setAdditionalCurrencies(AdditionalCurrencies additionalCurrencies) {
-    this.additionalCurrencies = additionalCurrencies;
-    return this;
-  }
-
-  public String getCustomId() {
-    return customId;
-  }
-  public TransactionLines setCustomId(String customId) {
-    this.customId = customId;
+  public TransactionLines setProductType(String productType) {
+    this.productType = productType;
     return this;
   }
 
@@ -100,27 +84,19 @@ public class TransactionLines {
     return this;
   }
 
-  public String getProductType() {
-    return productType;
+  public String getSupplyDate() {
+    return supplyDate;
   }
-  public TransactionLines setProductType(String productType) {
-    this.productType = productType;
+  public TransactionLines setSupplyDate(String supplyDate) {
+    this.supplyDate = supplyDate;
     return this;
   }
 
-  public BigDecimal getQuantity() {
-    return quantity;
+  public BigDecimal getId() {
+    return id;
   }
-  public TransactionLines setQuantity(BigDecimal quantity) {
-    this.quantity = quantity;
-    return this;
-  }
-
-  public BigDecimal getTaxAmount() {
-    return taxAmount;
-  }
-  public TransactionLines setTaxAmount(BigDecimal taxAmount) {
-    this.taxAmount = taxAmount;
+  public TransactionLines setId(BigDecimal id) {
+    this.id = id;
     return this;
   }
 
@@ -140,27 +116,19 @@ public class TransactionLines {
     return this;
   }
 
-  public BigDecimal getTotalAmount() {
-    return totalAmount;
+  public BigDecimal getQuantity() {
+    return quantity;
   }
-  public TransactionLines setTotalAmount(BigDecimal totalAmount) {
-    this.totalAmount = totalAmount;
+  public TransactionLines setQuantity(BigDecimal quantity) {
+    this.quantity = quantity;
     return this;
   }
 
-  public BigDecimal getTaxRate() {
-    return taxRate;
+  public List<CustomFields> getCustomFields() {
+    return customFields;
   }
-  public TransactionLines setTaxRate(BigDecimal taxRate) {
-    this.taxRate = taxRate;
-    return this;
-  }
-
-  public BigDecimal getRefundedTaxAmount() {
-    return refundedTaxAmount;
-  }
-  public TransactionLines setRefundedTaxAmount(BigDecimal refundedTaxAmount) {
-    this.refundedTaxAmount = refundedTaxAmount;
+  public TransactionLines setCustomFields(List<CustomFields> customFields) {
+    this.customFields = customFields;
     return this;
   }
 
@@ -172,43 +140,11 @@ public class TransactionLines {
     return this;
   }
 
-  public BigDecimal getAmount() {
-    return amount;
+  public String getTaxName() {
+    return taxName;
   }
-  public TransactionLines setAmount(BigDecimal amount) {
-    this.amount = amount;
-    return this;
-  }
-
-  public BigDecimal getId() {
-    return id;
-  }
-  public TransactionLines setId(BigDecimal id) {
-    this.id = id;
-    return this;
-  }
-
-  public BigDecimal getRefundedTotalAmount() {
-    return refundedTotalAmount;
-  }
-  public TransactionLines setRefundedTotalAmount(BigDecimal refundedTotalAmount) {
-    this.refundedTotalAmount = refundedTotalAmount;
-    return this;
-  }
-
-  public Boolean getInformative() {
-    return informative;
-  }
-  public TransactionLines setInformative(Boolean informative) {
-    this.informative = informative;
-    return this;
-  }
-
-  public String getDescription() {
-    return description;
-  }
-  public TransactionLines setDescription(String description) {
-    this.description = description;
+  public TransactionLines setTaxName(String taxName) {
+    this.taxName = taxName;
     return this;
   }
 
@@ -220,19 +156,83 @@ public class TransactionLines {
     return this;
   }
 
-  public String getSupplyDate() {
-    return supplyDate;
+  public BigDecimal getAmount() {
+    return amount;
   }
-  public TransactionLines setSupplyDate(String supplyDate) {
-    this.supplyDate = supplyDate;
+  public TransactionLines setAmount(BigDecimal amount) {
+    this.amount = amount;
     return this;
   }
 
-  public String getTaxName() {
-    return taxName;
+  public String getCustomId() {
+    return customId;
   }
-  public TransactionLines setTaxName(String taxName) {
-    this.taxName = taxName;
+  public TransactionLines setCustomId(String customId) {
+    this.customId = customId;
+    return this;
+  }
+
+  public Boolean getInformative() {
+    return informative;
+  }
+  public TransactionLines setInformative(Boolean informative) {
+    this.informative = informative;
+    return this;
+  }
+
+  public BigDecimal getTaxAmount() {
+    return taxAmount;
+  }
+  public TransactionLines setTaxAmount(BigDecimal taxAmount) {
+    this.taxAmount = taxAmount;
+    return this;
+  }
+
+  public BigDecimal getTaxRate() {
+    return taxRate;
+  }
+  public TransactionLines setTaxRate(BigDecimal taxRate) {
+    this.taxRate = taxRate;
+    return this;
+  }
+
+  public AdditionalCurrencies getAdditionalCurrencies() {
+    return additionalCurrencies;
+  }
+  public TransactionLines setAdditionalCurrencies(AdditionalCurrencies additionalCurrencies) {
+    this.additionalCurrencies = additionalCurrencies;
+    return this;
+  }
+
+  public BigDecimal getTotalAmount() {
+    return totalAmount;
+  }
+  public TransactionLines setTotalAmount(BigDecimal totalAmount) {
+    this.totalAmount = totalAmount;
+    return this;
+  }
+
+  public BigDecimal getRefundedTaxAmount() {
+    return refundedTaxAmount;
+  }
+  public TransactionLines setRefundedTaxAmount(BigDecimal refundedTaxAmount) {
+    this.refundedTaxAmount = refundedTaxAmount;
+    return this;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+  public TransactionLines setDescription(String description) {
+    this.description = description;
+    return this;
+  }
+
+  public BigDecimal getRefundedTotalAmount() {
+    return refundedTotalAmount;
+  }
+  public TransactionLines setRefundedTotalAmount(BigDecimal refundedTotalAmount) {
+    this.refundedTotalAmount = refundedTotalAmount;
     return this;
   }
 
@@ -240,27 +240,27 @@ public class TransactionLines {
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class TransactionLines {\n");
-    sb.append("  customFields: ").append(customFields).append("\n");
-    sb.append("  additionalCurrencies: ").append(additionalCurrencies).append("\n");
-    sb.append("  customId: ").append(customId).append("\n");
-    sb.append("  deductedTaxAmount: ").append(deductedTaxAmount).append("\n");
     sb.append("  productType: ").append(productType).append("\n");
-    sb.append("  quantity: ").append(quantity).append("\n");
-    sb.append("  taxAmount: ").append(taxAmount).append("\n");
+    sb.append("  deductedTaxAmount: ").append(deductedTaxAmount).append("\n");
+    sb.append("  supplyDate: ").append(supplyDate).append("\n");
+    sb.append("  id: ").append(id).append("\n");
     sb.append("  unitPrice: ").append(unitPrice).append("\n");
     sb.append("  unitOfMeasure: ").append(unitOfMeasure).append("\n");
-    sb.append("  totalAmount: ").append(totalAmount).append("\n");
-    sb.append("  taxRate: ").append(taxRate).append("\n");
-    sb.append("  refundedTaxAmount: ").append(refundedTaxAmount).append("\n");
+    sb.append("  quantity: ").append(quantity).append("\n");
+    sb.append("  customFields: ").append(customFields).append("\n");
     sb.append("  lineKey: ").append(lineKey).append("\n");
-    sb.append("  amount: ").append(amount).append("\n");
-    sb.append("  id: ").append(id).append("\n");
-    sb.append("  refundedTotalAmount: ").append(refundedTotalAmount).append("\n");
-    sb.append("  informative: ").append(informative).append("\n");
-    sb.append("  description: ").append(description).append("\n");
-    sb.append("  productCode: ").append(productCode).append("\n");
-    sb.append("  supplyDate: ").append(supplyDate).append("\n");
     sb.append("  taxName: ").append(taxName).append("\n");
+    sb.append("  productCode: ").append(productCode).append("\n");
+    sb.append("  amount: ").append(amount).append("\n");
+    sb.append("  customId: ").append(customId).append("\n");
+    sb.append("  informative: ").append(informative).append("\n");
+    sb.append("  taxAmount: ").append(taxAmount).append("\n");
+    sb.append("  taxRate: ").append(taxRate).append("\n");
+    sb.append("  additionalCurrencies: ").append(additionalCurrencies).append("\n");
+    sb.append("  totalAmount: ").append(totalAmount).append("\n");
+    sb.append("  refundedTaxAmount: ").append(refundedTaxAmount).append("\n");
+    sb.append("  description: ").append(description).append("\n");
+    sb.append("  refundedTotalAmount: ").append(refundedTotalAmount).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

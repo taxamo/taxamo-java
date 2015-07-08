@@ -21,22 +21,24 @@ package com.taxamo.client.model;
 */
 
 
-public class CreateSMSTokenOut {
-  /* Always set to true. Success means that the message has been queued for delivery. In some cases message may be undelivered at the end, e.g. mobile number is blacklisted. API errors are signalled with appropriate error codes. */
-  private Boolean success = null;
-  public Boolean getSuccess() {
-    return success;
+import java.util.*;
+import com.taxamo.client.model.SettlementDailyStatsSchema;
+public class GetDailySettlementStatsOut {
+  /* Daily settlement stats */
+  private List<SettlementDailyStatsSchema> settlementDaily = new ArrayList<SettlementDailyStatsSchema>();
+  public List<SettlementDailyStatsSchema> getSettlementDaily() {
+    return settlementDaily;
   }
-  public CreateSMSTokenOut setSuccess(Boolean success) {
-    this.success = success;
+  public GetDailySettlementStatsOut setSettlementDaily(List<SettlementDailyStatsSchema> settlementDaily) {
+    this.settlementDaily = settlementDaily;
     return this;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreateSMSTokenOut {\n");
-    sb.append("  success: ").append(success).append("\n");
+    sb.append("class GetDailySettlementStatsOut {\n");
+    sb.append("  settlementDaily: ").append(settlementDaily).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

@@ -22,6 +22,7 @@ package com.taxamo.client.model;
 
 
 import java.math.BigDecimal;
+import java.lang.Integer;
 public class ByTaxationType {
   /* Number of taxed transactions. */
   private BigDecimal taxedCount = null;
@@ -29,6 +30,10 @@ public class ByTaxationType {
   private BigDecimal deductedCount = null;
   /* Total number of transactions */
   private BigDecimal transactionsCount = null;
+  /* Total EU B2B transaction count. */
+  private Integer euB2b = null;
+  /* Total EU Taxed transaction count. */
+  private Integer euTaxed = null;
   public BigDecimal getTaxedCount() {
     return taxedCount;
   }
@@ -53,6 +58,22 @@ public class ByTaxationType {
     return this;
   }
 
+  public Integer getEuB2b() {
+    return euB2b;
+  }
+  public ByTaxationType setEuB2b(Integer euB2b) {
+    this.euB2b = euB2b;
+    return this;
+  }
+
+  public Integer getEuTaxed() {
+    return euTaxed;
+  }
+  public ByTaxationType setEuTaxed(Integer euTaxed) {
+    this.euTaxed = euTaxed;
+    return this;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -60,6 +81,8 @@ public class ByTaxationType {
     sb.append("  taxedCount: ").append(taxedCount).append("\n");
     sb.append("  deductedCount: ").append(deductedCount).append("\n");
     sb.append("  transactionsCount: ").append(transactionsCount).append("\n");
+    sb.append("  euB2b: ").append(euB2b).append("\n");
+    sb.append("  euTaxed: ").append(euTaxed).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

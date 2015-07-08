@@ -21,13 +21,13 @@ package com.taxamo.client.model;
 */
 
 
-public class CreateSMSTokenOut {
-  /* Always set to true. Success means that the message has been queued for delivery. In some cases message may be undelivered at the end, e.g. mobile number is blacklisted. API errors are signalled with appropriate error codes. */
+public class EmailInvoiceOut {
+  /* Was operation successful? */
   private Boolean success = null;
   public Boolean getSuccess() {
     return success;
   }
-  public CreateSMSTokenOut setSuccess(Boolean success) {
+  public EmailInvoiceOut setSuccess(Boolean success) {
     this.success = success;
     return this;
   }
@@ -35,7 +35,7 @@ public class CreateSMSTokenOut {
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreateSMSTokenOut {\n");
+    sb.append("class EmailInvoiceOut {\n");
     sb.append("  success: ").append(success).append("\n");
     sb.append("}\n");
     return sb.toString();

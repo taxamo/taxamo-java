@@ -26,6 +26,7 @@ import com.taxamo.client.common.ApiInvoker;
 
 import com.taxamo.client.model.CalculateTaxIn;
 import com.taxamo.client.model.CreateSMSTokenIn;
+import com.taxamo.client.model.UnconfirmTransactionIn;
 import com.taxamo.client.model.CreatePaymentIn;
 import com.taxamo.client.model.LocateMyIPOut;
 import com.taxamo.client.model.UpdateTransactionOut;
@@ -34,18 +35,22 @@ import com.taxamo.client.model.CancelTransactionOut;
 import com.taxamo.client.model.CalculateTaxLocationOut;
 import com.taxamo.client.model.LocateGivenIPOut;
 import com.taxamo.client.model.GetSettlementStatsByTaxationTypeOut;
+import com.taxamo.client.model.UnconfirmTransactionOut;
 import com.taxamo.client.model.CreatePaymentOut;
 import com.taxamo.client.model.UpdateTransactionIn;
 import com.taxamo.client.model.CreateRefundIn;
 import com.taxamo.client.model.GetTransactionOut;
+import com.taxamo.client.model.EmailInvoiceIn;
 import com.taxamo.client.model.CreateSMSTokenOut;
 import com.taxamo.client.model.GetSettlementOut;
 import com.taxamo.client.model.ListTransactionsOut;
 import com.taxamo.client.model.ListPaymentsOut;
 import com.taxamo.client.model.GetTransactionsStatsOut;
+import com.taxamo.client.model.EmailInvoiceOut;
 import com.taxamo.client.model.CapturePaymentOut;
 import com.taxamo.client.model.ConfirmTransactionIn;
 import com.taxamo.client.model.ValidateTaxNumberOut;
+import com.taxamo.client.model.GetDailySettlementStatsOut;
 import com.taxamo.client.model.CreateRefundOut;
 import com.taxamo.client.model.GetProductTypesDictOut;
 import com.taxamo.client.model.GetSettlementSummaryOut;
@@ -224,6 +229,44 @@ public class TaxamoApi {
       String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
         return (CapturePaymentOut) ApiInvoker.deserialize(response, "", CapturePaymentOut.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  //error info- code: 200 reason: "OK" model: <none>
+  //error info- code: 401 reason: "Incorrect token" model: <none>
+  //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
+  public EmailInvoiceOut emailInvoice (String key, EmailInvoiceIn body) throws ApiException {
+    // verify required params are set
+    if(key == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    // create path and map variables
+    String path = "/api/v1/transactions/{key}/invoice/send_email".replaceAll("\\{format\\}","json").replaceAll("\\{" + "key" + "\\}", apiInvoker.escapeString(key.toString()));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    String[] contentTypes = {
+      "application/json"};
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, body, headerParams, formParams, contentType);
+      if(response != null){
+        return (EmailInvoiceOut) ApiInvoker.deserialize(response, "", EmailInvoiceOut.class);
       }
       else {
         return null;
@@ -430,7 +473,46 @@ public class TaxamoApi {
   //error info- code: 200 reason: "OK" model: <none>
   //error info- code: 401 reason: "Incorrect token" model: <none>
   //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
-  public ListTransactionsOut listTransactions (String statuses, Boolean sortReverse, String taxCountryCode, String orderDateFrom, String keyOrCustomId, Integer offset, String filterText, String format, String orderDateTo, String currencyCode, Integer limit) throws ApiException {
+  public UnconfirmTransactionOut unconfirmTransaction (String key, UnconfirmTransactionIn body) throws ApiException {
+    // verify required params are set
+    if(key == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    // create path and map variables
+    String path = "/api/v1/transactions/{key}/unconfirm".replaceAll("\\{format\\}","json").replaceAll("\\{" + "key" + "\\}", apiInvoker.escapeString(key.toString()));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    String[] contentTypes = {
+      "application/json"};
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, body, headerParams, formParams, contentType);
+      if(response != null){
+        return (UnconfirmTransactionOut) ApiInvoker.deserialize(response, "", UnconfirmTransactionOut.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  //error info- code: 200 reason: "OK" model: <none>
+  //error info- code: 401 reason: "Incorrect token" model: <none>
+  //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
+
+  public ListTransactionsOut listTransactions (String statuses, Boolean sortReverse, String taxCountryCode, String orderDateFrom, String keyOrCustomId, Integer offset, String filterText, String format, String orderDateTo, String currencyCode, Integer limit, String invoiceNumber) throws ApiException {
     // create path and map variables
     String path = "/api/v1/transactions".replaceAll("\\{format\\}","json");
 
@@ -439,28 +521,30 @@ public class TaxamoApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if(!"null".equals(String.valueOf(statuses)))
-      queryParams.put("statuses", String.valueOf(statuses));
-    if(!"null".equals(String.valueOf(sortReverse)))
-      queryParams.put("sort_reverse", String.valueOf(sortReverse));
-    if(!"null".equals(String.valueOf(taxCountryCode)))
-      queryParams.put("tax_country_code", String.valueOf(taxCountryCode));
-    if(!"null".equals(String.valueOf(orderDateFrom)))
-      queryParams.put("order_date_from", String.valueOf(orderDateFrom));
-    if(!"null".equals(String.valueOf(keyOrCustomId)))
-      queryParams.put("key_or_custom_id", String.valueOf(keyOrCustomId));
-    if(!"null".equals(String.valueOf(offset)))
-      queryParams.put("offset", String.valueOf(offset));
     if(!"null".equals(String.valueOf(filterText)))
       queryParams.put("filter_text", String.valueOf(filterText));
-    if(!"null".equals(String.valueOf(format)))
-      queryParams.put("format", String.valueOf(format));
-    if(!"null".equals(String.valueOf(orderDateTo)))
-      queryParams.put("order_date_to", String.valueOf(orderDateTo));
+    if(!"null".equals(String.valueOf(offset)))
+      queryParams.put("offset", String.valueOf(offset));
+    if(!"null".equals(String.valueOf(keyOrCustomId)))
+      queryParams.put("key_or_custom_id", String.valueOf(keyOrCustomId));
     if(!"null".equals(String.valueOf(currencyCode)))
       queryParams.put("currency_code", String.valueOf(currencyCode));
+    if(!"null".equals(String.valueOf(orderDateTo)))
+      queryParams.put("order_date_to", String.valueOf(orderDateTo));
+    if(!"null".equals(String.valueOf(sortReverse)))
+      queryParams.put("sort_reverse", String.valueOf(sortReverse));
     if(!"null".equals(String.valueOf(limit)))
       queryParams.put("limit", String.valueOf(limit));
+    if(!"null".equals(String.valueOf(invoiceNumber)))
+      queryParams.put("invoice_number", String.valueOf(invoiceNumber));
+    if(!"null".equals(String.valueOf(statuses)))
+      queryParams.put("statuses", String.valueOf(statuses));
+    if(!"null".equals(String.valueOf(orderDateFrom)))
+      queryParams.put("order_date_from", String.valueOf(orderDateFrom));
+    if(!"null".equals(String.valueOf(format)))
+      queryParams.put("format", String.valueOf(format));
+    if(!"null".equals(String.valueOf(taxCountryCode)))
+      queryParams.put("tax_country_code", String.valueOf(taxCountryCode));
     String[] contentTypes = {
       "application/json"};
 
@@ -537,30 +621,30 @@ public class TaxamoApi {
     Map<String, String> headerParams = new HashMap<String, String>();
     Map<String, String> formParams = new HashMap<String, String>();
 
-    if(!"null".equals(String.valueOf(buyerCreditCardPrefix)))
-      queryParams.put("buyer_credit_card_prefix", String.valueOf(buyerCreditCardPrefix));
-    if(!"null".equals(String.valueOf(buyerTaxNumber)))
-      queryParams.put("buyer_tax_number", String.valueOf(buyerTaxNumber));
     if(!"null".equals(String.valueOf(productType)))
       queryParams.put("product_type", String.valueOf(productType));
-    if(!"null".equals(String.valueOf(forceCountryCode)))
-      queryParams.put("force_country_code", String.valueOf(forceCountryCode));
-    if(!"null".equals(String.valueOf(quantity)))
-      queryParams.put("quantity", String.valueOf(quantity));
+    if(!"null".equals(String.valueOf(buyerCreditCardPrefix)))
+      queryParams.put("buyer_credit_card_prefix", String.valueOf(buyerCreditCardPrefix));
+    if(!"null".equals(String.valueOf(currencyCode)))
+      queryParams.put("currency_code", String.valueOf(currencyCode));
     if(!"null".equals(String.valueOf(unitPrice)))
       queryParams.put("unit_price", String.valueOf(unitPrice));
-    if(!"null".equals(String.valueOf(totalAmount)))
-      queryParams.put("total_amount", String.valueOf(totalAmount));
-    if(!"null".equals(String.valueOf(taxDeducted)))
-      queryParams.put("tax_deducted", String.valueOf(taxDeducted));
+    if(!"null".equals(String.valueOf(quantity)))
+      queryParams.put("quantity", String.valueOf(quantity));
+    if(!"null".equals(String.valueOf(buyerTaxNumber)))
+      queryParams.put("buyer_tax_number", String.valueOf(buyerTaxNumber));
+    if(!"null".equals(String.valueOf(forceCountryCode)))
+      queryParams.put("force_country_code", String.valueOf(forceCountryCode));
+    if(!"null".equals(String.valueOf(orderDate)))
+      queryParams.put("order_date", String.valueOf(orderDate));
     if(!"null".equals(String.valueOf(amount)))
       queryParams.put("amount", String.valueOf(amount));
     if(!"null".equals(String.valueOf(billingCountryCode)))
       queryParams.put("billing_country_code", String.valueOf(billingCountryCode));
-    if(!"null".equals(String.valueOf(currencyCode)))
-      queryParams.put("currency_code", String.valueOf(currencyCode));
-    if(!"null".equals(String.valueOf(orderDate)))
-      queryParams.put("order_date", String.valueOf(orderDate));
+    if(!"null".equals(String.valueOf(totalAmount)))
+      queryParams.put("total_amount", String.valueOf(totalAmount));
+    if(!"null".equals(String.valueOf(taxDeducted)))
+      queryParams.put("tax_deducted", String.valueOf(taxDeducted));
     String[] contentTypes = {
       "application/json"};
 
@@ -864,6 +948,50 @@ public class TaxamoApi {
   //error info- code: 200 reason: "OK" model: <none>
   //error info- code: 401 reason: "Incorrect token" model: <none>
   //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
+  public GetDailySettlementStatsOut getDailySettlementStats (String interval, String dateFrom, String dateTo) throws ApiException {
+    // verify required params are set
+    if(interval == null || dateFrom == null || dateTo == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    // create path and map variables
+    String path = "/api/v1/stats/settlement/daily".replaceAll("\\{format\\}","json");
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    if(!"null".equals(String.valueOf(interval)))
+      queryParams.put("interval", String.valueOf(interval));
+    if(!"null".equals(String.valueOf(dateFrom)))
+      queryParams.put("date_from", String.valueOf(dateFrom));
+    if(!"null".equals(String.valueOf(dateTo)))
+      queryParams.put("date_to", String.valueOf(dateTo));
+    String[] contentTypes = {
+      "application/json"};
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
+      if(response != null){
+        return (GetDailySettlementStatsOut) ApiInvoker.deserialize(response, "", GetDailySettlementStatsOut.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  //error info- code: 200 reason: "OK" model: <none>
+  //error info- code: 401 reason: "Incorrect token" model: <none>
+  //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
   public GetRefundsOut getRefunds (String format, String mossCountryCode, String dateFrom) throws ApiException {
     // verify required params are set
     if(dateFrom == null ) {
@@ -908,7 +1036,7 @@ public class TaxamoApi {
   //error info- code: 200 reason: "OK" model: <none>
   //error info- code: 401 reason: "Incorrect token" model: <none>
   //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
-  public GetSettlementOut getSettlement (String format, String mossCountryCode, String quarter) throws ApiException {
+  public GetSettlementOut getSettlement (String format, String mossCountryCode, String mossTaxId, String quarter) throws ApiException {
     // verify required params are set
     if(quarter == null ) {
        throw new ApiException(400, "missing required params");
@@ -925,6 +1053,8 @@ public class TaxamoApi {
       queryParams.put("format", String.valueOf(format));
     if(!"null".equals(String.valueOf(mossCountryCode)))
       queryParams.put("moss_country_code", String.valueOf(mossCountryCode));
+    if(!"null".equals(String.valueOf(mossTaxId)))
+      queryParams.put("moss_tax_id", String.valueOf(mossTaxId));
     String[] contentTypes = {
       "application/json"};
 

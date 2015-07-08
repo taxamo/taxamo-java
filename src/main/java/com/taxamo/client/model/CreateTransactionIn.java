@@ -23,7 +23,7 @@ package com.taxamo.client.model;
 
 import com.taxamo.client.model.InputTransaction;
 public class CreateTransactionIn {
-  /* Use manual mode, bypassing country detection. Only allowed with private token. */
+  /* Use manual mode, bypassing country detection. Only allowed with private token. This flag allows to use original_transaction_key field */
   private Boolean manualMode = null;
   /* Transaction. */
   private InputTransaction transaction = null;

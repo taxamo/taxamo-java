@@ -23,57 +23,33 @@ package com.taxamo.client.model;
 
 import com.taxamo.client.model.CountrySchema;
 public class Countries {
-  /* Used when merchant uses 2003 EU VAT rules. */
-  private CountrySchema by2003Rules = null;
-  /* Country detected from other evidence */
-  private CountrySchema detected = null;
-  /* Country detected from EU TAX number */
-  private CountrySchema byTaxNumber = null;
-  /* Self declared country as evidence. */
-  private CountrySchema selfDeclaration = null;
-  /* Country detected by credit card number prefix */
-  private CountrySchema byCc = null;
-  /* Country detected by IP */
-  private CountrySchema byIp = null;
   /* Country detected from SMS token */
   private CountrySchema byToken = null;
-  /* Country detected by billing country code */
-  private CountrySchema byBilling = null;
+  /* Country detected by credit card number prefix */
+  private CountrySchema byCc = null;
+  /* Used when merchant uses 2003 EU VAT rules. */
+  private CountrySchema by2003Rules = null;
+  /* Country forced by paramters */
+  private CountrySchema forced = null;
+  /* Country detected by IP */
+  private CountrySchema byIp = null;
   /* Country guessed from IP due to lack of other evidence */
   private CountrySchema guessedFromIp = null;
   /* Additional evidence held by the merchant. */
   private CountrySchema otherCommerciallyRelevantInfo = null;
-  /* Country forced by paramters */
-  private CountrySchema forced = null;
-  public CountrySchema getBy2003Rules() {
-    return by2003Rules;
+  /* Country detected by billing country code */
+  private CountrySchema byBilling = null;
+  /* Country detected from EU TAX number */
+  private CountrySchema byTaxNumber = null;
+  /* Country detected from other evidence */
+  private CountrySchema detected = null;
+  /* Self declared country as evidence. */
+  private CountrySchema selfDeclaration = null;
+  public CountrySchema getByToken() {
+    return byToken;
   }
-  public Countries setBy2003Rules(CountrySchema by2003Rules) {
-    this.by2003Rules = by2003Rules;
-    return this;
-  }
-
-  public CountrySchema getDetected() {
-    return detected;
-  }
-  public Countries setDetected(CountrySchema detected) {
-    this.detected = detected;
-    return this;
-  }
-
-  public CountrySchema getByTaxNumber() {
-    return byTaxNumber;
-  }
-  public Countries setByTaxNumber(CountrySchema byTaxNumber) {
-    this.byTaxNumber = byTaxNumber;
-    return this;
-  }
-
-  public CountrySchema getSelfDeclaration() {
-    return selfDeclaration;
-  }
-  public Countries setSelfDeclaration(CountrySchema selfDeclaration) {
-    this.selfDeclaration = selfDeclaration;
+  public Countries setByToken(CountrySchema byToken) {
+    this.byToken = byToken;
     return this;
   }
 
@@ -85,27 +61,27 @@ public class Countries {
     return this;
   }
 
+  public CountrySchema getBy2003Rules() {
+    return by2003Rules;
+  }
+  public Countries setBy2003Rules(CountrySchema by2003Rules) {
+    this.by2003Rules = by2003Rules;
+    return this;
+  }
+
+  public CountrySchema getForced() {
+    return forced;
+  }
+  public Countries setForced(CountrySchema forced) {
+    this.forced = forced;
+    return this;
+  }
+
   public CountrySchema getByIp() {
     return byIp;
   }
   public Countries setByIp(CountrySchema byIp) {
     this.byIp = byIp;
-    return this;
-  }
-
-  public CountrySchema getByToken() {
-    return byToken;
-  }
-  public Countries setByToken(CountrySchema byToken) {
-    this.byToken = byToken;
-    return this;
-  }
-
-  public CountrySchema getByBilling() {
-    return byBilling;
-  }
-  public Countries setByBilling(CountrySchema byBilling) {
-    this.byBilling = byBilling;
     return this;
   }
 
@@ -125,11 +101,35 @@ public class Countries {
     return this;
   }
 
-  public CountrySchema getForced() {
-    return forced;
+  public CountrySchema getByBilling() {
+    return byBilling;
   }
-  public Countries setForced(CountrySchema forced) {
-    this.forced = forced;
+  public Countries setByBilling(CountrySchema byBilling) {
+    this.byBilling = byBilling;
+    return this;
+  }
+
+  public CountrySchema getByTaxNumber() {
+    return byTaxNumber;
+  }
+  public Countries setByTaxNumber(CountrySchema byTaxNumber) {
+    this.byTaxNumber = byTaxNumber;
+    return this;
+  }
+
+  public CountrySchema getDetected() {
+    return detected;
+  }
+  public Countries setDetected(CountrySchema detected) {
+    this.detected = detected;
+    return this;
+  }
+
+  public CountrySchema getSelfDeclaration() {
+    return selfDeclaration;
+  }
+  public Countries setSelfDeclaration(CountrySchema selfDeclaration) {
+    this.selfDeclaration = selfDeclaration;
     return this;
   }
 
@@ -137,17 +137,17 @@ public class Countries {
   public String toString()  {
     StringBuilder sb = new StringBuilder();
     sb.append("class Countries {\n");
-    sb.append("  by2003Rules: ").append(by2003Rules).append("\n");
-    sb.append("  detected: ").append(detected).append("\n");
-    sb.append("  byTaxNumber: ").append(byTaxNumber).append("\n");
-    sb.append("  selfDeclaration: ").append(selfDeclaration).append("\n");
-    sb.append("  byCc: ").append(byCc).append("\n");
-    sb.append("  byIp: ").append(byIp).append("\n");
     sb.append("  byToken: ").append(byToken).append("\n");
-    sb.append("  byBilling: ").append(byBilling).append("\n");
+    sb.append("  byCc: ").append(byCc).append("\n");
+    sb.append("  by2003Rules: ").append(by2003Rules).append("\n");
+    sb.append("  forced: ").append(forced).append("\n");
+    sb.append("  byIp: ").append(byIp).append("\n");
     sb.append("  guessedFromIp: ").append(guessedFromIp).append("\n");
     sb.append("  otherCommerciallyRelevantInfo: ").append(otherCommerciallyRelevantInfo).append("\n");
-    sb.append("  forced: ").append(forced).append("\n");
+    sb.append("  byBilling: ").append(byBilling).append("\n");
+    sb.append("  byTaxNumber: ").append(byTaxNumber).append("\n");
+    sb.append("  detected: ").append(detected).append("\n");
+    sb.append("  selfDeclaration: ").append(selfDeclaration).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
