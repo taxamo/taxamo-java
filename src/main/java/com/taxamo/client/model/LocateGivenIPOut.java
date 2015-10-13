@@ -37,7 +37,7 @@ public class LocateGivenIPOut {
   public String getRemoteAddr() {
     return remoteAddr;
   }
-  
+
   @JsonProperty("remote_addr")
   public LocateGivenIPOut setRemoteAddr(String remoteAddr) {
     this.remoteAddr = remoteAddr;
@@ -48,7 +48,7 @@ public class LocateGivenIPOut {
   public String getCountryCode() {
     return countryCode;
   }
-  
+
   @JsonProperty("country_code")
   public LocateGivenIPOut setCountryCode(String countryCode) {
     this.countryCode = countryCode;
@@ -59,7 +59,7 @@ public class LocateGivenIPOut {
   public Country getCountry() {
     return country;
   }
-  
+
   @JsonProperty("country")
   public LocateGivenIPOut setCountry(Country country) {
     this.country = country;

@@ -30,7 +30,7 @@ public class TaxRequiredFields {
   public String getFieldName() {
     return fieldName;
   }
-  
+
   @JsonProperty("field_name")
   public TaxRequiredFields setFieldName(String fieldName) {
     this.fieldName = fieldName;

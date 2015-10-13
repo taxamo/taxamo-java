@@ -40,7 +40,7 @@ public class ByCountry {
   public BigDecimal getValue() {
     return value;
   }
-  
+
   @JsonProperty("value")
   public ByCountry setValue(BigDecimal value) {
     this.value = value;
@@ -51,7 +51,7 @@ public class ByCountry {
   public String getTaxCountryName() {
     return taxCountryName;
   }
-  
+
   @JsonProperty("tax_country_name")
   public ByCountry setTaxCountryName(String taxCountryName) {
     this.taxCountryName = taxCountryName;
@@ -62,7 +62,7 @@ public class ByCountry {
   public String getTaxCountryCode() {
     return taxCountryCode;
   }
-  
+
   @JsonProperty("tax_country_code")
   public ByCountry setTaxCountryCode(String taxCountryCode) {
     this.taxCountryCode = taxCountryCode;
@@ -73,7 +73,7 @@ public class ByCountry {
   public String getCurrencyCode() {
     return currencyCode;
   }
-  
+
   @JsonProperty("currency_code")
   public ByCountry setCurrencyCode(String currencyCode) {
     this.currencyCode = currencyCode;

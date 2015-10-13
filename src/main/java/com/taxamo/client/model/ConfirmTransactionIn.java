@@ -31,7 +31,7 @@ public class ConfirmTransactionIn {
   public InputTransactionUpdate getTransaction() {
     return transaction;
   }
-  
+
   @JsonProperty("transaction")
   public ConfirmTransactionIn setTransaction(InputTransactionUpdate transaction) {
     this.transaction = transaction;

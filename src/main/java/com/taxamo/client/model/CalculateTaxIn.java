@@ -31,7 +31,7 @@ public class CalculateTaxIn {
   public InputTransaction getTransaction() {
     return transaction;
   }
-  
+
   @JsonProperty("transaction")
   public CalculateTaxIn setTransaction(InputTransaction transaction) {
     this.transaction = transaction;

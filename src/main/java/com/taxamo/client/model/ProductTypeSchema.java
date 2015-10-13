@@ -30,7 +30,7 @@ public class ProductTypeSchema {
   public String getCode() {
     return code;
   }
-  
+
   @JsonProperty("code")
   public ProductTypeSchema setCode(String code) {
     this.code = code;

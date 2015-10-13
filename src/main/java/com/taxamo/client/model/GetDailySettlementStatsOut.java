@@ -32,7 +32,7 @@ public class GetDailySettlementStatsOut {
   public List<SettlementDailyStatsSchema> getSettlementDaily() {
     return settlementDaily;
   }
-  
+
   @JsonProperty("settlement_daily")
   public GetDailySettlementStatsOut setSettlementDaily(List<SettlementDailyStatsSchema> settlementDaily) {
     this.settlementDaily = settlementDaily;

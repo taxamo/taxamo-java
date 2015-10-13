@@ -97,7 +97,7 @@ public class TransactionLines {
   public String getProductType() {
     return productType;
   }
-  
+
   @JsonProperty("product_type")
   public TransactionLines setProductType(String productType) {
     this.productType = productType;
@@ -108,7 +108,7 @@ public class TransactionLines {
   public BigDecimal getDeductedTaxAmount() {
     return deductedTaxAmount;
   }
-  
+
   @JsonProperty("deducted_tax_amount")
   public TransactionLines setDeductedTaxAmount(BigDecimal deductedTaxAmount) {
     this.deductedTaxAmount = deductedTaxAmount;
@@ -119,7 +119,7 @@ public class TransactionLines {
   public String getSupplyDate() {
     return supplyDate;
   }
-  
+
   @JsonProperty("supply_date")
   public TransactionLines setSupplyDate(String supplyDate) {
     this.supplyDate = supplyDate;
@@ -130,7 +130,7 @@ public class TransactionLines {
   public BigDecimal getId() {
     return id;
   }
-  
+
   @JsonProperty("id")
   public TransactionLines setId(BigDecimal id) {
     this.id = id;
@@ -141,7 +141,7 @@ public class TransactionLines {
   public BigDecimal getUnitPrice() {
     return unitPrice;
   }
-  
+
   @JsonProperty("unit_price")
   public TransactionLines setUnitPrice(BigDecimal unitPrice) {
     this.unitPrice = unitPrice;
@@ -152,7 +152,7 @@ public class TransactionLines {
   public String getUnitOfMeasure() {
     return unitOfMeasure;
   }
-  
+
   @JsonProperty("unit_of_measure")
   public TransactionLines setUnitOfMeasure(String unitOfMeasure) {
     this.unitOfMeasure = unitOfMeasure;
@@ -163,7 +163,7 @@ public class TransactionLines {
   public BigDecimal getQuantity() {
     return quantity;
   }
-  
+
   @JsonProperty("quantity")
   public TransactionLines setQuantity(BigDecimal quantity) {
     this.quantity = quantity;
@@ -174,7 +174,7 @@ public class TransactionLines {
   public List<CustomFields> getCustomFields() {
     return customFields;
   }
-  
+
   @JsonProperty("custom_fields")
   public TransactionLines setCustomFields(List<CustomFields> customFields) {
     this.customFields = customFields;
@@ -185,7 +185,7 @@ public class TransactionLines {
   public String getLineKey() {
     return lineKey;
   }
-  
+
   @JsonProperty("line_key")
   public TransactionLines setLineKey(String lineKey) {
     this.lineKey = lineKey;
@@ -196,7 +196,7 @@ public class TransactionLines {
   public String getTaxName() {
     return taxName;
   }
-  
+
   @JsonProperty("tax_name")
   public TransactionLines setTaxName(String taxName) {
     this.taxName = taxName;
@@ -207,7 +207,7 @@ public class TransactionLines {
   public String getProductCode() {
     return productCode;
   }
-  
+
   @JsonProperty("product_code")
   public TransactionLines setProductCode(String productCode) {
     this.productCode = productCode;
@@ -218,7 +218,7 @@ public class TransactionLines {
   public BigDecimal getAmount() {
     return amount;
   }
-  
+
   @JsonProperty("amount")
   public TransactionLines setAmount(BigDecimal amount) {
     this.amount = amount;
@@ -229,7 +229,7 @@ public class TransactionLines {
   public String getCustomId() {
     return customId;
   }
-  
+
   @JsonProperty("custom_id")
   public TransactionLines setCustomId(String customId) {
     this.customId = customId;
@@ -240,7 +240,7 @@ public class TransactionLines {
   public Boolean getInformative() {
     return informative;
   }
-  
+
   @JsonProperty("informative")
   public TransactionLines setInformative(Boolean informative) {
     this.informative = informative;
@@ -251,7 +251,7 @@ public class TransactionLines {
   public BigDecimal getTaxAmount() {
     return taxAmount;
   }
-  
+
   @JsonProperty("tax_amount")
   public TransactionLines setTaxAmount(BigDecimal taxAmount) {
     this.taxAmount = taxAmount;
@@ -262,7 +262,7 @@ public class TransactionLines {
   public BigDecimal getTaxRate() {
     return taxRate;
   }
-  
+
   @JsonProperty("tax_rate")
   public TransactionLines setTaxRate(BigDecimal taxRate) {
     this.taxRate = taxRate;
@@ -273,7 +273,7 @@ public class TransactionLines {
   public AdditionalCurrencies getAdditionalCurrencies() {
     return additionalCurrencies;
   }
-  
+
   @JsonProperty("additional_currencies")
   public TransactionLines setAdditionalCurrencies(AdditionalCurrencies additionalCurrencies) {
     this.additionalCurrencies = additionalCurrencies;
@@ -284,7 +284,7 @@ public class TransactionLines {
   public BigDecimal getTotalAmount() {
     return totalAmount;
   }
-  
+
   @JsonProperty("total_amount")
   public TransactionLines setTotalAmount(BigDecimal totalAmount) {
     this.totalAmount = totalAmount;
@@ -295,7 +295,7 @@ public class TransactionLines {
   public String getProductTaxCode() {
     return productTaxCode;
   }
-  
+
   @JsonProperty("product_tax_code")
   public TransactionLines setProductTaxCode(String productTaxCode) {
     this.productTaxCode = productTaxCode;
@@ -306,7 +306,7 @@ public class TransactionLines {
   public BigDecimal getRefundedTaxAmount() {
     return refundedTaxAmount;
   }
-  
+
   @JsonProperty("refunded_tax_amount")
   public TransactionLines setRefundedTaxAmount(BigDecimal refundedTaxAmount) {
     this.refundedTaxAmount = refundedTaxAmount;
@@ -317,7 +317,7 @@ public class TransactionLines {
   public String getDescription() {
     return description;
   }
-  
+
   @JsonProperty("description")
   public TransactionLines setDescription(String description) {
     this.description = description;
@@ -328,7 +328,7 @@ public class TransactionLines {
   public BigDecimal getRefundedTotalAmount() {
     return refundedTotalAmount;
   }
-  
+
   @JsonProperty("refunded_total_amount")
   public TransactionLines setRefundedTotalAmount(BigDecimal refundedTotalAmount) {
     this.refundedTotalAmount = refundedTotalAmount;

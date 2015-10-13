@@ -37,7 +37,7 @@ public class Payments {
   public BigDecimal getAmount() {
     return amount;
   }
-  
+
   @JsonProperty("amount")
   public Payments setAmount(BigDecimal amount) {
     this.amount = amount;
@@ -48,7 +48,7 @@ public class Payments {
   public String getPaymentTimestamp() {
     return paymentTimestamp;
   }
-  
+
   @JsonProperty("payment_timestamp")
   public Payments setPaymentTimestamp(String paymentTimestamp) {
     this.paymentTimestamp = paymentTimestamp;
@@ -59,7 +59,7 @@ public class Payments {
   public String getPaymentInformation() {
     return paymentInformation;
   }
-  
+
   @JsonProperty("payment_information")
   public Payments setPaymentInformation(String paymentInformation) {
     this.paymentInformation = paymentInformation;

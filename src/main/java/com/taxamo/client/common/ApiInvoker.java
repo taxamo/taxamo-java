@@ -114,8 +114,12 @@ public class ApiInvoker {
 
 
         try {
-            String bodyResp = httpRequest.asString().getBody();
-            System.out.println(bodyResp);
+            HttpResponse<String> response = httpRequest.asString();
+            String bodyResp = response.getBody();
+            if (response.getStatus() != 200) {
+                throw new ApiException(response.getStatus(), bodyResp);
+            }
+
             return bodyResp;
         }
         catch (UnirestException e) {

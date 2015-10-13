@@ -30,7 +30,7 @@ public class CreatePaymentOut {
   public Boolean getSuccess() {
     return success;
   }
-  
+
   @JsonProperty("success")
   public CreatePaymentOut setSuccess(Boolean success) {
     this.success = success;

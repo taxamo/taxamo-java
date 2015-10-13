@@ -118,7 +118,7 @@ public class InputTransactionUpdate {
   public String getBuyerCreditCardPrefix() {
     return buyerCreditCardPrefix;
   }
-  
+
   @JsonProperty("buyer_credit_card_prefix")
   public InputTransactionUpdate setBuyerCreditCardPrefix(String buyerCreditCardPrefix) {
     this.buyerCreditCardPrefix = buyerCreditCardPrefix;
@@ -129,7 +129,7 @@ public class InputTransactionUpdate {
   public String getCustomData() {
     return customData;
   }
-  
+
   @JsonProperty("custom_data")
   public InputTransactionUpdate setCustomData(String customData) {
     this.customData = customData;
@@ -140,7 +140,7 @@ public class InputTransactionUpdate {
   public String getBuyerName() {
     return buyerName;
   }
-  
+
   @JsonProperty("buyer_name")
   public InputTransactionUpdate setBuyerName(String buyerName) {
     this.buyerName = buyerName;
@@ -151,7 +151,7 @@ public class InputTransactionUpdate {
   public String getInvoiceDate() {
     return invoiceDate;
   }
-  
+
   @JsonProperty("invoice_date")
   public InputTransactionUpdate setInvoiceDate(String invoiceDate) {
     this.invoiceDate = invoiceDate;
@@ -162,7 +162,7 @@ public class InputTransactionUpdate {
   public String getCurrencyCode() {
     return currencyCode;
   }
-  
+
   @JsonProperty("currency_code")
   public InputTransactionUpdate setCurrencyCode(String currencyCode) {
     this.currencyCode = currencyCode;
@@ -173,7 +173,7 @@ public class InputTransactionUpdate {
   public String getSupplyDate() {
     return supplyDate;
   }
-  
+
   @JsonProperty("supply_date")
   public InputTransactionUpdate setSupplyDate(String supplyDate) {
     this.supplyDate = supplyDate;
@@ -184,7 +184,7 @@ public class InputTransactionUpdate {
   public InvoiceAddress getInvoiceAddress() {
     return invoiceAddress;
   }
-  
+
   @JsonProperty("invoice_address")
   public InputTransactionUpdate setInvoiceAddress(InvoiceAddress invoiceAddress) {
     this.invoiceAddress = invoiceAddress;
@@ -195,7 +195,7 @@ public class InputTransactionUpdate {
   public String getVerificationToken() {
     return verificationToken;
   }
-  
+
   @JsonProperty("verification_token")
   public InputTransactionUpdate setVerificationToken(String verificationToken) {
     this.verificationToken = verificationToken;
@@ -206,7 +206,7 @@ public class InputTransactionUpdate {
   public TaxDataSchema getTaxData() {
     return taxData;
   }
-  
+
   @JsonProperty("tax_data")
   public InputTransactionUpdate setTaxData(TaxDataSchema taxData) {
     this.taxData = taxData;
@@ -217,7 +217,7 @@ public class InputTransactionUpdate {
   public List<InputTransactionLine> getTransactionLines() {
     return transactionLines;
   }
-  
+
   @JsonProperty("transaction_lines")
   public InputTransactionUpdate setTransactionLines(List<InputTransactionLine> transactionLines) {
     this.transactionLines = transactionLines;
@@ -228,7 +228,7 @@ public class InputTransactionUpdate {
   public String getBuyerTaxNumber() {
     return buyerTaxNumber;
   }
-  
+
   @JsonProperty("buyer_tax_number")
   public InputTransactionUpdate setBuyerTaxNumber(String buyerTaxNumber) {
     this.buyerTaxNumber = buyerTaxNumber;
@@ -239,7 +239,7 @@ public class InputTransactionUpdate {
   public String getStatus() {
     return status;
   }
-  
+
   @JsonProperty("status")
   public InputTransactionUpdate setStatus(String status) {
     this.status = status;
@@ -250,7 +250,7 @@ public class InputTransactionUpdate {
   public List<CustomFields> getCustomFields() {
     return customFields;
   }
-  
+
   @JsonProperty("custom_fields")
   public InputTransactionUpdate setCustomFields(List<CustomFields> customFields) {
     this.customFields = customFields;
@@ -261,7 +261,7 @@ public class InputTransactionUpdate {
   public String getForceCountryCode() {
     return forceCountryCode;
   }
-  
+
   @JsonProperty("force_country_code")
   public InputTransactionUpdate setForceCountryCode(String forceCountryCode) {
     this.forceCountryCode = forceCountryCode;
@@ -272,7 +272,7 @@ public class InputTransactionUpdate {
   public String getInvoiceNumber() {
     return invoiceNumber;
   }
-  
+
   @JsonProperty("invoice_number")
   public InputTransactionUpdate setInvoiceNumber(String invoiceNumber) {
     this.invoiceNumber = invoiceNumber;
@@ -283,7 +283,7 @@ public class InputTransactionUpdate {
   public String getOrderDate() {
     return orderDate;
   }
-  
+
   @JsonProperty("order_date")
   public InputTransactionUpdate setOrderDate(String orderDate) {
     this.orderDate = orderDate;
@@ -294,7 +294,7 @@ public class InputTransactionUpdate {
   public String getCustomerId() {
     return customerId;
   }
-  
+
   @JsonProperty("customer_id")
   public InputTransactionUpdate setCustomerId(String customerId) {
     this.customerId = customerId;
@@ -305,7 +305,7 @@ public class InputTransactionUpdate {
   public String getBuyerIp() {
     return buyerIp;
   }
-  
+
   @JsonProperty("buyer_ip")
   public InputTransactionUpdate setBuyerIp(String buyerIp) {
     this.buyerIp = buyerIp;
@@ -316,7 +316,7 @@ public class InputTransactionUpdate {
   public String getBuyerEmail() {
     return buyerEmail;
   }
-  
+
   @JsonProperty("buyer_email")
   public InputTransactionUpdate setBuyerEmail(String buyerEmail) {
     this.buyerEmail = buyerEmail;
@@ -327,7 +327,7 @@ public class InputTransactionUpdate {
   public String getOriginalTransactionKey() {
     return originalTransactionKey;
   }
-  
+
   @JsonProperty("original_transaction_key")
   public InputTransactionUpdate setOriginalTransactionKey(String originalTransactionKey) {
     this.originalTransactionKey = originalTransactionKey;
@@ -338,7 +338,7 @@ public class InputTransactionUpdate {
   public String getBillingCountryCode() {
     return billingCountryCode;
   }
-  
+
   @JsonProperty("billing_country_code")
   public InputTransactionUpdate setBillingCountryCode(String billingCountryCode) {
     this.billingCountryCode = billingCountryCode;
@@ -349,7 +349,7 @@ public class InputTransactionUpdate {
   public String getCustomId() {
     return customId;
   }
-  
+
   @JsonProperty("custom_id")
   public InputTransactionUpdate setCustomId(String customId) {
     this.customId = customId;
@@ -360,7 +360,7 @@ public class InputTransactionUpdate {
   public AdditionalCurrencies getAdditionalCurrencies() {
     return additionalCurrencies;
   }
-  
+
   @JsonProperty("additional_currencies")
   public InputTransactionUpdate setAdditionalCurrencies(AdditionalCurrencies additionalCurrencies) {
     this.additionalCurrencies = additionalCurrencies;
@@ -371,7 +371,7 @@ public class InputTransactionUpdate {
   public String getInvoicePlace() {
     return invoicePlace;
   }
-  
+
   @JsonProperty("invoice_place")
   public InputTransactionUpdate setInvoicePlace(String invoicePlace) {
     this.invoicePlace = invoicePlace;
@@ -382,7 +382,7 @@ public class InputTransactionUpdate {
   public Evidence getEvidence() {
     return evidence;
   }
-  
+
   @JsonProperty("evidence")
   public InputTransactionUpdate setEvidence(Evidence evidence) {
     this.evidence = evidence;
@@ -393,7 +393,7 @@ public class InputTransactionUpdate {
   public String getDescription() {
     return description;
   }
-  
+
   @JsonProperty("description")
   public InputTransactionUpdate setDescription(String description) {
     this.description = description;
@@ -404,7 +404,7 @@ public class InputTransactionUpdate {
   public Boolean getTaxDeducted() {
     return taxDeducted;
   }
-  
+
   @JsonProperty("tax_deducted")
   public InputTransactionUpdate setTaxDeducted(Boolean taxDeducted) {
     this.taxDeducted = taxDeducted;
@@ -415,7 +415,7 @@ public class InputTransactionUpdate {
   public String getTaxCountryCode() {
     return taxCountryCode;
   }
-  
+
   @JsonProperty("tax_country_code")
   public InputTransactionUpdate setTaxCountryCode(String taxCountryCode) {
     this.taxCountryCode = taxCountryCode;

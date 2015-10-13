@@ -31,7 +31,7 @@ public class TaxDataSchema {
   public UsTaxExemptionCertificateSchema getUsTaxExemptionCertificate() {
     return usTaxExemptionCertificate;
   }
-  
+
   @JsonProperty("us_tax_exemption_certificate")
   public TaxDataSchema setUsTaxExemptionCertificate(UsTaxExemptionCertificateSchema usTaxExemptionCertificate) {
     this.usTaxExemptionCertificate = usTaxExemptionCertificate;

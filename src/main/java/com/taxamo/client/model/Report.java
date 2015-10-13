@@ -55,7 +55,7 @@ public class Report {
   public String getCurrencyCode() {
     return currencyCode;
   }
-  
+
   @JsonProperty("currency_code")
   public Report setCurrencyCode(String currencyCode) {
     this.currencyCode = currencyCode;
@@ -66,7 +66,7 @@ public class Report {
   public Boolean getSkipMoss() {
     return skipMoss;
   }
-  
+
   @JsonProperty("skip_moss")
   public Report setSkipMoss(Boolean skipMoss) {
     this.skipMoss = skipMoss;
@@ -77,7 +77,7 @@ public class Report {
   public String getCountryCode() {
     return countryCode;
   }
-  
+
   @JsonProperty("country_code")
   public Report setCountryCode(String countryCode) {
     this.countryCode = countryCode;
@@ -88,7 +88,7 @@ public class Report {
   public String getTaxRegion() {
     return taxRegion;
   }
-  
+
   @JsonProperty("tax_region")
   public Report setTaxRegion(String taxRegion) {
     this.taxRegion = taxRegion;
@@ -99,7 +99,7 @@ public class Report {
   public String getCountrySubdivision() {
     return countrySubdivision;
   }
-  
+
   @JsonProperty("country_subdivision")
   public Report setCountrySubdivision(String countrySubdivision) {
     this.countrySubdivision = countrySubdivision;
@@ -110,7 +110,7 @@ public class Report {
   public BigDecimal getAmount() {
     return amount;
   }
-  
+
   @JsonProperty("amount")
   public Report setAmount(BigDecimal amount) {
     this.amount = amount;
@@ -121,7 +121,7 @@ public class Report {
   public BigDecimal getTaxAmount() {
     return taxAmount;
   }
-  
+
   @JsonProperty("tax_amount")
   public Report setTaxAmount(BigDecimal taxAmount) {
     this.taxAmount = taxAmount;
@@ -132,7 +132,7 @@ public class Report {
   public BigDecimal getTaxRate() {
     return taxRate;
   }
-  
+
   @JsonProperty("tax_rate")
   public Report setTaxRate(BigDecimal taxRate) {
     this.taxRate = taxRate;
@@ -143,7 +143,7 @@ public class Report {
   public String getCountryName() {
     return countryName;
   }
-  
+
   @JsonProperty("country_name")
   public Report setCountryName(String countryName) {
     this.countryName = countryName;

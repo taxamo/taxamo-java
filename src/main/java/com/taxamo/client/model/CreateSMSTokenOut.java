@@ -30,7 +30,7 @@ public class CreateSMSTokenOut {
   public Boolean getSuccess() {
     return success;
   }
-  
+
   @JsonProperty("success")
   public CreateSMSTokenOut setSuccess(Boolean success) {
     this.success = success;

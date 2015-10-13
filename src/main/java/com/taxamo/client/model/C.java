@@ -40,7 +40,7 @@ public class C {
   public String getDayRaw() {
     return dayRaw;
   }
-  
+
   @JsonProperty("day_raw")
   public C setDayRaw(String dayRaw) {
     this.dayRaw = dayRaw;
@@ -51,7 +51,7 @@ public class C {
   public BigDecimal getValue() {
     return value;
   }
-  
+
   @JsonProperty("value")
   public C setValue(BigDecimal value) {
     this.value = value;
@@ -62,7 +62,7 @@ public class C {
   public String getStatus() {
     return status;
   }
-  
+
   @JsonProperty("status")
   public C setStatus(String status) {
     this.status = status;
@@ -73,7 +73,7 @@ public class C {
   public String getDay() {
     return day;
   }
-  
+
   @JsonProperty("day")
   public C setDay(String day) {
     this.day = day;

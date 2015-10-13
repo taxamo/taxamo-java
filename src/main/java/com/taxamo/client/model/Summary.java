@@ -52,7 +52,7 @@ public class Summary {
   public String getQuarter() {
     return quarter;
   }
-  
+
   @JsonProperty("quarter")
   public Summary setQuarter(String quarter) {
     this.quarter = quarter;
@@ -63,7 +63,7 @@ public class Summary {
   public BigDecimal getTaxAmount() {
     return taxAmount;
   }
-  
+
   @JsonProperty("tax_amount")
   public Summary setTaxAmount(BigDecimal taxAmount) {
     this.taxAmount = taxAmount;
@@ -74,7 +74,7 @@ public class Summary {
   public String getCurrencyCode() {
     return currencyCode;
   }
-  
+
   @JsonProperty("currency_code")
   public Summary setCurrencyCode(String currencyCode) {
     this.currencyCode = currencyCode;
@@ -85,7 +85,7 @@ public class Summary {
   public Boolean getIndicative() {
     return indicative;
   }
-  
+
   @JsonProperty("indicative")
   public Summary setIndicative(Boolean indicative) {
     this.indicative = indicative;
@@ -96,7 +96,7 @@ public class Summary {
   public String getFxRateDate() {
     return fxRateDate;
   }
-  
+
   @JsonProperty("fx_rate_date")
   public Summary setFxRateDate(String fxRateDate) {
     this.fxRateDate = fxRateDate;
@@ -107,7 +107,7 @@ public class Summary {
   public String getStartDate() {
     return startDate;
   }
-  
+
   @JsonProperty("start_date")
   public Summary setStartDate(String startDate) {
     this.startDate = startDate;
@@ -118,7 +118,7 @@ public class Summary {
   public String getEndDate() {
     return endDate;
   }
-  
+
   @JsonProperty("end_date")
   public Summary setEndDate(String endDate) {
     this.endDate = endDate;
@@ -129,7 +129,7 @@ public class Summary {
   public String getTaxEntityName() {
     return taxEntityName;
   }
-  
+
   @JsonProperty("tax_entity_name")
   public Summary setTaxEntityName(String taxEntityName) {
     this.taxEntityName = taxEntityName;

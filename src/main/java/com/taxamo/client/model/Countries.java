@@ -61,7 +61,7 @@ public class Countries {
   public CountrySchema getByToken() {
     return byToken;
   }
-  
+
   @JsonProperty("by_token")
   public Countries setByToken(CountrySchema byToken) {
     this.byToken = byToken;
@@ -72,7 +72,7 @@ public class Countries {
   public CountrySchema getByCc() {
     return byCc;
   }
-  
+
   @JsonProperty("by_cc")
   public Countries setByCc(CountrySchema byCc) {
     this.byCc = byCc;
@@ -83,7 +83,7 @@ public class Countries {
   public CountrySchema getBy2003Rules() {
     return by2003Rules;
   }
-  
+
   @JsonProperty("by_2003_rules")
   public Countries setBy2003Rules(CountrySchema by2003Rules) {
     this.by2003Rules = by2003Rules;
@@ -94,7 +94,7 @@ public class Countries {
   public CountrySchema getForced() {
     return forced;
   }
-  
+
   @JsonProperty("forced")
   public Countries setForced(CountrySchema forced) {
     this.forced = forced;
@@ -105,7 +105,7 @@ public class Countries {
   public CountrySchema getByIp() {
     return byIp;
   }
-  
+
   @JsonProperty("by_ip")
   public Countries setByIp(CountrySchema byIp) {
     this.byIp = byIp;
@@ -116,7 +116,7 @@ public class Countries {
   public CountrySchema getGuessedFromIp() {
     return guessedFromIp;
   }
-  
+
   @JsonProperty("guessed_from_ip")
   public Countries setGuessedFromIp(CountrySchema guessedFromIp) {
     this.guessedFromIp = guessedFromIp;
@@ -127,7 +127,7 @@ public class Countries {
   public CountrySchema getOtherCommerciallyRelevantInfo() {
     return otherCommerciallyRelevantInfo;
   }
-  
+
   @JsonProperty("other_commercially_relevant_info")
   public Countries setOtherCommerciallyRelevantInfo(CountrySchema otherCommerciallyRelevantInfo) {
     this.otherCommerciallyRelevantInfo = otherCommerciallyRelevantInfo;
@@ -138,7 +138,7 @@ public class Countries {
   public CountrySchema getByBilling() {
     return byBilling;
   }
-  
+
   @JsonProperty("by_billing")
   public Countries setByBilling(CountrySchema byBilling) {
     this.byBilling = byBilling;
@@ -149,7 +149,7 @@ public class Countries {
   public CountrySchema getByTaxNumber() {
     return byTaxNumber;
   }
-  
+
   @JsonProperty("by_tax_number")
   public Countries setByTaxNumber(CountrySchema byTaxNumber) {
     this.byTaxNumber = byTaxNumber;
@@ -160,7 +160,7 @@ public class Countries {
   public CountrySchema getDetected() {
     return detected;
   }
-  
+
   @JsonProperty("detected")
   public Countries setDetected(CountrySchema detected) {
     this.detected = detected;
@@ -171,7 +171,7 @@ public class Countries {
   public CountrySchema getSelfDeclaration() {
     return selfDeclaration;
   }
-  
+
   @JsonProperty("self_declaration")
   public Countries setSelfDeclaration(CountrySchema selfDeclaration) {
     this.selfDeclaration = selfDeclaration;

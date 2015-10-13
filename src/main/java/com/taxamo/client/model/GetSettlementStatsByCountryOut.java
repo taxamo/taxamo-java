@@ -32,7 +32,7 @@ public class GetSettlementStatsByCountryOut {
   public List<ByCountry> getByCountry() {
     return byCountry;
   }
-  
+
   @JsonProperty("by_country")
   public GetSettlementStatsByCountryOut setByCountry(List<ByCountry> byCountry) {
     this.byCountry = byCountry;

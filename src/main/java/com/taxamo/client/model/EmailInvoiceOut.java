@@ -30,7 +30,7 @@ public class EmailInvoiceOut {
   public Boolean getSuccess() {
     return success;
   }
-  
+
   @JsonProperty("success")
   public EmailInvoiceOut setSuccess(Boolean success) {
     this.success = success;

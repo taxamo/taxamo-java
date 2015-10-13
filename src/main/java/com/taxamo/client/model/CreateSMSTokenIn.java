@@ -33,7 +33,7 @@ public class CreateSMSTokenIn {
   public String getCountryCode() {
     return countryCode;
   }
-  
+
   @JsonProperty("country_code")
   public CreateSMSTokenIn setCountryCode(String countryCode) {
     this.countryCode = countryCode;
@@ -44,7 +44,7 @@ public class CreateSMSTokenIn {
   public String getRecipient() {
     return recipient;
   }
-  
+
   @JsonProperty("recipient")
   public CreateSMSTokenIn setRecipient(String recipient) {
     this.recipient = recipient;

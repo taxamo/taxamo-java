@@ -31,7 +31,7 @@ public class AdditionalCurrencies {
   public AdditionalCurrency getInvoice() {
     return invoice;
   }
-  
+
   @JsonProperty("invoice")
   public AdditionalCurrencies setInvoice(AdditionalCurrency invoice) {
     this.invoice = invoice;

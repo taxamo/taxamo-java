@@ -40,7 +40,7 @@ public class ConfirmTransactionOut {
   public Transaction getTransaction() {
     return transaction;
   }
-  
+
   @JsonProperty("transaction")
   public ConfirmTransactionOut setTransaction(Transaction transaction) {
     this.transaction = transaction;
@@ -51,7 +51,7 @@ public class ConfirmTransactionOut {
   public List<TaxRequiredFields> getTaxRequiredFields() {
     return taxRequiredFields;
   }
-  
+
   @JsonProperty("tax_required_fields")
   public ConfirmTransactionOut setTaxRequiredFields(List<TaxRequiredFields> taxRequiredFields) {
     this.taxRequiredFields = taxRequiredFields;
@@ -62,7 +62,7 @@ public class ConfirmTransactionOut {
   public List<StorageRequiredFields> getStorageRequiredFields() {
     return storageRequiredFields;
   }
-  
+
   @JsonProperty("storage_required_fields")
   public ConfirmTransactionOut setStorageRequiredFields(List<StorageRequiredFields> storageRequiredFields) {
     this.storageRequiredFields = storageRequiredFields;

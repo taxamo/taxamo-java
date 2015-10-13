@@ -30,7 +30,7 @@ public class EmailInvoiceIn {
   public String getBuyerEmail() {
     return buyerEmail;
   }
-  
+
   @JsonProperty("buyer_email")
   public EmailInvoiceIn setBuyerEmail(String buyerEmail) {
     this.buyerEmail = buyerEmail;

@@ -32,7 +32,7 @@ public class GetRefundsOut {
   public List<Report> getReport() {
     return report;
   }
-  
+
   @JsonProperty("report")
   public GetRefundsOut setReport(List<Report> report) {
     this.report = report;

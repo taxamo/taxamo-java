@@ -40,7 +40,7 @@ public class N {
   public String getDayRaw() {
     return dayRaw;
   }
-  
+
   @JsonProperty("day_raw")
   public N setDayRaw(String dayRaw) {
     this.dayRaw = dayRaw;
@@ -51,7 +51,7 @@ public class N {
   public BigDecimal getValue() {
     return value;
   }
-  
+
   @JsonProperty("value")
   public N setValue(BigDecimal value) {
     this.value = value;
@@ -62,7 +62,7 @@ public class N {
   public String getStatus() {
     return status;
   }
-  
+
   @JsonProperty("status")
   public N setStatus(String status) {
     this.status = status;
@@ -73,7 +73,7 @@ public class N {
   public String getDay() {
     return day;
   }
-  
+
   @JsonProperty("day")
   public N setDay(String day) {
     this.day = day;

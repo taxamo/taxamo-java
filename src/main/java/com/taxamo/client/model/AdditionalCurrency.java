@@ -43,7 +43,7 @@ public class AdditionalCurrency {
   public String getCurrencyCode() {
     return currencyCode;
   }
-  
+
   @JsonProperty("currency_code")
   public AdditionalCurrency setCurrencyCode(String currencyCode) {
     this.currencyCode = currencyCode;
@@ -54,7 +54,7 @@ public class AdditionalCurrency {
   public BigDecimal getAmount() {
     return amount;
   }
-  
+
   @JsonProperty("amount")
   public AdditionalCurrency setAmount(BigDecimal amount) {
     this.amount = amount;
@@ -65,7 +65,7 @@ public class AdditionalCurrency {
   public BigDecimal getTaxAmount() {
     return taxAmount;
   }
-  
+
   @JsonProperty("tax_amount")
   public AdditionalCurrency setTaxAmount(BigDecimal taxAmount) {
     this.taxAmount = taxAmount;
@@ -76,7 +76,7 @@ public class AdditionalCurrency {
   public BigDecimal getFxRate() {
     return fxRate;
   }
-  
+
   @JsonProperty("fx_rate")
   public AdditionalCurrency setFxRate(BigDecimal fxRate) {
     this.fxRate = fxRate;
@@ -87,7 +87,7 @@ public class AdditionalCurrency {
   public BigDecimal getTotalAmount() {
     return totalAmount;
   }
-  
+
   @JsonProperty("total_amount")
   public AdditionalCurrency setTotalAmount(BigDecimal totalAmount) {
     this.totalAmount = totalAmount;

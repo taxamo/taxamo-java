@@ -30,7 +30,7 @@ public class CancelTransactionOut {
   public Boolean getSuccess() {
     return success;
   }
-  
+
   @JsonProperty("success")
   public CancelTransactionOut setSuccess(Boolean success) {
     this.success = success;

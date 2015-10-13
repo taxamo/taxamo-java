@@ -32,7 +32,7 @@ public class GetProductTypesDictOut {
   public List<ProductTypeSchema> getDictionary() {
     return dictionary;
   }
-  
+
   @JsonProperty("dictionary")
   public GetProductTypesDictOut setDictionary(List<ProductTypeSchema> dictionary) {
     this.dictionary = dictionary;

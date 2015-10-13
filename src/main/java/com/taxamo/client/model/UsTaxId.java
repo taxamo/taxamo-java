@@ -36,7 +36,7 @@ public class UsTaxId {
   public String getTaxIdType() {
     return taxIdType;
   }
-  
+
   @JsonProperty("tax_id_type")
   public UsTaxId setTaxIdType(String taxIdType) {
     this.taxIdType = taxIdType;
@@ -47,7 +47,7 @@ public class UsTaxId {
   public String getTaxId() {
     return taxId;
   }
-  
+
   @JsonProperty("tax_id")
   public UsTaxId setTaxId(String taxId) {
     this.taxId = taxId;
@@ -58,7 +58,7 @@ public class UsTaxId {
   public String getStateOfIssue() {
     return stateOfIssue;
   }
-  
+
   @JsonProperty("state_of_issue")
   public UsTaxId setStateOfIssue(String stateOfIssue) {
     this.stateOfIssue = stateOfIssue;

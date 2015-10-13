@@ -64,7 +64,7 @@ public class CountrySchema {
   public String getCodeLong() {
     return codeLong;
   }
-  
+
   @JsonProperty("code_long")
   public CountrySchema setCodeLong(String codeLong) {
     this.codeLong = codeLong;
@@ -75,7 +75,7 @@ public class CountrySchema {
   public String getCodenum() {
     return codenum;
   }
-  
+
   @JsonProperty("codenum")
   public CountrySchema setCodenum(String codenum) {
     this.codenum = codenum;
@@ -86,7 +86,7 @@ public class CountrySchema {
   public List<String> getCurrency() {
     return currency;
   }
-  
+
   @JsonProperty("currency")
   public CountrySchema setCurrency(List<String> currency) {
     this.currency = currency;
@@ -97,7 +97,7 @@ public class CountrySchema {
   public Boolean getTaxSupported() {
     return taxSupported;
   }
-  
+
   @JsonProperty("tax_supported")
   public CountrySchema setTaxSupported(Boolean taxSupported) {
     this.taxSupported = taxSupported;
@@ -108,7 +108,7 @@ public class CountrySchema {
   public String getName() {
     return name;
   }
-  
+
   @JsonProperty("name")
   public CountrySchema setName(String name) {
     this.name = name;
@@ -119,7 +119,7 @@ public class CountrySchema {
   public String getCcn3() {
     return ccn3;
   }
-  
+
   @JsonProperty("ccn3")
   public CountrySchema setCcn3(String ccn3) {
     this.ccn3 = ccn3;
@@ -130,7 +130,7 @@ public class CountrySchema {
   public String getTaxRegion() {
     return taxRegion;
   }
-  
+
   @JsonProperty("tax_region")
   public CountrySchema setTaxRegion(String taxRegion) {
     this.taxRegion = taxRegion;
@@ -141,7 +141,7 @@ public class CountrySchema {
   public String getCca3() {
     return cca3;
   }
-  
+
   @JsonProperty("cca3")
   public CountrySchema setCca3(String cca3) {
     this.cca3 = cca3;
@@ -152,7 +152,7 @@ public class CountrySchema {
   public List<String> getCallingCode() {
     return callingCode;
   }
-  
+
   @JsonProperty("callingCode")
   public CountrySchema setCallingCode(List<String> callingCode) {
     this.callingCode = callingCode;
@@ -163,7 +163,7 @@ public class CountrySchema {
   public String getTaxNumberCountryCode() {
     return taxNumberCountryCode;
   }
-  
+
   @JsonProperty("tax_number_country_code")
   public CountrySchema setTaxNumberCountryCode(String taxNumberCountryCode) {
     this.taxNumberCountryCode = taxNumberCountryCode;
@@ -174,7 +174,7 @@ public class CountrySchema {
   public String getCode() {
     return code;
   }
-  
+
   @JsonProperty("code")
   public CountrySchema setCode(String code) {
     this.code = code;
@@ -185,7 +185,7 @@ public class CountrySchema {
   public String getCca2() {
     return cca2;
   }
-  
+
   @JsonProperty("cca2")
   public CountrySchema setCca2(String cca2) {
     this.cca2 = cca2;

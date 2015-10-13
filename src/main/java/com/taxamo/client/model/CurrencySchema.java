@@ -43,7 +43,7 @@ public class CurrencySchema {
   public String getCode() {
     return code;
   }
-  
+
   @JsonProperty("code")
   public CurrencySchema setCode(String code) {
     this.code = code;
@@ -54,7 +54,7 @@ public class CurrencySchema {
   public Integer getMinorunits() {
     return minorunits;
   }
-  
+
   @JsonProperty("minorunits")
   public CurrencySchema setMinorunits(Integer minorunits) {
     this.minorunits = minorunits;
@@ -65,7 +65,7 @@ public class CurrencySchema {
   public String getDescription() {
     return description;
   }
-  
+
   @JsonProperty("description")
   public CurrencySchema setDescription(String description) {
     this.description = description;
@@ -76,7 +76,7 @@ public class CurrencySchema {
   public String getIsocode() {
     return isocode;
   }
-  
+
   @JsonProperty("isocode")
   public CurrencySchema setIsocode(String isocode) {
     this.isocode = isocode;
@@ -87,7 +87,7 @@ public class CurrencySchema {
   public Integer getIsonum() {
     return isonum;
   }
-  
+
   @JsonProperty("isonum")
   public CurrencySchema setIsonum(Integer isonum) {
     this.isonum = isonum;

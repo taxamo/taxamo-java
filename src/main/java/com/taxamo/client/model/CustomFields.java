@@ -33,7 +33,7 @@ public class CustomFields {
   public String getKey() {
     return key;
   }
-  
+
   @JsonProperty("key")
   public CustomFields setKey(String key) {
     this.key = key;
@@ -44,7 +44,7 @@ public class CustomFields {
   public String getValue() {
     return value;
   }
-  
+
   @JsonProperty("value")
   public CustomFields setValue(String value) {
     this.value = value;

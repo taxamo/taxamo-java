@@ -51,7 +51,7 @@ public class InvoiceAddress {
   public String getFreeformAddress() {
     return freeformAddress;
   }
-  
+
   @JsonProperty("freeform_address")
   public InvoiceAddress setFreeformAddress(String freeformAddress) {
     this.freeformAddress = freeformAddress;
@@ -62,7 +62,7 @@ public class InvoiceAddress {
   public String getBuildingNumber() {
     return buildingNumber;
   }
-  
+
   @JsonProperty("building_number")
   public InvoiceAddress setBuildingNumber(String buildingNumber) {
     this.buildingNumber = buildingNumber;
@@ -73,7 +73,7 @@ public class InvoiceAddress {
   public String getStreetName() {
     return streetName;
   }
-  
+
   @JsonProperty("street_name")
   public InvoiceAddress setStreetName(String streetName) {
     this.streetName = streetName;
@@ -84,7 +84,7 @@ public class InvoiceAddress {
   public String getAddressDetail() {
     return addressDetail;
   }
-  
+
   @JsonProperty("address_detail")
   public InvoiceAddress setAddressDetail(String addressDetail) {
     this.addressDetail = addressDetail;
@@ -95,7 +95,7 @@ public class InvoiceAddress {
   public String getCity() {
     return city;
   }
-  
+
   @JsonProperty("city")
   public InvoiceAddress setCity(String city) {
     this.city = city;
@@ -106,7 +106,7 @@ public class InvoiceAddress {
   public String getPostalCode() {
     return postalCode;
   }
-  
+
   @JsonProperty("postal_code")
   public InvoiceAddress setPostalCode(String postalCode) {
     this.postalCode = postalCode;
@@ -117,7 +117,7 @@ public class InvoiceAddress {
   public String getRegion() {
     return region;
   }
-  
+
   @JsonProperty("region")
   public InvoiceAddress setRegion(String region) {
     this.region = region;
@@ -128,7 +128,7 @@ public class InvoiceAddress {
   public String getCountry() {
     return country;
   }
-  
+
   @JsonProperty("country")
   public InvoiceAddress setCountry(String country) {
     this.country = country;

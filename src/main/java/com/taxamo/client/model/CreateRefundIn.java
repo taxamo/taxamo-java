@@ -40,7 +40,7 @@ public class CreateRefundIn {
   public String getLineKey() {
     return lineKey;
   }
-  
+
   @JsonProperty("line_key")
   public CreateRefundIn setLineKey(String lineKey) {
     this.lineKey = lineKey;
@@ -51,7 +51,7 @@ public class CreateRefundIn {
   public String getCustomId() {
     return customId;
   }
-  
+
   @JsonProperty("custom_id")
   public CreateRefundIn setCustomId(String customId) {
     this.customId = customId;
@@ -62,7 +62,7 @@ public class CreateRefundIn {
   public BigDecimal getAmount() {
     return amount;
   }
-  
+
   @JsonProperty("amount")
   public CreateRefundIn setAmount(BigDecimal amount) {
     this.amount = amount;
@@ -73,7 +73,7 @@ public class CreateRefundIn {
   public BigDecimal getTotalAmount() {
     return totalAmount;
   }
-  
+
   @JsonProperty("total_amount")
   public CreateRefundIn setTotalAmount(BigDecimal totalAmount) {
     this.totalAmount = totalAmount;

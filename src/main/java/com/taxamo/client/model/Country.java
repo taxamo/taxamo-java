@@ -64,7 +64,7 @@ public class Country {
   public String getCodeLong() {
     return codeLong;
   }
-  
+
   @JsonProperty("code_long")
   public Country setCodeLong(String codeLong) {
     this.codeLong = codeLong;
@@ -75,7 +75,7 @@ public class Country {
   public String getCodenum() {
     return codenum;
   }
-  
+
   @JsonProperty("codenum")
   public Country setCodenum(String codenum) {
     this.codenum = codenum;
@@ -86,7 +86,7 @@ public class Country {
   public List<String> getCurrency() {
     return currency;
   }
-  
+
   @JsonProperty("currency")
   public Country setCurrency(List<String> currency) {
     this.currency = currency;
@@ -97,7 +97,7 @@ public class Country {
   public Boolean getTaxSupported() {
     return taxSupported;
   }
-  
+
   @JsonProperty("tax_supported")
   public Country setTaxSupported(Boolean taxSupported) {
     this.taxSupported = taxSupported;
@@ -108,7 +108,7 @@ public class Country {
   public String getName() {
     return name;
   }
-  
+
   @JsonProperty("name")
   public Country setName(String name) {
     this.name = name;
@@ -119,7 +119,7 @@ public class Country {
   public String getCcn3() {
     return ccn3;
   }
-  
+
   @JsonProperty("ccn3")
   public Country setCcn3(String ccn3) {
     this.ccn3 = ccn3;
@@ -130,7 +130,7 @@ public class Country {
   public String getTaxRegion() {
     return taxRegion;
   }
-  
+
   @JsonProperty("tax_region")
   public Country setTaxRegion(String taxRegion) {
     this.taxRegion = taxRegion;
@@ -141,7 +141,7 @@ public class Country {
   public String getCca3() {
     return cca3;
   }
-  
+
   @JsonProperty("cca3")
   public Country setCca3(String cca3) {
     this.cca3 = cca3;
@@ -152,7 +152,7 @@ public class Country {
   public List<String> getCallingCode() {
     return callingCode;
   }
-  
+
   @JsonProperty("callingCode")
   public Country setCallingCode(List<String> callingCode) {
     this.callingCode = callingCode;
@@ -163,7 +163,7 @@ public class Country {
   public String getTaxNumberCountryCode() {
     return taxNumberCountryCode;
   }
-  
+
   @JsonProperty("tax_number_country_code")
   public Country setTaxNumberCountryCode(String taxNumberCountryCode) {
     this.taxNumberCountryCode = taxNumberCountryCode;
@@ -174,7 +174,7 @@ public class Country {
   public String getCode() {
     return code;
   }
-  
+
   @JsonProperty("code")
   public Country setCode(String code) {
     this.code = code;
@@ -185,7 +185,7 @@ public class Country {
   public String getCca2() {
     return cca2;
   }
-  
+
   @JsonProperty("cca2")
   public Country setCca2(String cca2) {
     this.cca2 = cca2;

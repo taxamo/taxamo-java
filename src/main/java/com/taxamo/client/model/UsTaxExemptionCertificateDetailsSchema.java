@@ -78,7 +78,7 @@ public class UsTaxExemptionCertificateDetailsSchema {
   public String getSinglePurchaseOrderIdentifier() {
     return singlePurchaseOrderIdentifier;
   }
-  
+
   @JsonProperty("single_purchase_order_identifier")
   public UsTaxExemptionCertificateDetailsSchema setSinglePurchaseOrderIdentifier(String singlePurchaseOrderIdentifier) {
     this.singlePurchaseOrderIdentifier = singlePurchaseOrderIdentifier;
@@ -89,7 +89,7 @@ public class UsTaxExemptionCertificateDetailsSchema {
   public String getPurchaserBusinessType() {
     return purchaserBusinessType;
   }
-  
+
   @JsonProperty("purchaser_business_type")
   public UsTaxExemptionCertificateDetailsSchema setPurchaserBusinessType(String purchaserBusinessType) {
     this.purchaserBusinessType = purchaserBusinessType;
@@ -100,7 +100,7 @@ public class UsTaxExemptionCertificateDetailsSchema {
   public String getPurchaserExemptionReasonValue() {
     return purchaserExemptionReasonValue;
   }
-  
+
   @JsonProperty("purchaser_exemption_reason_value")
   public UsTaxExemptionCertificateDetailsSchema setPurchaserExemptionReasonValue(String purchaserExemptionReasonValue) {
     this.purchaserExemptionReasonValue = purchaserExemptionReasonValue;
@@ -111,7 +111,7 @@ public class UsTaxExemptionCertificateDetailsSchema {
   public String getPurchaserState() {
     return purchaserState;
   }
-  
+
   @JsonProperty("purchaser_state")
   public UsTaxExemptionCertificateDetailsSchema setPurchaserState(String purchaserState) {
     this.purchaserState = purchaserState;
@@ -122,7 +122,7 @@ public class UsTaxExemptionCertificateDetailsSchema {
   public String getPurchaserZip() {
     return purchaserZip;
   }
-  
+
   @JsonProperty("purchaser_zip")
   public UsTaxExemptionCertificateDetailsSchema setPurchaserZip(String purchaserZip) {
     this.purchaserZip = purchaserZip;
@@ -133,7 +133,7 @@ public class UsTaxExemptionCertificateDetailsSchema {
   public String getPurchaserCity() {
     return purchaserCity;
   }
-  
+
   @JsonProperty("purchaser_city")
   public UsTaxExemptionCertificateDetailsSchema setPurchaserCity(String purchaserCity) {
     this.purchaserCity = purchaserCity;
@@ -144,7 +144,7 @@ public class UsTaxExemptionCertificateDetailsSchema {
   public String getPurchaserLastName() {
     return purchaserLastName;
   }
-  
+
   @JsonProperty("purchaser_last_name")
   public UsTaxExemptionCertificateDetailsSchema setPurchaserLastName(String purchaserLastName) {
     this.purchaserLastName = purchaserLastName;
@@ -155,7 +155,7 @@ public class UsTaxExemptionCertificateDetailsSchema {
   public String getPurchaserExemptionReason() {
     return purchaserExemptionReason;
   }
-  
+
   @JsonProperty("purchaser_exemption_reason")
   public UsTaxExemptionCertificateDetailsSchema setPurchaserExemptionReason(String purchaserExemptionReason) {
     this.purchaserExemptionReason = purchaserExemptionReason;
@@ -166,7 +166,7 @@ public class UsTaxExemptionCertificateDetailsSchema {
   public Boolean getSinglePurchase() {
     return singlePurchase;
   }
-  
+
   @JsonProperty("single_purchase")
   public UsTaxExemptionCertificateDetailsSchema setSinglePurchase(Boolean singlePurchase) {
     this.singlePurchase = singlePurchase;
@@ -177,7 +177,7 @@ public class UsTaxExemptionCertificateDetailsSchema {
   public UsTaxId getPurchaserTaxId() {
     return purchaserTaxId;
   }
-  
+
   @JsonProperty("purchaser_tax_id")
   public UsTaxExemptionCertificateDetailsSchema setPurchaserTaxId(UsTaxId purchaserTaxId) {
     this.purchaserTaxId = purchaserTaxId;
@@ -188,7 +188,7 @@ public class UsTaxExemptionCertificateDetailsSchema {
   public String getPurchaserAddress2() {
     return purchaserAddress2;
   }
-  
+
   @JsonProperty("purchaser_address2")
   public UsTaxExemptionCertificateDetailsSchema setPurchaserAddress2(String purchaserAddress2) {
     this.purchaserAddress2 = purchaserAddress2;
@@ -199,7 +199,7 @@ public class UsTaxExemptionCertificateDetailsSchema {
   public String getPurchaserAddress1() {
     return purchaserAddress1;
   }
-  
+
   @JsonProperty("purchaser_address1")
   public UsTaxExemptionCertificateDetailsSchema setPurchaserAddress1(String purchaserAddress1) {
     this.purchaserAddress1 = purchaserAddress1;
@@ -210,7 +210,7 @@ public class UsTaxExemptionCertificateDetailsSchema {
   public String getPurchaserBusinessTypeOtherValue() {
     return purchaserBusinessTypeOtherValue;
   }
-  
+
   @JsonProperty("purchaser_business_type_other_value")
   public UsTaxExemptionCertificateDetailsSchema setPurchaserBusinessTypeOtherValue(String purchaserBusinessTypeOtherValue) {
     this.purchaserBusinessTypeOtherValue = purchaserBusinessTypeOtherValue;
@@ -221,7 +221,7 @@ public class UsTaxExemptionCertificateDetailsSchema {
   public String getPurchaserFirstName() {
     return purchaserFirstName;
   }
-  
+
   @JsonProperty("purchaser_first_name")
   public UsTaxExemptionCertificateDetailsSchema setPurchaserFirstName(String purchaserFirstName) {
     this.purchaserFirstName = purchaserFirstName;
@@ -232,7 +232,7 @@ public class UsTaxExemptionCertificateDetailsSchema {
   public List<UsTaxExemptState> getExemptStates() {
     return exemptStates;
   }
-  
+
   @JsonProperty("exempt_states")
   public UsTaxExemptionCertificateDetailsSchema setExemptStates(List<UsTaxExemptState> exemptStates) {
     this.exemptStates = exemptStates;
@@ -243,7 +243,7 @@ public class UsTaxExemptionCertificateDetailsSchema {
   public String getPurchaserTitle() {
     return purchaserTitle;
   }
-  
+
   @JsonProperty("purchaser_title")
   public UsTaxExemptionCertificateDetailsSchema setPurchaserTitle(String purchaserTitle) {
     this.purchaserTitle = purchaserTitle;

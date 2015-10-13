@@ -31,7 +31,7 @@ public class UpdateTransactionIn {
   public Transaction getTransaction() {
     return transaction;
   }
-  
+
   @JsonProperty("transaction")
   public UpdateTransactionIn setTransaction(Transaction transaction) {
     this.transaction = transaction;

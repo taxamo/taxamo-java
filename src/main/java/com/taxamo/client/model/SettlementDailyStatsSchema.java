@@ -55,7 +55,7 @@ public class SettlementDailyStatsSchema {
   public Integer getB2c() {
     return b2c;
   }
-  
+
   @JsonProperty("b2c")
   public SettlementDailyStatsSchema setB2c(Integer b2c) {
     this.b2c = b2c;
@@ -66,7 +66,7 @@ public class SettlementDailyStatsSchema {
   public Integer getUntaxed() {
     return untaxed;
   }
-  
+
   @JsonProperty("untaxed")
   public SettlementDailyStatsSchema setUntaxed(Integer untaxed) {
     this.untaxed = untaxed;
@@ -77,7 +77,7 @@ public class SettlementDailyStatsSchema {
   public Integer getEuTaxed() {
     return euTaxed;
   }
-  
+
   @JsonProperty("eu_taxed")
   public SettlementDailyStatsSchema setEuTaxed(Integer euTaxed) {
     this.euTaxed = euTaxed;
@@ -88,7 +88,7 @@ public class SettlementDailyStatsSchema {
   public Integer getEuB2b() {
     return euB2b;
   }
-  
+
   @JsonProperty("eu_b2b")
   public SettlementDailyStatsSchema setEuB2b(Integer euB2b) {
     this.euB2b = euB2b;
@@ -99,7 +99,7 @@ public class SettlementDailyStatsSchema {
   public Integer getCount() {
     return count;
   }
-  
+
   @JsonProperty("count")
   public SettlementDailyStatsSchema setCount(Integer count) {
     this.count = count;
@@ -110,7 +110,7 @@ public class SettlementDailyStatsSchema {
   public Integer getEuTotal() {
     return euTotal;
   }
-  
+
   @JsonProperty("eu_total")
   public SettlementDailyStatsSchema setEuTotal(Integer euTotal) {
     this.euTotal = euTotal;
@@ -121,7 +121,7 @@ public class SettlementDailyStatsSchema {
   public String getDayRaw() {
     return dayRaw;
   }
-  
+
   @JsonProperty("day_raw")
   public SettlementDailyStatsSchema setDayRaw(String dayRaw) {
     this.dayRaw = dayRaw;
@@ -132,7 +132,7 @@ public class SettlementDailyStatsSchema {
   public Integer getB2b() {
     return b2b;
   }
-  
+
   @JsonProperty("b2b")
   public SettlementDailyStatsSchema setB2b(Integer b2b) {
     this.b2b = b2b;
@@ -143,7 +143,7 @@ public class SettlementDailyStatsSchema {
   public String getDay() {
     return day;
   }
-  
+
   @JsonProperty("day")
   public SettlementDailyStatsSchema setDay(String day) {
     this.day = day;

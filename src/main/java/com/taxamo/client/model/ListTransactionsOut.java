@@ -32,7 +32,7 @@ public class ListTransactionsOut {
   public List<Transactions> getTransactions() {
     return transactions;
   }
-  
+
   @JsonProperty("transactions")
   public ListTransactionsOut setTransactions(List<Transactions> transactions) {
     this.transactions = transactions;

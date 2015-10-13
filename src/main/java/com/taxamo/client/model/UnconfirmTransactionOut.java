@@ -40,7 +40,7 @@ public class UnconfirmTransactionOut {
   public Transaction getTransaction() {
     return transaction;
   }
-  
+
   @JsonProperty("transaction")
   public UnconfirmTransactionOut setTransaction(Transaction transaction) {
     this.transaction = transaction;
@@ -51,7 +51,7 @@ public class UnconfirmTransactionOut {
   public List<TaxRequiredFields> getTaxRequiredFields() {
     return taxRequiredFields;
   }
-  
+
   @JsonProperty("tax_required_fields")
   public UnconfirmTransactionOut setTaxRequiredFields(List<TaxRequiredFields> taxRequiredFields) {
     this.taxRequiredFields = taxRequiredFields;
@@ -62,7 +62,7 @@ public class UnconfirmTransactionOut {
   public List<StorageRequiredFields> getStorageRequiredFields() {
     return storageRequiredFields;
   }
-  
+
   @JsonProperty("storage_required_fields")
   public UnconfirmTransactionOut setStorageRequiredFields(List<StorageRequiredFields> storageRequiredFields) {
     this.storageRequiredFields = storageRequiredFields;

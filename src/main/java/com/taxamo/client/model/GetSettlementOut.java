@@ -44,7 +44,7 @@ public class GetSettlementOut {
   public List<Report> getReport() {
     return report;
   }
-  
+
   @JsonProperty("report")
   public GetSettlementOut setReport(List<Report> report) {
     this.report = report;
@@ -55,7 +55,7 @@ public class GetSettlementOut {
   public String getStartDate() {
     return startDate;
   }
-  
+
   @JsonProperty("start_date")
   public GetSettlementOut setStartDate(String startDate) {
     this.startDate = startDate;
@@ -66,7 +66,7 @@ public class GetSettlementOut {
   public String getEndDate() {
     return endDate;
   }
-  
+
   @JsonProperty("end_date")
   public GetSettlementOut setEndDate(String endDate) {
     this.endDate = endDate;
@@ -77,7 +77,7 @@ public class GetSettlementOut {
   public Boolean getIndicative() {
     return indicative;
   }
-  
+
   @JsonProperty("indicative")
   public GetSettlementOut setIndicative(Boolean indicative) {
     this.indicative = indicative;
@@ -88,7 +88,7 @@ public class GetSettlementOut {
   public String getFxRateDate() {
     return fxRateDate;
   }
-  
+
   @JsonProperty("fx_rate_date")
   public GetSettlementOut setFxRateDate(String fxRateDate) {
     this.fxRateDate = fxRateDate;

@@ -32,7 +32,7 @@ public class GetCurrenciesDictOut {
   public List<CurrencySchema> getDictionary() {
     return dictionary;
   }
-  
+
   @JsonProperty("dictionary")
   public GetCurrenciesDictOut setDictionary(List<CurrencySchema> dictionary) {
     this.dictionary = dictionary;

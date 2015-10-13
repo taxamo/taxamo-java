@@ -61,7 +61,7 @@ public class Evidence {
   public EvidenceSchema getByToken() {
     return byToken;
   }
-  
+
   @JsonProperty("by_token")
   public Evidence setByToken(EvidenceSchema byToken) {
     this.byToken = byToken;
@@ -72,7 +72,7 @@ public class Evidence {
   public EvidenceSchema getByCc() {
     return byCc;
   }
-  
+
   @JsonProperty("by_cc")
   public Evidence setByCc(EvidenceSchema byCc) {
     this.byCc = byCc;
@@ -83,7 +83,7 @@ public class Evidence {
   public EvidenceSchema getBy2003Rules() {
     return by2003Rules;
   }
-  
+
   @JsonProperty("by_2003_rules")
   public Evidence setBy2003Rules(EvidenceSchema by2003Rules) {
     this.by2003Rules = by2003Rules;
@@ -94,7 +94,7 @@ public class Evidence {
   public EvidenceSchema getForced() {
     return forced;
   }
-  
+
   @JsonProperty("forced")
   public Evidence setForced(EvidenceSchema forced) {
     this.forced = forced;
@@ -105,7 +105,7 @@ public class Evidence {
   public EvidenceSchema getByPaymentMethod() {
     return byPaymentMethod;
   }
-  
+
   @JsonProperty("by_payment_method")
   public Evidence setByPaymentMethod(EvidenceSchema byPaymentMethod) {
     this.byPaymentMethod = byPaymentMethod;
@@ -116,7 +116,7 @@ public class Evidence {
   public EvidenceSchema getByIp() {
     return byIp;
   }
-  
+
   @JsonProperty("by_ip")
   public Evidence setByIp(EvidenceSchema byIp) {
     this.byIp = byIp;
@@ -127,7 +127,7 @@ public class Evidence {
   public EvidenceSchema getGuessedFromIp() {
     return guessedFromIp;
   }
-  
+
   @JsonProperty("guessed_from_ip")
   public Evidence setGuessedFromIp(EvidenceSchema guessedFromIp) {
     this.guessedFromIp = guessedFromIp;
@@ -138,7 +138,7 @@ public class Evidence {
   public EvidenceSchema getOtherCommerciallyRelevantInfo() {
     return otherCommerciallyRelevantInfo;
   }
-  
+
   @JsonProperty("other_commercially_relevant_info")
   public Evidence setOtherCommerciallyRelevantInfo(EvidenceSchema otherCommerciallyRelevantInfo) {
     this.otherCommerciallyRelevantInfo = otherCommerciallyRelevantInfo;
@@ -149,7 +149,7 @@ public class Evidence {
   public EvidenceSchema getByBilling() {
     return byBilling;
   }
-  
+
   @JsonProperty("by_billing")
   public Evidence setByBilling(EvidenceSchema byBilling) {
     this.byBilling = byBilling;
@@ -160,7 +160,7 @@ public class Evidence {
   public EvidenceSchema getByTaxNumber() {
     return byTaxNumber;
   }
-  
+
   @JsonProperty("by_tax_number")
   public Evidence setByTaxNumber(EvidenceSchema byTaxNumber) {
     this.byTaxNumber = byTaxNumber;
@@ -171,7 +171,7 @@ public class Evidence {
   public EvidenceSchema getSelfDeclaration() {
     return selfDeclaration;
   }
-  
+
   @JsonProperty("self_declaration")
   public Evidence setSelfDeclaration(EvidenceSchema selfDeclaration) {
     this.selfDeclaration = selfDeclaration;

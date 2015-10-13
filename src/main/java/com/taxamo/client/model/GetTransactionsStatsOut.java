@@ -31,7 +31,7 @@ public class GetTransactionsStatsOut {
   public ByStatus getByStatus() {
     return byStatus;
   }
-  
+
   @JsonProperty("by_status")
   public GetTransactionsStatsOut setByStatus(ByStatus byStatus) {
     this.byStatus = byStatus;

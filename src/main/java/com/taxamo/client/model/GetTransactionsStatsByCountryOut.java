@@ -32,7 +32,7 @@ public class GetTransactionsStatsByCountryOut {
   public List<ByCountry> getByCountry() {
     return byCountry;
   }
-  
+
   @JsonProperty("by_country")
   public GetTransactionsStatsByCountryOut setByCountry(List<ByCountry> byCountry) {
     this.byCountry = byCountry;

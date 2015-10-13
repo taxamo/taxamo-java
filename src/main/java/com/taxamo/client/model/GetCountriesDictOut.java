@@ -32,7 +32,7 @@ public class GetCountriesDictOut {
   public List<CountrySchema> getDictionary() {
     return dictionary;
   }
-  
+
   @JsonProperty("dictionary")
   public GetCountriesDictOut setDictionary(List<CountrySchema> dictionary) {
     this.dictionary = dictionary;

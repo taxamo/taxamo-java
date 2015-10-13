@@ -78,7 +78,7 @@ public class InputTransactionLine {
   public String getProductType() {
     return productType;
   }
-  
+
   @JsonProperty("product_type")
   public InputTransactionLine setProductType(String productType) {
     this.productType = productType;
@@ -89,7 +89,7 @@ public class InputTransactionLine {
   public String getSupplyDate() {
     return supplyDate;
   }
-  
+
   @JsonProperty("supply_date")
   public InputTransactionLine setSupplyDate(String supplyDate) {
     this.supplyDate = supplyDate;
@@ -100,7 +100,7 @@ public class InputTransactionLine {
   public BigDecimal getUnitPrice() {
     return unitPrice;
   }
-  
+
   @JsonProperty("unit_price")
   public InputTransactionLine setUnitPrice(BigDecimal unitPrice) {
     this.unitPrice = unitPrice;
@@ -111,7 +111,7 @@ public class InputTransactionLine {
   public String getUnitOfMeasure() {
     return unitOfMeasure;
   }
-  
+
   @JsonProperty("unit_of_measure")
   public InputTransactionLine setUnitOfMeasure(String unitOfMeasure) {
     this.unitOfMeasure = unitOfMeasure;
@@ -122,7 +122,7 @@ public class InputTransactionLine {
   public BigDecimal getQuantity() {
     return quantity;
   }
-  
+
   @JsonProperty("quantity")
   public InputTransactionLine setQuantity(BigDecimal quantity) {
     this.quantity = quantity;
@@ -133,7 +133,7 @@ public class InputTransactionLine {
   public List<CustomFields> getCustomFields() {
     return customFields;
   }
-  
+
   @JsonProperty("custom_fields")
   public InputTransactionLine setCustomFields(List<CustomFields> customFields) {
     this.customFields = customFields;
@@ -144,7 +144,7 @@ public class InputTransactionLine {
   public String getLineKey() {
     return lineKey;
   }
-  
+
   @JsonProperty("line_key")
   public InputTransactionLine setLineKey(String lineKey) {
     this.lineKey = lineKey;
@@ -155,7 +155,7 @@ public class InputTransactionLine {
   public String getTaxName() {
     return taxName;
   }
-  
+
   @JsonProperty("tax_name")
   public InputTransactionLine setTaxName(String taxName) {
     this.taxName = taxName;
@@ -166,7 +166,7 @@ public class InputTransactionLine {
   public String getProductCode() {
     return productCode;
   }
-  
+
   @JsonProperty("product_code")
   public InputTransactionLine setProductCode(String productCode) {
     this.productCode = productCode;
@@ -177,7 +177,7 @@ public class InputTransactionLine {
   public BigDecimal getAmount() {
     return amount;
   }
-  
+
   @JsonProperty("amount")
   public InputTransactionLine setAmount(BigDecimal amount) {
     this.amount = amount;
@@ -188,7 +188,7 @@ public class InputTransactionLine {
   public String getCustomId() {
     return customId;
   }
-  
+
   @JsonProperty("custom_id")
   public InputTransactionLine setCustomId(String customId) {
     this.customId = customId;
@@ -199,7 +199,7 @@ public class InputTransactionLine {
   public Boolean getInformative() {
     return informative;
   }
-  
+
   @JsonProperty("informative")
   public InputTransactionLine setInformative(Boolean informative) {
     this.informative = informative;
@@ -210,7 +210,7 @@ public class InputTransactionLine {
   public BigDecimal getTaxRate() {
     return taxRate;
   }
-  
+
   @JsonProperty("tax_rate")
   public InputTransactionLine setTaxRate(BigDecimal taxRate) {
     this.taxRate = taxRate;
@@ -221,7 +221,7 @@ public class InputTransactionLine {
   public BigDecimal getTotalAmount() {
     return totalAmount;
   }
-  
+
   @JsonProperty("total_amount")
   public InputTransactionLine setTotalAmount(BigDecimal totalAmount) {
     this.totalAmount = totalAmount;
@@ -232,7 +232,7 @@ public class InputTransactionLine {
   public String getProductTaxCode() {
     return productTaxCode;
   }
-  
+
   @JsonProperty("product_tax_code")
   public InputTransactionLine setProductTaxCode(String productTaxCode) {
     this.productTaxCode = productTaxCode;
@@ -243,7 +243,7 @@ public class InputTransactionLine {
   public String getDescription() {
     return description;
   }
-  
+
   @JsonProperty("description")
   public InputTransactionLine setDescription(String description) {
     this.description = description;

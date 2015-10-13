@@ -30,7 +30,7 @@ public class CapturePaymentOut {
   public Boolean getSuccess() {
     return success;
   }
-  
+
   @JsonProperty("success")
   public CapturePaymentOut setSuccess(Boolean success) {
     this.success = success;

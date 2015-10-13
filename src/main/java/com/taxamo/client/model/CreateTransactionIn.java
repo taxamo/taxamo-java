@@ -34,7 +34,7 @@ public class CreateTransactionIn {
   public Boolean getManualMode() {
     return manualMode;
   }
-  
+
   @JsonProperty("manual_mode")
   public CreateTransactionIn setManualMode(Boolean manualMode) {
     this.manualMode = manualMode;
@@ -45,7 +45,7 @@ public class CreateTransactionIn {
   public InputTransaction getTransaction() {
     return transaction;
   }
-  
+
   @JsonProperty("transaction")
   public CreateTransactionIn setTransaction(InputTransaction transaction) {
     this.transaction = transaction;

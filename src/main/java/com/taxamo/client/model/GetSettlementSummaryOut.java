@@ -31,7 +31,7 @@ public class GetSettlementSummaryOut {
   public Summary getSummary() {
     return summary;
   }
-  
+
   @JsonProperty("summary")
   public GetSettlementSummaryOut setSummary(Summary summary) {
     this.summary = summary;

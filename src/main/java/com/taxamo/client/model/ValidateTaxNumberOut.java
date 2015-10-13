@@ -39,7 +39,7 @@ public class ValidateTaxNumberOut {
   public Boolean getTaxDeducted() {
     return taxDeducted;
   }
-  
+
   @JsonProperty("tax_deducted")
   public ValidateTaxNumberOut setTaxDeducted(Boolean taxDeducted) {
     this.taxDeducted = taxDeducted;
@@ -50,7 +50,7 @@ public class ValidateTaxNumberOut {
   public String getBuyerTaxNumber() {
     return buyerTaxNumber;
   }
-  
+
   @JsonProperty("buyer_tax_number")
   public ValidateTaxNumberOut setBuyerTaxNumber(String buyerTaxNumber) {
     this.buyerTaxNumber = buyerTaxNumber;
@@ -61,7 +61,7 @@ public class ValidateTaxNumberOut {
   public Boolean getBuyerTaxNumberValid() {
     return buyerTaxNumberValid;
   }
-  
+
   @JsonProperty("buyer_tax_number_valid")
   public ValidateTaxNumberOut setBuyerTaxNumberValid(Boolean buyerTaxNumberValid) {
     this.buyerTaxNumberValid = buyerTaxNumberValid;
@@ -72,7 +72,7 @@ public class ValidateTaxNumberOut {
   public String getBillingCountryCode() {
     return billingCountryCode;
   }
-  
+
   @JsonProperty("billing_country_code")
   public ValidateTaxNumberOut setBillingCountryCode(String billingCountryCode) {
     this.billingCountryCode = billingCountryCode;

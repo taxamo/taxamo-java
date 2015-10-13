@@ -36,7 +36,7 @@ public class ByStatus {
   public List<N> getN() {
     return n;
   }
-  
+
   @JsonProperty("N")
   public ByStatus setN(List<N> n) {
     this.n = n;
@@ -47,7 +47,7 @@ public class ByStatus {
   public List<C> getC() {
     return c;
   }
-  
+
   @JsonProperty("C")
   public ByStatus setC(List<C> c) {
     this.c = c;

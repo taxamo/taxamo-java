@@ -36,7 +36,7 @@ public class UsTaxExemptState {
   public String getStateAbbr() {
     return stateAbbr;
   }
-  
+
   @JsonProperty("state_abbr")
   public UsTaxExemptState setStateAbbr(String stateAbbr) {
     this.stateAbbr = stateAbbr;
@@ -47,7 +47,7 @@ public class UsTaxExemptState {
   public String getReasonForExemption() {
     return reasonForExemption;
   }
-  
+
   @JsonProperty("reason_for_exemption")
   public UsTaxExemptState setReasonForExemption(String reasonForExemption) {
     this.reasonForExemption = reasonForExemption;
@@ -58,7 +58,7 @@ public class UsTaxExemptState {
   public String getIdentifierForExemptionReason() {
     return identifierForExemptionReason;
   }
-  
+
   @JsonProperty("identifier_for_exemption_reason")
   public UsTaxExemptState setIdentifierForExemptionReason(String identifierForExemptionReason) {
     this.identifierForExemptionReason = identifierForExemptionReason;

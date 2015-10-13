@@ -44,7 +44,7 @@ public class ByTaxationType {
   public BigDecimal getTaxedCount() {
     return taxedCount;
   }
-  
+
   @JsonProperty("taxed_count")
   public ByTaxationType setTaxedCount(BigDecimal taxedCount) {
     this.taxedCount = taxedCount;
@@ -55,7 +55,7 @@ public class ByTaxationType {
   public BigDecimal getDeductedCount() {
     return deductedCount;
   }
-  
+
   @JsonProperty("deducted_count")
   public ByTaxationType setDeductedCount(BigDecimal deductedCount) {
     this.deductedCount = deductedCount;
@@ -66,7 +66,7 @@ public class ByTaxationType {
   public BigDecimal getTransactionsCount() {
     return transactionsCount;
   }
-  
+
   @JsonProperty("transactions_count")
   public ByTaxationType setTransactionsCount(BigDecimal transactionsCount) {
     this.transactionsCount = transactionsCount;
@@ -77,7 +77,7 @@ public class ByTaxationType {
   public Integer getEuB2b() {
     return euB2b;
   }
-  
+
   @JsonProperty("eu_b2b")
   public ByTaxationType setEuB2b(Integer euB2b) {
     this.euB2b = euB2b;
@@ -88,7 +88,7 @@ public class ByTaxationType {
   public Integer getEuTaxed() {
     return euTaxed;
   }
-  
+
   @JsonProperty("eu_taxed")
   public ByTaxationType setEuTaxed(Integer euTaxed) {
     this.euTaxed = euTaxed;

@@ -40,7 +40,7 @@ public class CreateRefundOut {
   public BigDecimal getTotalAmount() {
     return totalAmount;
   }
-  
+
   @JsonProperty("total_amount")
   public CreateRefundOut setTotalAmount(BigDecimal totalAmount) {
     this.totalAmount = totalAmount;
@@ -51,7 +51,7 @@ public class CreateRefundOut {
   public BigDecimal getTaxAmount() {
     return taxAmount;
   }
-  
+
   @JsonProperty("tax_amount")
   public CreateRefundOut setTaxAmount(BigDecimal taxAmount) {
     this.taxAmount = taxAmount;
@@ -62,7 +62,7 @@ public class CreateRefundOut {
   public BigDecimal getRefundedTotalAmount() {
     return refundedTotalAmount;
   }
-  
+
   @JsonProperty("refunded_total_amount")
   public CreateRefundOut setRefundedTotalAmount(BigDecimal refundedTotalAmount) {
     this.refundedTotalAmount = refundedTotalAmount;
@@ -73,7 +73,7 @@ public class CreateRefundOut {
   public BigDecimal getRefundedTaxAmount() {
     return refundedTaxAmount;
   }
-  
+
   @JsonProperty("refunded_tax_amount")
   public CreateRefundOut setRefundedTaxAmount(BigDecimal refundedTaxAmount) {
     this.refundedTaxAmount = refundedTaxAmount;

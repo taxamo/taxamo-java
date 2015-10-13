@@ -39,7 +39,7 @@ public class EvidenceSchema {
   public Boolean getUsed() {
     return used;
   }
-  
+
   @JsonProperty("used")
   public EvidenceSchema setUsed(Boolean used) {
     this.used = used;
@@ -50,7 +50,7 @@ public class EvidenceSchema {
   public String getResolvedCountryCode() {
     return resolvedCountryCode;
   }
-  
+
   @JsonProperty("resolved_country_code")
   public EvidenceSchema setResolvedCountryCode(String resolvedCountryCode) {
     this.resolvedCountryCode = resolvedCountryCode;
@@ -61,7 +61,7 @@ public class EvidenceSchema {
   public String getEvidenceType() {
     return evidenceType;
   }
-  
+
   @JsonProperty("evidence_type")
   public EvidenceSchema setEvidenceType(String evidenceType) {
     this.evidenceType = evidenceType;
@@ -72,7 +72,7 @@ public class EvidenceSchema {
   public String getEvidenceValue() {
     return evidenceValue;
   }
-  
+
   @JsonProperty("evidence_value")
   public EvidenceSchema setEvidenceValue(String evidenceValue) {
     this.evidenceValue = evidenceValue;

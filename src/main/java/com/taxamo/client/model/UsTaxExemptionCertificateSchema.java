@@ -34,7 +34,7 @@ public class UsTaxExemptionCertificateSchema {
   public String getCertificateId() {
     return certificateId;
   }
-  
+
   @JsonProperty("certificate_id")
   public UsTaxExemptionCertificateSchema setCertificateId(String certificateId) {
     this.certificateId = certificateId;
@@ -45,7 +45,7 @@ public class UsTaxExemptionCertificateSchema {
   public UsTaxExemptionCertificateDetailsSchema getDetail() {
     return detail;
   }
-  
+
   @JsonProperty("detail")
   public UsTaxExemptionCertificateSchema setDetail(UsTaxExemptionCertificateDetailsSchema detail) {
     this.detail = detail;

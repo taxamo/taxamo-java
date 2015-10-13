@@ -31,7 +31,7 @@ public class GetSettlementStatsByTaxationTypeOut {
   public ByTaxationType getByTaxationType() {
     return byTaxationType;
   }
-  
+
   @JsonProperty("by_taxation_type")
   public GetSettlementStatsByTaxationTypeOut setByTaxationType(ByTaxationType byTaxationType) {
     this.byTaxationType = byTaxationType;

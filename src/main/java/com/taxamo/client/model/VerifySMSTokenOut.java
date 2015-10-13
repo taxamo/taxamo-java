@@ -30,7 +30,7 @@ public class VerifySMSTokenOut {
   public String getCountryCode() {
     return countryCode;
   }
-  
+
   @JsonProperty("country_code")
   public VerifySMSTokenOut setCountryCode(String countryCode) {
     this.countryCode = countryCode;

@@ -53,7 +53,7 @@ public class CalculateTaxLocationOut {
   public String getTaxCountryCode() {
     return taxCountryCode;
   }
-  
+
   @JsonProperty("tax_country_code")
   public CalculateTaxLocationOut setTaxCountryCode(String taxCountryCode) {
     this.taxCountryCode = taxCountryCode;
@@ -64,7 +64,7 @@ public class CalculateTaxLocationOut {
   public Boolean getTaxDeducted() {
     return taxDeducted;
   }
-  
+
   @JsonProperty("tax_deducted")
   public CalculateTaxLocationOut setTaxDeducted(Boolean taxDeducted) {
     this.taxDeducted = taxDeducted;
@@ -75,7 +75,7 @@ public class CalculateTaxLocationOut {
   public Boolean getTaxSupported() {
     return taxSupported;
   }
-  
+
   @JsonProperty("tax_supported")
   public CalculateTaxLocationOut setTaxSupported(Boolean taxSupported) {
     this.taxSupported = taxSupported;
@@ -86,7 +86,7 @@ public class CalculateTaxLocationOut {
   public Countries getCountries() {
     return countries;
   }
-  
+
   @JsonProperty("countries")
   public CalculateTaxLocationOut setCountries(Countries countries) {
     this.countries = countries;
@@ -97,7 +97,7 @@ public class CalculateTaxLocationOut {
   public String getBuyerIp() {
     return buyerIp;
   }
-  
+
   @JsonProperty("buyer_ip")
   public CalculateTaxLocationOut setBuyerIp(String buyerIp) {
     this.buyerIp = buyerIp;
@@ -108,7 +108,7 @@ public class CalculateTaxLocationOut {
   public String getBillingCountryCode() {
     return billingCountryCode;
   }
-  
+
   @JsonProperty("billing_country_code")
   public CalculateTaxLocationOut setBillingCountryCode(String billingCountryCode) {
     this.billingCountryCode = billingCountryCode;
@@ -119,7 +119,7 @@ public class CalculateTaxLocationOut {
   public String getBuyerCreditCardPrefix() {
     return buyerCreditCardPrefix;
   }
-  
+
   @JsonProperty("buyer_credit_card_prefix")
   public CalculateTaxLocationOut setBuyerCreditCardPrefix(String buyerCreditCardPrefix) {
     this.buyerCreditCardPrefix = buyerCreditCardPrefix;
@@ -130,7 +130,7 @@ public class CalculateTaxLocationOut {
   public Evidence getEvidence() {
     return evidence;
   }
-  
+
   @JsonProperty("evidence")
   public CalculateTaxLocationOut setEvidence(Evidence evidence) {
     this.evidence = evidence;

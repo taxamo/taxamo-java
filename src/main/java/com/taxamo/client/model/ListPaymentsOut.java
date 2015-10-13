@@ -32,7 +32,7 @@ public class ListPaymentsOut {
   public List<Payments> getPayments() {
     return payments;
   }
-  
+
   @JsonProperty("payments")
   public ListPaymentsOut setPayments(List<Payments> payments) {
     this.payments = payments;

@@ -30,7 +30,7 @@ public class StorageRequiredFields {
   public String getFieldName() {
     return fieldName;
   }
-  
+
   @JsonProperty("field_name")
   public StorageRequiredFields setFieldName(String fieldName) {
     this.fieldName = fieldName;
