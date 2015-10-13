@@ -22,28 +22,26 @@ package com.taxamo.client.model;
 
 import com.owlike.genson.annotation.JsonProperty;
 
-import java.util.*;
-import com.taxamo.client.model.ByCountry;
-public class GetSettlementStatsByCountryOut {
-  /* Settlement stats. */
-  @JsonProperty("by_country")
-  private List<ByCountry> byCountry = new ArrayList<ByCountry>();
-  @JsonProperty("by_country")
-  public List<ByCountry> getByCountry() {
-    return byCountry;
+public class TaxRequiredFields {
+  /* Required field name. */
+  @JsonProperty("field_name")
+  private String fieldName = null;
+  @JsonProperty("field_name")
+  public String getFieldName() {
+    return fieldName;
   }
   
-  @JsonProperty("by_country")
-  public GetSettlementStatsByCountryOut setByCountry(List<ByCountry> byCountry) {
-    this.byCountry = byCountry;
+  @JsonProperty("field_name")
+  public TaxRequiredFields setFieldName(String fieldName) {
+    this.fieldName = fieldName;
     return this;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GetSettlementStatsByCountryOut {\n");
-    sb.append("  byCountry: ").append(byCountry).append("\n");
+    sb.append("class TaxRequiredFields {\n");
+    sb.append("  fieldName: ").append(fieldName).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

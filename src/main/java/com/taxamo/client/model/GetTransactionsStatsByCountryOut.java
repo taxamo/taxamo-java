@@ -24,7 +24,7 @@ import com.owlike.genson.annotation.JsonProperty;
 
 import java.util.*;
 import com.taxamo.client.model.ByCountry;
-public class GetSettlementStatsByCountryOut {
+public class GetTransactionsStatsByCountryOut {
   /* Settlement stats. */
   @JsonProperty("by_country")
   private List<ByCountry> byCountry = new ArrayList<ByCountry>();
@@ -34,7 +34,7 @@ public class GetSettlementStatsByCountryOut {
   }
   
   @JsonProperty("by_country")
-  public GetSettlementStatsByCountryOut setByCountry(List<ByCountry> byCountry) {
+  public GetTransactionsStatsByCountryOut setByCountry(List<ByCountry> byCountry) {
     this.byCountry = byCountry;
     return this;
   }
@@ -42,7 +42,7 @@ public class GetSettlementStatsByCountryOut {
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GetSettlementStatsByCountryOut {\n");
+    sb.append("class GetTransactionsStatsByCountryOut {\n");
     sb.append("  byCountry: ").append(byCountry).append("\n");
     sb.append("}\n");
     return sb.toString();

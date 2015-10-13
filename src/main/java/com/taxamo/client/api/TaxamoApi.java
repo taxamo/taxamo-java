@@ -36,6 +36,7 @@ import com.taxamo.client.model.CalculateTaxLocationOut;
 import com.taxamo.client.model.LocateGivenIPOut;
 import com.taxamo.client.model.GetSettlementStatsByTaxationTypeOut;
 import com.taxamo.client.model.UnconfirmTransactionOut;
+import com.taxamo.client.model.GetTransactionsStatsByCountryOut;
 import com.taxamo.client.model.CreatePaymentOut;
 import com.taxamo.client.model.UpdateTransactionIn;
 import com.taxamo.client.model.CreateRefundIn;
@@ -74,6 +75,7 @@ public class TaxamoApi {
   public TaxamoApi(String apiToken) {
     apiInvoker.addDefaultHeader("Token", apiToken);
   }
+
   public ApiInvoker getInvoker() {
     return apiInvoker;
   }
@@ -110,7 +112,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, body, headerParams, formParams, contentType);
       if(response != null){
-        return (CreateRefundOut) ApiInvoker.deserialize(response, "", CreateRefundOut.class);
+        return (CreateRefundOut) ApiInvoker.deserialize(response, null, CreateRefundOut.class);
       }
       else {
         return null;
@@ -148,7 +150,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, body, headerParams, formParams, contentType);
       if(response != null){
-        return (CreatePaymentOut) ApiInvoker.deserialize(response, "", CreatePaymentOut.class);
+        return (CreatePaymentOut) ApiInvoker.deserialize(response, null, CreatePaymentOut.class);
       }
       else {
         return null;
@@ -190,7 +192,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (ListPaymentsOut) ApiInvoker.deserialize(response, "", ListPaymentsOut.class);
+        return (ListPaymentsOut) ApiInvoker.deserialize(response, null, ListPaymentsOut.class);
       }
       else {
         return null;
@@ -228,7 +230,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (CapturePaymentOut) ApiInvoker.deserialize(response, "", CapturePaymentOut.class);
+        return (CapturePaymentOut) ApiInvoker.deserialize(response, null, CapturePaymentOut.class);
       }
       else {
         return null;
@@ -266,7 +268,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, body, headerParams, formParams, contentType);
       if(response != null){
-        return (EmailInvoiceOut) ApiInvoker.deserialize(response, "", EmailInvoiceOut.class);
+        return (EmailInvoiceOut) ApiInvoker.deserialize(response, null, EmailInvoiceOut.class);
       }
       else {
         return null;
@@ -304,7 +306,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, body, headerParams, formParams, contentType);
       if(response != null){
-        return (CreateTransactionOut) ApiInvoker.deserialize(response, "", CreateTransactionOut.class);
+        return (CreateTransactionOut) ApiInvoker.deserialize(response, null, CreateTransactionOut.class);
       }
       else {
         return null;
@@ -342,7 +344,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (GetTransactionOut) ApiInvoker.deserialize(response, "", GetTransactionOut.class);
+        return (GetTransactionOut) ApiInvoker.deserialize(response, null, GetTransactionOut.class);
       }
       else {
         return null;
@@ -380,7 +382,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "PUT", queryParams, body, headerParams, formParams, contentType);
       if(response != null){
-        return (UpdateTransactionOut) ApiInvoker.deserialize(response, "", UpdateTransactionOut.class);
+        return (UpdateTransactionOut) ApiInvoker.deserialize(response, null, UpdateTransactionOut.class);
       }
       else {
         return null;
@@ -418,7 +420,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, body, headerParams, formParams, contentType);
       if(response != null){
-        return (ConfirmTransactionOut) ApiInvoker.deserialize(response, "", ConfirmTransactionOut.class);
+        return (ConfirmTransactionOut) ApiInvoker.deserialize(response, null, ConfirmTransactionOut.class);
       }
       else {
         return null;
@@ -456,7 +458,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "DELETE", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (CancelTransactionOut) ApiInvoker.deserialize(response, "", CancelTransactionOut.class);
+        return (CancelTransactionOut) ApiInvoker.deserialize(response, null, CancelTransactionOut.class);
       }
       else {
         return null;
@@ -494,7 +496,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, body, headerParams, formParams, contentType);
       if(response != null){
-        return (UnconfirmTransactionOut) ApiInvoker.deserialize(response, "", UnconfirmTransactionOut.class);
+        return (UnconfirmTransactionOut) ApiInvoker.deserialize(response, null, UnconfirmTransactionOut.class);
       }
       else {
         return null;
@@ -511,8 +513,7 @@ public class TaxamoApi {
   //error info- code: 200 reason: "OK" model: <none>
   //error info- code: 401 reason: "Incorrect token" model: <none>
   //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
-
-  public ListTransactionsOut listTransactions (String statuses, Boolean sortReverse, String taxCountryCode, String orderDateFrom, String keyOrCustomId, Integer offset, String filterText, String format, String orderDateTo, String currencyCode, Integer limit, String invoiceNumber) throws ApiException {
+  public ListTransactionsOut listTransactions (String filterText, Integer offset, String keyOrCustomId, String currencyCode, String orderDateTo, Boolean sortReverse, Integer limit, String invoiceNumber, String statuses, String orderDateFrom, String totalAmountGreaterThan, String format, String totalAmountLessThan, String taxCountryCode) throws ApiException {
     // create path and map variables
     String path = "/api/v1/transactions".replaceAll("\\{format\\}","json");
 
@@ -541,8 +542,12 @@ public class TaxamoApi {
       queryParams.put("statuses", String.valueOf(statuses));
     if(!"null".equals(String.valueOf(orderDateFrom)))
       queryParams.put("order_date_from", String.valueOf(orderDateFrom));
+    if(!"null".equals(String.valueOf(totalAmountGreaterThan)))
+      queryParams.put("total_amount_greater_than", String.valueOf(totalAmountGreaterThan));
     if(!"null".equals(String.valueOf(format)))
       queryParams.put("format", String.valueOf(format));
+    if(!"null".equals(String.valueOf(totalAmountLessThan)))
+      queryParams.put("total_amount_less_than", String.valueOf(totalAmountLessThan));
     if(!"null".equals(String.valueOf(taxCountryCode)))
       queryParams.put("tax_country_code", String.valueOf(taxCountryCode));
     String[] contentTypes = {
@@ -553,7 +558,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (ListTransactionsOut) ApiInvoker.deserialize(response, "", ListTransactionsOut.class);
+        return (ListTransactionsOut) ApiInvoker.deserialize(response, null, ListTransactionsOut.class);
       }
       else {
         return null;
@@ -591,7 +596,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, body, headerParams, formParams, contentType);
       if(response != null){
-        return (CalculateTaxOut) ApiInvoker.deserialize(response, "", CalculateTaxOut.class);
+        return (CalculateTaxOut) ApiInvoker.deserialize(response, null, CalculateTaxOut.class);
       }
       else {
         return null;
@@ -608,7 +613,7 @@ public class TaxamoApi {
   //error info- code: 200 reason: "OK" model: <none>
   //error info- code: 401 reason: "Incorrect token" model: <none>
   //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
-  public CalculateSimpleTaxOut calculateSimpleTax (String buyerCreditCardPrefix, String buyerTaxNumber, String productType, String forceCountryCode, BigDecimal quantity, BigDecimal unitPrice, BigDecimal totalAmount, Boolean taxDeducted, BigDecimal amount, String billingCountryCode, String currencyCode, String orderDate) throws ApiException {
+  public CalculateSimpleTaxOut calculateSimpleTax (String productType, String invoiceAddressCity, String buyerCreditCardPrefix, String currencyCode, String invoiceAddressRegion, BigDecimal unitPrice, BigDecimal quantity, String buyerTaxNumber, String forceCountryCode, String orderDate, BigDecimal amount, String billingCountryCode, String invoiceAddressPostalCode, BigDecimal totalAmount, Boolean taxDeducted) throws ApiException {
     // verify required params are set
     if(currencyCode == null ) {
        throw new ApiException(400, "missing required params");
@@ -623,10 +628,14 @@ public class TaxamoApi {
 
     if(!"null".equals(String.valueOf(productType)))
       queryParams.put("product_type", String.valueOf(productType));
+    if(!"null".equals(String.valueOf(invoiceAddressCity)))
+      queryParams.put("invoice_address_city", String.valueOf(invoiceAddressCity));
     if(!"null".equals(String.valueOf(buyerCreditCardPrefix)))
       queryParams.put("buyer_credit_card_prefix", String.valueOf(buyerCreditCardPrefix));
     if(!"null".equals(String.valueOf(currencyCode)))
       queryParams.put("currency_code", String.valueOf(currencyCode));
+    if(!"null".equals(String.valueOf(invoiceAddressRegion)))
+      queryParams.put("invoice_address_region", String.valueOf(invoiceAddressRegion));
     if(!"null".equals(String.valueOf(unitPrice)))
       queryParams.put("unit_price", String.valueOf(unitPrice));
     if(!"null".equals(String.valueOf(quantity)))
@@ -641,6 +650,8 @@ public class TaxamoApi {
       queryParams.put("amount", String.valueOf(amount));
     if(!"null".equals(String.valueOf(billingCountryCode)))
       queryParams.put("billing_country_code", String.valueOf(billingCountryCode));
+    if(!"null".equals(String.valueOf(invoiceAddressPostalCode)))
+      queryParams.put("invoice_address_postal_code", String.valueOf(invoiceAddressPostalCode));
     if(!"null".equals(String.valueOf(totalAmount)))
       queryParams.put("total_amount", String.valueOf(totalAmount));
     if(!"null".equals(String.valueOf(taxDeducted)))
@@ -653,7 +664,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (CalculateSimpleTaxOut) ApiInvoker.deserialize(response, "", CalculateSimpleTaxOut.class);
+        return (CalculateSimpleTaxOut) ApiInvoker.deserialize(response, null, CalculateSimpleTaxOut.class);
       }
       else {
         return null;
@@ -676,7 +687,7 @@ public class TaxamoApi {
        throw new ApiException(400, "missing required params");
     }
     // create path and map variables
-    String path = "/api/v1/tax/vat_numbers/{tax_number}/validate".replaceAll("\\{format\\}","json").replaceAll("\\{" + "tax_number" + "\\}", apiInvoker.escapeString(taxNumber));
+    String path = "/api/v1/tax/vat_numbers/{tax_number}/validate".replaceAll("\\{format\\}","json").replaceAll("\\{" + "taxNumber" + "\\}", apiInvoker.escapeString(taxNumber.toString()));
 
     // query params
     Map<String, String> queryParams = new HashMap<String, String>();
@@ -693,7 +704,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (ValidateTaxNumberOut) ApiInvoker.deserialize(response, "", ValidateTaxNumberOut.class);
+        return (ValidateTaxNumberOut) ApiInvoker.deserialize(response, null, ValidateTaxNumberOut.class);
       }
       else {
         return null;
@@ -731,7 +742,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (CalculateTaxLocationOut) ApiInvoker.deserialize(response, "", CalculateTaxLocationOut.class);
+        return (CalculateTaxLocationOut) ApiInvoker.deserialize(response, null, CalculateTaxLocationOut.class);
       }
       else {
         return null;
@@ -765,7 +776,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (LocateMyIPOut) ApiInvoker.deserialize(response, "", LocateMyIPOut.class);
+        return (LocateMyIPOut) ApiInvoker.deserialize(response, null, LocateMyIPOut.class);
       }
       else {
         return null;
@@ -803,7 +814,51 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (LocateGivenIPOut) ApiInvoker.deserialize(response, "", LocateGivenIPOut.class);
+        return (LocateGivenIPOut) ApiInvoker.deserialize(response, null, LocateGivenIPOut.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  //error info- code: 200 reason: "OK" model: <none>
+  //error info- code: 401 reason: "Incorrect token" model: <none>
+  //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
+  public GetTransactionsStatsByCountryOut getTransactionsStatsByCountry (String globalCurrencyCode, String dateFrom, String dateTo) throws ApiException {
+    // verify required params are set
+    if(dateFrom == null || dateTo == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    // create path and map variables
+    String path = "/api/v1/stats/transactions/by_country".replaceAll("\\{format\\}","json");
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    if(!"null".equals(String.valueOf(globalCurrencyCode)))
+      queryParams.put("global_currency_code", String.valueOf(globalCurrencyCode));
+    if(!"null".equals(String.valueOf(dateFrom)))
+      queryParams.put("date_from", String.valueOf(dateFrom));
+    if(!"null".equals(String.valueOf(dateTo)))
+      queryParams.put("date_to", String.valueOf(dateTo));
+    String[] contentTypes = {
+      "application/json"};
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
+      if(response != null){
+        return (GetTransactionsStatsByCountryOut) ApiInvoker.deserialize(response, null, GetTransactionsStatsByCountryOut.class);
       }
       else {
         return null;
@@ -847,7 +902,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (GetTransactionsStatsOut) ApiInvoker.deserialize(response, "", GetTransactionsStatsOut.class);
+        return (GetTransactionsStatsOut) ApiInvoker.deserialize(response, null, GetTransactionsStatsOut.class);
       }
       else {
         return null;
@@ -889,7 +944,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (GetSettlementStatsByCountryOut) ApiInvoker.deserialize(response, "", GetSettlementStatsByCountryOut.class);
+        return (GetSettlementStatsByCountryOut) ApiInvoker.deserialize(response, null, GetSettlementStatsByCountryOut.class);
       }
       else {
         return null;
@@ -931,7 +986,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (GetSettlementStatsByTaxationTypeOut) ApiInvoker.deserialize(response, "", GetSettlementStatsByTaxationTypeOut.class);
+        return (GetSettlementStatsByTaxationTypeOut) ApiInvoker.deserialize(response, null, GetSettlementStatsByTaxationTypeOut.class);
       }
       else {
         return null;
@@ -975,7 +1030,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (GetDailySettlementStatsOut) ApiInvoker.deserialize(response, "", GetDailySettlementStatsOut.class);
+        return (GetDailySettlementStatsOut) ApiInvoker.deserialize(response, null, GetDailySettlementStatsOut.class);
       }
       else {
         return null;
@@ -992,7 +1047,7 @@ public class TaxamoApi {
   //error info- code: 200 reason: "OK" model: <none>
   //error info- code: 401 reason: "Incorrect token" model: <none>
   //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
-  public GetRefundsOut getRefunds (String format, String mossCountryCode, String dateFrom) throws ApiException {
+  public GetRefundsOut getRefunds (String format, String mossCountryCode, String taxRegion, String dateFrom) throws ApiException {
     // verify required params are set
     if(dateFrom == null ) {
        throw new ApiException(400, "missing required params");
@@ -1009,6 +1064,8 @@ public class TaxamoApi {
       queryParams.put("format", String.valueOf(format));
     if(!"null".equals(String.valueOf(mossCountryCode)))
       queryParams.put("moss_country_code", String.valueOf(mossCountryCode));
+    if(!"null".equals(String.valueOf(taxRegion)))
+      queryParams.put("tax_region", String.valueOf(taxRegion));
     if(!"null".equals(String.valueOf(dateFrom)))
       queryParams.put("date_from", String.valueOf(dateFrom));
     String[] contentTypes = {
@@ -1019,7 +1076,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (GetRefundsOut) ApiInvoker.deserialize(response, "", GetRefundsOut.class);
+        return (GetRefundsOut) ApiInvoker.deserialize(response, null, GetRefundsOut.class);
       }
       else {
         return null;
@@ -1036,7 +1093,7 @@ public class TaxamoApi {
   //error info- code: 200 reason: "OK" model: <none>
   //error info- code: 401 reason: "Incorrect token" model: <none>
   //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
-  public GetSettlementOut getSettlement (String format, String mossCountryCode, String mossTaxId, String quarter) throws ApiException {
+  public GetSettlementOut getSettlement (String format, String mossCountryCode, String taxCountryCode, String currencyCode, String mossTaxId, String taxId, String startMonth, String endMonth, String quarter) throws ApiException {
     // verify required params are set
     if(quarter == null ) {
        throw new ApiException(400, "missing required params");
@@ -1053,8 +1110,18 @@ public class TaxamoApi {
       queryParams.put("format", String.valueOf(format));
     if(!"null".equals(String.valueOf(mossCountryCode)))
       queryParams.put("moss_country_code", String.valueOf(mossCountryCode));
+    if(!"null".equals(String.valueOf(taxCountryCode)))
+      queryParams.put("tax_country_code", String.valueOf(taxCountryCode));
+    if(!"null".equals(String.valueOf(currencyCode)))
+      queryParams.put("currency_code", String.valueOf(currencyCode));
     if(!"null".equals(String.valueOf(mossTaxId)))
       queryParams.put("moss_tax_id", String.valueOf(mossTaxId));
+    if(!"null".equals(String.valueOf(taxId)))
+      queryParams.put("tax_id", String.valueOf(taxId));
+    if(!"null".equals(String.valueOf(startMonth)))
+      queryParams.put("start_month", String.valueOf(startMonth));
+    if(!"null".equals(String.valueOf(endMonth)))
+      queryParams.put("end_month", String.valueOf(endMonth));
     String[] contentTypes = {
       "application/json"};
 
@@ -1063,7 +1130,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (GetSettlementOut) ApiInvoker.deserialize(response, "", GetSettlementOut.class);
+        return (GetSettlementOut) ApiInvoker.deserialize(response, null, GetSettlementOut.class);
       }
       else {
         return null;
@@ -1080,7 +1147,7 @@ public class TaxamoApi {
   //error info- code: 200 reason: "OK" model: <none>
   //error info- code: 401 reason: "Incorrect token" model: <none>
   //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
-  public GetSettlementSummaryOut getSettlementSummary (String mossCountryCode, String quarter) throws ApiException {
+  public GetSettlementSummaryOut getSettlementSummary (String mossCountryCode, String taxRegion, String startMonth, String endMonth, String quarter) throws ApiException {
     // verify required params are set
     if(quarter == null ) {
        throw new ApiException(400, "missing required params");
@@ -1095,6 +1162,12 @@ public class TaxamoApi {
 
     if(!"null".equals(String.valueOf(mossCountryCode)))
       queryParams.put("moss_country_code", String.valueOf(mossCountryCode));
+    if(!"null".equals(String.valueOf(taxRegion)))
+      queryParams.put("tax_region", String.valueOf(taxRegion));
+    if(!"null".equals(String.valueOf(startMonth)))
+      queryParams.put("start_month", String.valueOf(startMonth));
+    if(!"null".equals(String.valueOf(endMonth)))
+      queryParams.put("end_month", String.valueOf(endMonth));
     String[] contentTypes = {
       "application/json"};
 
@@ -1103,7 +1176,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (GetSettlementSummaryOut) ApiInvoker.deserialize(response, "", GetSettlementSummaryOut.class);
+        return (GetSettlementSummaryOut) ApiInvoker.deserialize(response, null, GetSettlementSummaryOut.class);
       }
       else {
         return null;
@@ -1141,7 +1214,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, body, headerParams, formParams, contentType);
       if(response != null){
-        return (CreateSMSTokenOut) ApiInvoker.deserialize(response, "", CreateSMSTokenOut.class);
+        return (CreateSMSTokenOut) ApiInvoker.deserialize(response, null, CreateSMSTokenOut.class);
       }
       else {
         return null;
@@ -1179,7 +1252,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (VerifySMSTokenOut) ApiInvoker.deserialize(response, "", VerifySMSTokenOut.class);
+        return (VerifySMSTokenOut) ApiInvoker.deserialize(response, null, VerifySMSTokenOut.class);
       }
       else {
         return null;
@@ -1213,7 +1286,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (GetCurrenciesDictOut) ApiInvoker.deserialize(response, "", GetCurrenciesDictOut.class);
+        return (GetCurrenciesDictOut) ApiInvoker.deserialize(response, null, GetCurrenciesDictOut.class);
       }
       else {
         return null;
@@ -1247,7 +1320,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (GetProductTypesDictOut) ApiInvoker.deserialize(response, "", GetProductTypesDictOut.class);
+        return (GetProductTypesDictOut) ApiInvoker.deserialize(response, null, GetProductTypesDictOut.class);
       }
       else {
         return null;
@@ -1283,7 +1356,7 @@ public class TaxamoApi {
     try {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
-        return (GetCountriesDictOut) ApiInvoker.deserialize(response, "", GetCountriesDictOut.class);
+        return (GetCountriesDictOut) ApiInvoker.deserialize(response, null, GetCountriesDictOut.class);
       }
       else {
         return null;

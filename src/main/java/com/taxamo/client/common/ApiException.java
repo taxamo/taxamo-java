@@ -11,7 +11,11 @@ public class ApiException extends Exception {
     this.message = message;
   }
 
-  public int getCode() {
+    public ApiException(Throwable cause) {
+        super(cause);
+    }
+
+    public int getCode() {
     return code;
   }
   

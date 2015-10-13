@@ -16,7 +16,6 @@ package com.taxamo.client.test;
 *  limitations under the License.
 */
 
-import com.sun.jersey.api.client.ClientHandlerException;
 import com.taxamo.client.api.TaxamoApi;
 import com.taxamo.client.common.ApiException;
 import com.taxamo.client.model.*;
@@ -267,7 +266,7 @@ public class TaxamoApiClientTest {
         Assert.assertNull(api.getTransaction("non_existing_key"));
 
 
-        ClientHandlerException clientHandlerException = null;
+        ApiException clientHandlerException = null;
         badApi.setBasePath("http://nonexisting.taxamo.com:3000/");
         try {
             badApi.createTransaction(new CreateTransactionIn()
@@ -285,7 +284,7 @@ public class TaxamoApiClientTest {
                                             .setAmount(new BigDecimal(100))
                                             .setCustomId("line2")
                                             .setProductType("e-book")))));
-        } catch (ClientHandlerException e) {
+        } catch (ApiException e) {
             clientHandlerException = e;
         }
         Assert.assertNotNull(clientHandlerException);

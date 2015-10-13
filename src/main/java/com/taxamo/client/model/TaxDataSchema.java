@@ -22,28 +22,27 @@ package com.taxamo.client.model;
 
 import com.owlike.genson.annotation.JsonProperty;
 
-import java.util.*;
-import com.taxamo.client.model.ByCountry;
-public class GetSettlementStatsByCountryOut {
-  /* Settlement stats. */
-  @JsonProperty("by_country")
-  private List<ByCountry> byCountry = new ArrayList<ByCountry>();
-  @JsonProperty("by_country")
-  public List<ByCountry> getByCountry() {
-    return byCountry;
+import com.taxamo.client.model.UsTaxExemptionCertificateSchema;
+public class TaxDataSchema {
+  /* US sales tax exemption certificate. */
+  @JsonProperty("us_tax_exemption_certificate")
+  private UsTaxExemptionCertificateSchema usTaxExemptionCertificate = null;
+  @JsonProperty("us_tax_exemption_certificate")
+  public UsTaxExemptionCertificateSchema getUsTaxExemptionCertificate() {
+    return usTaxExemptionCertificate;
   }
   
-  @JsonProperty("by_country")
-  public GetSettlementStatsByCountryOut setByCountry(List<ByCountry> byCountry) {
-    this.byCountry = byCountry;
+  @JsonProperty("us_tax_exemption_certificate")
+  public TaxDataSchema setUsTaxExemptionCertificate(UsTaxExemptionCertificateSchema usTaxExemptionCertificate) {
+    this.usTaxExemptionCertificate = usTaxExemptionCertificate;
     return this;
   }
 
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GetSettlementStatsByCountryOut {\n");
-    sb.append("  byCountry: ").append(byCountry).append("\n");
+    sb.append("class TaxDataSchema {\n");
+    sb.append("  usTaxExemptionCertificate: ").append(usTaxExemptionCertificate).append("\n");
     sb.append("}\n");
     return sb.toString();
   }
