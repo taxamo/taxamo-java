@@ -21,7 +21,7 @@
             <comments>A business-friendly OSS license</comments>
         </license>
     </licenses>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <scm>
         <connection>scm:git:git@github.com:taxamo/taxamo-java.git</connection>
         <developerConnection>scm:git:git@github.com:taxamo/taxamo-java.git</developerConnection>

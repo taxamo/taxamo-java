@@ -92,7 +92,7 @@ public class Transactions {
   /* Transaction external key */
   @JsonProperty("external_key")
   private String externalKey = null;
-  /* Transaction status: 'N' - new, 'C' - confirmed, 'X' - cancelled, 'S' - settled. Can use 'C' in store-transaction! with private-token to create confirmed transaction, otherwise 'N' is default state. Not applicable for update-transaction!. */
+  /* Transaction status: 'N' - new, 'C' - confirmed. Can use 'C' in store-transaction! with private-token to create confirmed transaction, otherwise 'N' is default status. Not applicable for update-transaction!. */
   @JsonProperty("status")
   private String status = null;
   /* Custom fields, stored as key-value pairs. This property is not processed and used mostly with Taxamo-built helpers. */

@@ -24,18 +24,21 @@ import com.owlike.genson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
 public class CreateRefundIn {
-  /* Line identifier. Either line key or custom id is required. */
+  /* Line identifier. If neither line key or custom id is provided, the refund amount will be assigned to lines in order. */
   @JsonProperty("line_key")
   private String lineKey = null;
-  /* Line custom identifier. Either line key or custom id is required. */
+  /* Line custom identifier. If neither line key or custom id is provided, the refund amount will be assigned to lines in order. */
   @JsonProperty("custom_id")
   private String customId = null;
-  /* Amount (without tax) to be refunded. Either amount or total amount is required. */
+  /* Amount (without tax) to be refunded. Either amount or total amount is required. In case of line key and custom id missing, only total_amount can be used. */
   @JsonProperty("amount")
   private BigDecimal amount = null;
-  /* Total amount, including tax, to be refunded. Either amount or total amount is required. */
+  /* Total amount, including tax, to be refunded. Either amount or total amount is required. In case of line key and custom id missing, only total_amount can be used. */
   @JsonProperty("total_amount")
   private BigDecimal totalAmount = null;
+  /* Refund reason, displayed on the credit note. */
+  @JsonProperty("refund_reason")
+  private String refundReason = null;
   @JsonProperty("line_key")
   public String getLineKey() {
     return lineKey;
@@ -80,6 +83,17 @@ public class CreateRefundIn {
     return this;
   }
 
+  @JsonProperty("refund_reason")
+  public String getRefundReason() {
+    return refundReason;
+  }
+
+  @JsonProperty("refund_reason")
+  public CreateRefundIn setRefundReason(String refundReason) {
+    this.refundReason = refundReason;
+    return this;
+  }
+
   @Override
   public String toString()  {
     StringBuilder sb = new StringBuilder();
@@ -88,6 +102,7 @@ public class CreateRefundIn {
     sb.append("  customId: ").append(customId).append("\n");
     sb.append("  amount: ").append(amount).append("\n");
     sb.append("  totalAmount: ").append(totalAmount).append("\n");
+    sb.append("  refundReason: ").append(refundReason).append("\n");
     sb.append("}\n");
     return sb.toString();
   }

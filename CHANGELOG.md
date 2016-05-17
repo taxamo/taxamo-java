@@ -1,3 +1,10 @@
+=== 1.1.1 (2016-05-17)
+ * sync fields with api.taxamo.com
+
+=== 1.1.0 (2015-10-13)
+ * enable multiple region support with new methods
+ * use different library for JSON to avoid Jackson issues
+
 === 1.0.7 (2015-07-08)
  * sync fields with api.taxamo.com
 

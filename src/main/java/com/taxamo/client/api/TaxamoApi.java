@@ -31,6 +31,8 @@ import com.taxamo.client.model.CreatePaymentIn;
 import com.taxamo.client.model.LocateMyIPOut;
 import com.taxamo.client.model.UpdateTransactionOut;
 import com.taxamo.client.model.CalculateTaxOut;
+import com.taxamo.client.model.ListRefundsOut;
+import com.taxamo.client.model.GetDomesticSummaryReportOut;
 import com.taxamo.client.model.CancelTransactionOut;
 import com.taxamo.client.model.CalculateTaxLocationOut;
 import com.taxamo.client.model.LocateGivenIPOut;
@@ -44,6 +46,7 @@ import com.taxamo.client.model.GetTransactionOut;
 import com.taxamo.client.model.EmailInvoiceIn;
 import com.taxamo.client.model.CreateSMSTokenOut;
 import com.taxamo.client.model.GetSettlementOut;
+import com.taxamo.client.model.EmailRefundIn;
 import com.taxamo.client.model.ListTransactionsOut;
 import com.taxamo.client.model.ListPaymentsOut;
 import com.taxamo.client.model.GetTransactionsStatsOut;
@@ -51,9 +54,11 @@ import com.taxamo.client.model.EmailInvoiceOut;
 import com.taxamo.client.model.CapturePaymentOut;
 import com.taxamo.client.model.ConfirmTransactionIn;
 import com.taxamo.client.model.ValidateTaxNumberOut;
+import com.taxamo.client.model.GetEuViesReportOut;
 import com.taxamo.client.model.GetDailySettlementStatsOut;
 import com.taxamo.client.model.CreateRefundOut;
 import com.taxamo.client.model.GetProductTypesDictOut;
+import com.taxamo.client.model.EmailRefundOut;
 import com.taxamo.client.model.GetSettlementSummaryOut;
 import com.taxamo.client.model.ConfirmTransactionOut;
 import com.taxamo.client.model.GetSettlementStatsByCountryOut;
@@ -79,11 +84,11 @@ public class TaxamoApi {
   public ApiInvoker getInvoker() {
     return apiInvoker;
   }
-  
+
   public void setBasePath(String basePath) {
     this.basePath = basePath;
   }
-  
+
   public String getBasePath() {
     return basePath;
   }
@@ -113,6 +118,44 @@ public class TaxamoApi {
       String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, body, headerParams, formParams, contentType);
       if(response != null){
         return (CreateRefundOut) ApiInvoker.deserialize(response, null, CreateRefundOut.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  //error info- code: 200 reason: "OK" model: <none>
+  //error info- code: 401 reason: "Incorrect token" model: <none>
+  //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
+  public ListRefundsOut listRefunds (String key) throws ApiException {
+    // verify required params are set
+    if(key == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    // create path and map variables
+    String path = "/api/v1/transactions/{key}/refunds".replaceAll("\\{format\\}","json").replaceAll("\\{" + "key" + "\\}", apiInvoker.escapeString(key.toString()));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    String[] contentTypes = {
+      "application/json"};
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
+      if(response != null){
+        return (ListRefundsOut) ApiInvoker.deserialize(response, null, ListRefundsOut.class);
       }
       else {
         return null;
@@ -269,6 +312,44 @@ public class TaxamoApi {
       String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, body, headerParams, formParams, contentType);
       if(response != null){
         return (EmailInvoiceOut) ApiInvoker.deserialize(response, null, EmailInvoiceOut.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  //error info- code: 200 reason: "OK" model: <none>
+  //error info- code: 401 reason: "Incorrect token" model: <none>
+  //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
+  public EmailRefundOut emailRefund (String key, String refundNoteNumber, EmailRefundIn body) throws ApiException {
+    // verify required params are set
+    if(key == null || refundNoteNumber == null || body == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    // create path and map variables
+    String path = "/api/v1/transactions/{key}/invoice/refunds/{refund_note_number}/send_email".replaceAll("\\{format\\}","json").replaceAll("\\{" + "key" + "\\}", apiInvoker.escapeString(key.toString())).replaceAll("\\{" + "refund_note_number" + "\\}", apiInvoker.escapeString(refundNoteNumber.toString()));
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    String[] contentTypes = {
+      "application/json"};
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, path, "POST", queryParams, body, headerParams, formParams, contentType);
+      if(response != null){
+        return (EmailRefundOut) ApiInvoker.deserialize(response, null, EmailRefundOut.class);
       }
       else {
         return null;
@@ -513,7 +594,7 @@ public class TaxamoApi {
   //error info- code: 200 reason: "OK" model: <none>
   //error info- code: 401 reason: "Incorrect token" model: <none>
   //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
-  public ListTransactionsOut listTransactions (String filterText, Integer offset, String keyOrCustomId, String currencyCode, String orderDateTo, Boolean sortReverse, Integer limit, String invoiceNumber, String statuses, String orderDateFrom, String totalAmountGreaterThan, String format, String totalAmountLessThan, String taxCountryCode) throws ApiException {
+  public ListTransactionsOut listTransactions (String filterText, Integer offset, String keyOrCustomId, String currencyCode, String orderDateTo, Boolean sortReverse, Integer limit, String invoiceNumber, String statuses, String orderDateFrom, String totalAmountGreaterThan, String format, String totalAmountLessThan, String taxCountryCode, String originalTransactionKey) throws ApiException {
     // create path and map variables
     String path = "/api/v1/transactions".replaceAll("\\{format\\}","json");
 
@@ -540,6 +621,8 @@ public class TaxamoApi {
       queryParams.put("invoice_number", String.valueOf(invoiceNumber));
     if(!"null".equals(String.valueOf(statuses)))
       queryParams.put("statuses", String.valueOf(statuses));
+    if(!"null".equals(String.valueOf(originalTransactionKey)))
+      queryParams.put("original_transaction_key", String.valueOf(originalTransactionKey));
     if(!"null".equals(String.valueOf(orderDateFrom)))
       queryParams.put("order_date_from", String.valueOf(orderDateFrom));
     if(!"null".equals(String.valueOf(totalAmountGreaterThan)))
@@ -1031,6 +1114,110 @@ public class TaxamoApi {
       String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
       if(response != null){
         return (GetDailySettlementStatsOut) ApiInvoker.deserialize(response, null, GetDailySettlementStatsOut.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  //error info- code: 200 reason: "OK" model: <none>
+  //error info- code: 401 reason: "Incorrect token" model: <none>
+  //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
+  public GetEuViesReportOut getEuViesReport (String format, String transformation, String euCountryCode, String currencyCode, String taxId, String startMonth, String endMonth, String fxDateType) throws ApiException {
+    // verify required params are set
+    if(euCountryCode == null || startMonth == null || endMonth == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    // create path and map variables
+    String path = "/api/v1/reports/eu/vies".replaceAll("\\{format\\}","json");
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    if(!"null".equals(String.valueOf(format)))
+      queryParams.put("format", String.valueOf(format));
+    if(!"null".equals(String.valueOf(transformation)))
+      queryParams.put("transformation", String.valueOf(transformation));
+    if(!"null".equals(String.valueOf(euCountryCode)))
+      queryParams.put("eu_country_code", String.valueOf(euCountryCode));
+    if(!"null".equals(String.valueOf(currencyCode)))
+      queryParams.put("currency_code", String.valueOf(currencyCode));
+    if(!"null".equals(String.valueOf(taxId)))
+      queryParams.put("tax_id", String.valueOf(taxId));
+    if(!"null".equals(String.valueOf(startMonth)))
+      queryParams.put("start_month", String.valueOf(startMonth));
+    if(!"null".equals(String.valueOf(endMonth)))
+      queryParams.put("end_month", String.valueOf(endMonth));
+    if(!"null".equals(String.valueOf(fxDateType)))
+      queryParams.put("fx_date_type", String.valueOf(fxDateType));
+    String[] contentTypes = {
+      "application/json"};
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
+      if(response != null){
+        return (GetEuViesReportOut) ApiInvoker.deserialize(response, null, GetEuViesReportOut.class);
+      }
+      else {
+        return null;
+      }
+    } catch (ApiException ex) {
+      if(ex.getCode() == 404) {
+      	return null;
+      }
+      else {
+        throw ex;
+      }
+    }
+  }
+  //error info- code: 200 reason: "OK" model: <none>
+  //error info- code: 401 reason: "Incorrect token" model: <none>
+  //error info- code: 400 reason: "Validation failed, see JSON body response for details." model: <none>
+  public GetDomesticSummaryReportOut getDomesticSummaryReport (String format, String countryCode, String currencyCode, String startMonth, String endMonth, String fxDateType) throws ApiException {
+    // verify required params are set
+    if(countryCode == null || startMonth == null || endMonth == null ) {
+       throw new ApiException(400, "missing required params");
+    }
+    // create path and map variables
+    String path = "/api/v1/reports/domestic/summary".replaceAll("\\{format\\}","json");
+
+    // query params
+    Map<String, String> queryParams = new HashMap<String, String>();
+    Map<String, String> headerParams = new HashMap<String, String>();
+    Map<String, String> formParams = new HashMap<String, String>();
+
+    if(!"null".equals(String.valueOf(format)))
+      queryParams.put("format", String.valueOf(format));
+    if(!"null".equals(String.valueOf(countryCode)))
+      queryParams.put("country_code", String.valueOf(countryCode));
+    if(!"null".equals(String.valueOf(currencyCode)))
+      queryParams.put("currency_code", String.valueOf(currencyCode));
+    if(!"null".equals(String.valueOf(startMonth)))
+      queryParams.put("start_month", String.valueOf(startMonth));
+    if(!"null".equals(String.valueOf(endMonth)))
+      queryParams.put("end_month", String.valueOf(endMonth));
+    if(!"null".equals(String.valueOf(fxDateType)))
+      queryParams.put("fx_date_type", String.valueOf(fxDateType));
+    String[] contentTypes = {
+      "application/json"};
+
+    String contentType = contentTypes.length > 0 ? contentTypes[0] : "application/json";
+
+    try {
+      String response = apiInvoker.invokeAPI(basePath, path, "GET", queryParams, null, headerParams, formParams, contentType);
+      if(response != null){
+        return (GetDomesticSummaryReportOut) ApiInvoker.deserialize(response, null, GetDomesticSummaryReportOut.class);
       }
       else {
         return null;
